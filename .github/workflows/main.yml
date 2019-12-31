@@ -6,28 +6,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-
-    - name: Set up Python
-      uses: actions/setup-python@v1
-      with:
-        python-version: '3.x'
-
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install setuptools wheel twine
-
-    - name: Install project dependencies
-      run: |
-        cd github-actions-merge
-        pip install -r requirements.txt
-
-    - name: run test
-      run: |
-        cd github-actions-merge
-        python3 merge.py
-
     - name: Send message to Slack API
       uses: archive/github-actions-slack@master
       with:

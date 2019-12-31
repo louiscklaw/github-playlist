@@ -55,4 +55,4 @@ else:
       print('merging BUILD{} from {} `{}` to `{}` done'.format(GITHUB_ACTION, GITHUB_REPOSITORY, GITHUB_REF, BRANCH_TO_MERGE_INTO), '#travis-build-result')
 
     print('push commit')
-    run_command("git push {} {}".format(PUSH_URI, BRANCH_TO_MERGE_INTO))
+    run_command("git push")

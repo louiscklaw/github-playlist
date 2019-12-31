@@ -16,6 +16,9 @@ GITHUB_ACTION = os.environ['GITHUB_ACTION']
 GITHUB_REPOSITORY = os.environ['GITHUB_REPOSITORY']
 # GITHUB_TOKEN = os.environ['GITHUB_TOKEN']
 
+TEMP_DIR = local('mktemp -d', capture=True)
+local('git clone "{}" "{}"'.format(PUSH_URI, TEMP_DIR))
+
 print("background information :")
 print({
   'BRANCH_TO_MERGE_INTO':BRANCH_TO_MERGE_INTO,

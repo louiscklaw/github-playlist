@@ -11,6 +11,7 @@ jobs:
       run: |
         cd github-actions-merge
         pip install --user pipenv
+        which pipenv
         pipenv sync
         pipenv run python3 github-actions-merge/helloworld.py
 

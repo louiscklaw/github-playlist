@@ -43,16 +43,17 @@ if (m == None ) :
 
 else:
   with lcd(TEMP_DIR), settings(warn_only=True):
-    print('checkout {} branch'.format(BRANCH_TO_MERGE_INTO))
-    run_command('git checkout {}'.format(BRANCH_TO_MERGE_INTO))
+    with( shell_env( GIT_COMMITTER_EMAIL='travis@travis', GIT_COMMITTER_NAME='Travis CI' ) ):
+      print('checkout {} branch'.format(BRANCH_TO_MERGE_INTO))
+      run_command('git checkout {}'.format(BRANCH_TO_MERGE_INTO))
 
-    print('Merging "{}"'.format(GITHUB_SHA))
-    result_to_check = run_command('git merge --ff-only "{}"'.format(GITHUB_SHA))
+      print('Merging "{}"'.format(GITHUB_SHA))
+      result_to_check = run_command('git merge --ff-only "{}"'.format(GITHUB_SHA))
 
-    if result_to_check.failed:
-      print('error found during merging BUILD{} `{}` from `{}` to `{}`'.format(GITHUB_ACTION, GITHUB_REPOSITORY, GITHUB_REF, BRANCH_TO_MERGE_INTO), '#travis-build-result')
-    else:
-      print('merging BUILD{} from {} `{}` to `{}` done'.format(GITHUB_ACTION, GITHUB_REPOSITORY, GITHUB_REF, BRANCH_TO_MERGE_INTO), '#travis-build-result')
+      if result_to_check.failed:
+        print('error found during merging BUILD{} `{}` from `{}` to `{}`'.format(GITHUB_ACTION, GITHUB_REPOSITORY, GITHUB_REF, BRANCH_TO_MERGE_INTO), '#travis-build-result')
+      else:
+        print('merging BUILD{} from {} `{}` to `{}` done'.format(GITHUB_ACTION, GITHUB_REPOSITORY, GITHUB_REF, BRANCH_TO_MERGE_INTO), '#travis-build-result')
 
-    print('push commit')
-    run_command("git push")
+      print('push commit')
+      run_command("git push")

@@ -1,3 +1,5 @@
 # README.md
 
-test readme
+### build status
+- master
+- develop

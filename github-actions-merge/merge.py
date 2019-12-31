@@ -34,7 +34,7 @@ def run_command(command_body):
 m = re.match(BRANCH_TO_MERGE_REGEX, TRAVIS_BRANCH)
 if (m == None ) :
   print('skipping merge for branch {}'.format(TRAVIS_BRANCH))
-  slack_message('skip merging for BUILD #{} `{}` from `{}` to `{}`'.format(TRAVIS_BUILD_NUMBER, GITHUB_REPO, TRAVIS_BRANCH, BRANCH_TO_MERGE_INTO), '#travis-build-result')
+  print('skip merging for BUILD #{} `{}` from `{}` to `{}`'.format(TRAVIS_BUILD_NUMBER, GITHUB_REPO, TRAVIS_BRANCH, BRANCH_TO_MERGE_INTO), '#travis-build-result')
 
 else:
   with lcd(TEMP_DIR), settings(warn_only=True):

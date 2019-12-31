@@ -22,3 +22,8 @@ jobs:
       run: |
         cd github-actions-merge
         pip install -r requirements.txt
+
+    - name: run test
+      run: |
+        cd github-actions-merge
+        python3 helloworld.py

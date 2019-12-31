@@ -8,7 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Run a one-line script
-      run: python3 github-actions-merge/helloworld.py
+      run: bash build.sh
 
   slack-notifications:
     runs-on: ubuntu-latest

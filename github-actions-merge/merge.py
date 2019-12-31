@@ -32,7 +32,7 @@ def run_command(command_body):
   return command_result
 
 m = re.match(BRANCH_TO_MERGE_REGEX, GITHUB_REF)
-if (m == None ) :
+if (False ) :
   print('skipping merge for branch {}'.format(GITHUB_REF))
   print('skip merging for BUILD #{} `{}` from `{}` to `{}`'.format(GITHUB_ACTION, GITHUB_REPOSITORY, GITHUB_REF, BRANCH_TO_MERGE_INTO), '#travis-build-result')
 

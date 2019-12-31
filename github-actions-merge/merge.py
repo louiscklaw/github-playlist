@@ -15,8 +15,8 @@ GITHUB_SHA = os.environ['GITHUB_SHA']
 GITHUB_ACTION = os.environ['GITHUB_ACTION']
 GITHUB_REPOSITORY = os.environ['GITHUB_REPOSITORY']
 # GITHUB_TOKEN = os.environ['GITHUB_TOKEN']
-PUSH_URI=f"https://github.com/{GITHUB_REPOSITORY}.git"
 
+PUSH_URI=f"https://github.com/{GITHUB_REPOSITORY}.git"
 TEMP_DIR = local('mktemp -d', capture=True)
 local('git clone "{}" "{}"'.format(PUSH_URI, TEMP_DIR))
 

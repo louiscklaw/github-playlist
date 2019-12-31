@@ -16,16 +16,30 @@ TRAVIS_BUILD_NUMBER = os.environ['GITHUB_ACTION']
 GITHUB_REPO = os.environ['GITHUB_REPOSITORY']
 # GITHUB_TOKEN = os.environ['GITHUB_TOKEN']
 
-def run_command(command_body):
-  command_result = local(command_body, capture=True)
-  print(command_result)
-  return command_result
-
+print("background information :")
 print({
   'BRANCH_TO_MERGE_INTO':'develop',
-  'BRANCH_TO_MERGE_REGEX':'^feature',
+  'BRANCH_TO_MERGE_REGEX':'^refs/heads/feature',
   'TRAVIS_BRANCH ': os.environ['GITHUB_REF'],
   'TRAVIS_COMMIT ': os.environ['GITHUB_SHA'],
   'TRAVIS_BUILD_NUMBER ': os.environ['GITHUB_ACTION'],
   'GITHUB_REPO ': os.environ['GITHUB_REPOSITORY']
 })
+
+def run_command(command_body):
+  command_result = local(command_body, capture=True)
+  print(command_result)
+  return command_result
+
+m = re.match(BRANCH_TO_MERGE_REGEX, TRAVIS_BRANCH)
+if (m == None ) :
+  print('skipping merge for branch {}'.format(TRAVIS_BRANCH))
+  slack_message('skip merging for BUILD #{} `{}` from `{}` to `{}`'.format(TRAVIS_BUILD_NUMBER, GITHUB_REPO, TRAVIS_BRANCH, BRANCH_TO_MERGE_INTO), '#travis-build-result')
+
+else:
+  with lcd(TEMP_DIR), settings(warn_only=True):
+    print('checkout {} branch'.format(BRANCH_TO_MERGE_INTO))
+    run_command('git checkout {}'.format(BRANCH_TO_MERGE_INTO))
+
+    print('Merging "{}"'.format(TRAVIS_COMMIT))
+    result_to_check = run_command('git merge --ff-only "{}"'.format(TRAVIS_COMMIT))

@@ -8,12 +8,11 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: install pipenv
-      run: |
-        pip install pipenv
-        cd github-actions-merge
+      run: pip install pipenv
+    - name: change dir to test directory
+      run: cd github-actions-merge
     - name: check pipenv
-      run: which pipenv
-      # run: pipenv sync
+      run: pipenv sync
       # run: pipenv run python3 github-actions-merge/helloworld.py
 
     - name: Send message to Slack API

@@ -7,17 +7,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
+
+    - name: Set up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install setuptools wheel twine
+
+    - name: Install project dependencies
       run: |
         cd github-actions-merge
-        pip install --user pipenv
-        which pipenv
-        pipenv sync
-        pipenv run python3 github-actions-merge/helloworld.py
+        pip install -r requirements.txt
 
-  send_result:
-    runs-on: ubuntu-latest
-    steps:
+    - name: run test
+      run: |
+        cd github-actions-merge
+        python3 merge.py
+
     - name: Send message to Slack API
       uses: archive/github-actions-slack@master
       with:

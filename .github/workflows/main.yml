@@ -11,10 +11,10 @@ jobs:
       run: pip install pipenv
     - name: change dir to test directory
       run: cd github-actions-merge
-    - name: check pipenv
-      run: pipenv sync
+    - name: install requirement.txt
+      run: pip install -r requirements.txt
     - name: run test
-      run: pipenv run python3 github-actions-merge/helloworld.py
+      run: python3 github-actions-merge/helloworld.py
 
     - name: Send message to Slack API
       uses: archive/github-actions-slack@master

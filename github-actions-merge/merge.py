@@ -56,8 +56,8 @@ else:
         print('merging BUILD{} from {} `{}` to `{}` done'.format(GITHUB_ACTION, GITHUB_REPOSITORY, GITHUB_REF, BRANCH_TO_MERGE_INTO), '#travis-build-result')
 
       print('push commit')
-      os.system('git status')
-      os.system('git push origin HEAD:'+BRANCH_TO_MERGE_INTO)
-      os.system('git status')
-      os.system('git pull')
-      os.system('git status')
+      local('git status')
+      local('git push origin HEAD:'+BRANCH_TO_MERGE_INTO)
+      local('git status')
+      local('git pull')
+      local('git status')

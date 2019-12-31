@@ -57,7 +57,7 @@ else:
 
       print('push commit')
       os.system('git status')
-      os.system(f"git push origin HEAD:{BRANCH_TO_MERGE_INTO}")
+      os.system('git push origin HEAD:'+BRANCH_TO_MERGE_INTO)
       os.system('git status')
       os.system('git pull')
       os.system('git status')

@@ -9,7 +9,7 @@ import slack
 from fabric.api import local, shell_env, lcd, run, settings
 
 BRANCH_TO_MERGE_INTO='develop'
-BRANCH_TO_MERGE_REGEX='^feature'
+BRANCH_TO_MERGE_REGEX='^refs/heads/feature'
 GITHUB_REF = os.environ['GITHUB_REF']
 GITHUB_SHA = os.environ['GITHUB_SHA']
 GITHUB_ACTION = os.environ['GITHUB_ACTION']
@@ -18,8 +18,8 @@ GITHUB_REPOSITORY = os.environ['GITHUB_REPOSITORY']
 
 print("background information :")
 print({
-  'BRANCH_TO_MERGE_INTO':'develop',
-  'BRANCH_TO_MERGE_REGEX':'^refs/heads/feature',
+  'BRANCH_TO_MERGE_INTO':BRANCH_TO_MERGE_INTO,
+  'BRANCH_TO_MERGE_REGEX':BRANCH_TO_MERGE_REGEX,
   'GITHUB_REF ': os.environ['GITHUB_REF'],
   'GITHUB_SHA ': os.environ['GITHUB_SHA'],
   'GITHUB_ACTION ': os.environ['GITHUB_ACTION'],

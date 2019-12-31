@@ -1,4 +1,9 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
-import os,sys
-print('helloworld')
+# reference build https://travis-ci.org/louiscklaw/test_git_repo/builds/625335510
+# https://docs.travis-ci.com/user/environment-variables/
+
+import os, re, subprocess
+import slack
+
+from fabric.api import local, shell_env, lcd, run, settings

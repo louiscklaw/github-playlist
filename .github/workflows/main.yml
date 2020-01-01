@@ -6,17 +6,17 @@ on: [push]
 
 jobs:
   build:
+    # Job name is Greeting
     name: Greeting
-    strategy:
-      matrix:
-        os: [ubuntu-16.04, ubuntu-18.04, ubuntu-latest, macos-latest, windows-latest]
-        node: [6, 8, 10, 12]
-
-    runs-on: ${{ matrix.os }}
+    # This job runs on Linux
+    runs-on: ubuntu-latest
     steps:
-      - name: Echo the greeting's time
-        uses: actions/setup-node@v1
+      # This step uses GitHub's hello-world-javascript-action: https://github.com/actions/hello-world-javascript-action
+      - name: Hello world
+        uses: actions/hello-world-javascript-action@v1
         with:
-          node-version: ${{ matrix.node }}
-      - name: simple print node version
-        run: node --version
+          who-to-greet: 'Mona the Octocat'
+        id: hello
+      # This step prints an output (time) from the previous step's action.
+      - name: Echo the greeting's time
+        run: echo 'The time was ${{ steps.hello.outputs.time }}.'

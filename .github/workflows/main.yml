@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Echo the greeting's time
-        - uses: actions/setup-node@v1
-          with:
-            node-version: ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
         run: node --version

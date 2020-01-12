@@ -3,8 +3,8 @@
 name: test schedule
 
 on:
-  push:
-  schedule:
+  - push
+  - schedule:
     - cron:  '*/6 * * * *'
 jobs:
   build:

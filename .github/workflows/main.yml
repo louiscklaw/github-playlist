@@ -1,16 +1,11 @@
 # https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions
 
 name: test schedule
-
-on:
-  schedule:
-    - cron:  '* * * * *'
+on: [push]
 
 jobs:
   build:
-    # Job name is Greeting
-    name: hostname
-    # This job runs on Linux
+    name: schedule helloworld
     runs-on: ubuntu-latest
     steps:
       - name: Echo the greeting's time

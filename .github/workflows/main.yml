@@ -4,8 +4,6 @@ name: test schedule
 
 on:
   push:
-    branches:
-      - master
   schedule:
     - cron:  '*/15 * * * *'
 jobs:

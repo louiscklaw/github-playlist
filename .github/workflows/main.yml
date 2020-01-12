@@ -3,9 +3,9 @@
 name: test schedule
 
 on:
-  push:
   schedule:
-    - cron:  '*/6 * * * *'
+  - cron:  '*/6 * * * *'
+
 jobs:
   build:
     name: schedule helloworld

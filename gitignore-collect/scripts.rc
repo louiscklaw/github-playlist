@@ -1,0 +1,13 @@
+alias get_gitignore_freecad="cp /home/logic/_workspace/github-playlist/gitignore-collect1/freecad.gitignore ."
+
+alias get_gitignore_kicad="cp /home/logic/_workspace/github-playlist/gitignore-collect1/kicad.gitignore ."
+
+alias get_gitignore_next="cp /home/logic/_workspace/github-playlist/gitignore-collect1/next.gitignore ."
+
+alias get_gitignore_node="cp /home/logic/_workspace/github-playlist/gitignore-collect1/node.gitignore ."
+
+alias get_gitignore_python="cp /home/logic/_workspace/github-playlist/gitignore-collect1/python.gitignore ."
+
+alias get_gitignore_react="cp /home/logic/_workspace/github-playlist/gitignore-collect1/react.gitignore ."
+
+alias update_gitignore_collect="cd /home/logic/_workspace/github-playlist/gitignore-collect && ./gen.py && source scripts.rc"

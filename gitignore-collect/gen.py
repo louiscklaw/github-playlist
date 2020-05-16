@@ -13,7 +13,7 @@ file_abspath = os.path.abspath(__file__)
 file_dirname = os.path.dirname(file_abspath)
 file_basename = os.path.basename(file_abspath)
 
-update_gitignore_collect=[f'alias update_gitignore_collect="cd {file_dirname} && ./{file_basename} && source scripts.rc"']
+update_gitignore_collect=[f'alias update_gitignore_collect="cd {file_dirname} && ./{file_basename} && source scripts.rc" && cd -']
 
 # SIMPLE ETL
 # E

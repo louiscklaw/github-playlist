@@ -25,7 +25,7 @@ for (root, dirs, files) in os.walk(cwd):
 
 # T
 for (lang_name, lang_filename) in lang_list:
-  alias_list.append(f'alias get_gitignore_{lang_name}="cp /home/logic/_workspace/github-playlist/gitignore-collect/{lang_name}.{lang_filename} ."')
+  alias_list.append(f'alias get_gitignore_{lang_name}="cp /home/logic/_workspace/github-playlist/gitignore-template/{lang_name}.{lang_filename} ."')
 
 # L
 f_out.write('\n\n'.join(sorted(update_gitignore_collect+alias_list)))

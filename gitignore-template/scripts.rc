@@ -10,4 +10,4 @@ alias get_gitignore_python="cp /home/logic/_workspace/github-playlist/gitignore-
 
 alias get_gitignore_react="cp /home/logic/_workspace/github-playlist/gitignore-template/react.gitignore ."
 
-alias update_gitignore_collect="cd /home/logic/_workspace/github-playlist/gitignore-template && ./gen.py && source scripts.rc" && cd -
+alias update_gitignore_template="cd /home/logic/_workspace/github-playlist/gitignore-template && ./gen.py && source scripts.rc  && cd -"

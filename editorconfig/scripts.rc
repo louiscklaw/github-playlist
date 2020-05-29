@@ -1,1 +1,1 @@
-alias get_editorconfig="cp /home/logic/_workspace/github-playlist/editorconfig/.editorconfig ."
+alias getEditorconfig="cp /home/logic/_workspace/github-playlist/editorconfig/.editorconfig ."

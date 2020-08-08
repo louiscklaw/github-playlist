@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: python helloworld
-        run: python ./python-helloworld/helloworld.py
+        run: python python-helloworld/helloworld.py

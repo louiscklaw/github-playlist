@@ -1,3 +1,5 @@
+alias codeGitignoreTemplate="code /home/logic/_workspace/github-playlist/gitignore-template"
+
 alias getGitignoreFreecad="cp /home/logic/_workspace/github-playlist/gitignore-template/freecad.gitignore ."
 
 alias getGitignoreKicad="cp /home/logic/_workspace/github-playlist/gitignore-template/kicad.gitignore ."

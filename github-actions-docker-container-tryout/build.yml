@@ -2,6 +2,6 @@ github_actions_docker_container:
   runs-on: ubuntu-latest
   container: node:10.16-jessie
   steps:
-    - name: Run in container
+    - name: github-actions-docker-container
     run: |
       hostname

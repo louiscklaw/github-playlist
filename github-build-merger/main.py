@@ -12,7 +12,7 @@ from fabric.api import local, shell_env, lcd, run, settings
 
 
 def main():
-  console.log('helloworld')
+  print('helloworld')
 
 
 

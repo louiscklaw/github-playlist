@@ -28,7 +28,7 @@ export GITHUB_REPOSITORY=louiscklaw/github-playlist
 echo $GITHUB_TOKEN
 
 cd github-build-merger-tryout
-  # pipenv sync
+  pipenv sync
   # pipenv run python3 ./main.py -d
 
   pipenv run python3 test/test.py

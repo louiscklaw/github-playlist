@@ -5,9 +5,8 @@ name: github-merger
 on: [push, pull_request]
 
 jobs:
-  runs-on: ubuntu-latest
-
   test:
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
 
@@ -33,6 +32,7 @@ jobs:
 
   merge:
     needs: test
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: merge branch

@@ -38,6 +38,35 @@ jobs:
       run: |
         echo 'helloworld'
   
+  # 
+  # /home/logic/_workspace/github-playlist/github-environ-tryout/build.yml
+  # 
+  github_environ_tryout:
+    name: Greeting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello world
+        run: |
+          export CI
+          export HOME
+          export GITHUB_WORKFLOW
+          export GITHUB_RUN_ID
+          export GITHUB_RUN_NUMBER
+          export GITHUB_ACTION
+          export GITHUB_ACTIONS
+          export GITHUB_ACTOR
+          export GITHUB_REPOSITORY
+          export GITHUB_EVENT_NAME
+          export GITHUB_EVENT_PATH
+          export GITHUB_WORKSPACE
+          export GITHUB_SHA
+          export GITHUB_REF
+          export GITHUB_HEAD_REF
+          export GITHUB_BASE_REF
+          export GITHUB_SERVER_URL
+          export GITHUB_API_URL
+          export GITHUB_GRAPHQL_URL
+  
   
 
   # 
@@ -69,7 +98,7 @@ jobs:
         github-build-merger-tryout/test.sh
   
   merge:
-    needs: [test_merger, github-actions-multistage-tryout, github_actions_helloworld_tryout]
+    needs: [test_merger, github-actions-multistage-tryout, github_actions_helloworld_tryout, github_environ_tryout]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2

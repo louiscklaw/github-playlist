@@ -5,7 +5,7 @@ name: build matrix
 on: [push]
 
 jobs:
-  build:
+  github_environ_tryout:
     name: Greeting
     runs-on: ubuntu-latest
     steps:

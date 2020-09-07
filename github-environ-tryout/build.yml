@@ -1,0 +1,25 @@
+github_environ_tryout:
+  name: Greeting
+  runs-on: ubuntu-latest
+  steps:
+    - name: Hello world
+      run: |
+        export CI
+        export HOME
+        export GITHUB_WORKFLOW
+        export GITHUB_RUN_ID
+        export GITHUB_RUN_NUMBER
+        export GITHUB_ACTION
+        export GITHUB_ACTIONS
+        export GITHUB_ACTOR
+        export GITHUB_REPOSITORY
+        export GITHUB_EVENT_NAME
+        export GITHUB_EVENT_PATH
+        export GITHUB_WORKSPACE
+        export GITHUB_SHA
+        export GITHUB_REF
+        export GITHUB_HEAD_REF
+        export GITHUB_BASE_REF
+        export GITHUB_SERVER_URL
+        export GITHUB_API_URL
+        export GITHUB_GRAPHQL_URL

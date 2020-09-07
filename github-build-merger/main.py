@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # reference build https://travis-ci.org/louiscklaw/test_git_repo/builds/625335510
-# https://docs.travis-ci.com/user/environment-variables/
+# https://docs.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables
 
 import sys
 import os, re, subprocess
@@ -11,8 +11,11 @@ import chalk
 from fabric.api import local, shell_env, lcd, run, settings
 
 
+TRAVIS_BRANCH=os.environ['GITHUB_REF']
+
 def main(PUSH_URI, TEMP_DIR):
-  pass
+  print('starting merger')
+  print(f'current branch {TRAVIS_BRANCH}')
 
 
 

@@ -11,10 +11,21 @@ import chalk
 from fabric.api import local, shell_env, lcd, run, settings
 
 
-def main():
-  print('helloworld')
+def main(PUSH_URI, TEMP_DIR):
+  pass
 
 
 
 if __name__ == "__main__":
-  main()
+  TEMP_DIR = create_temp_dir()
+
+  try:
+    if ('-d' in sys.argv):
+      print('dry run activated')
+      DRY_RUN = True
+
+    main(PUSH_URI, TEMP_DIR)
+
+  except Exception as e:
+    print('error found during merging repo')
+    raise e

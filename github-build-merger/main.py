@@ -11,15 +11,9 @@ import chalk
 from fabric.api import local, shell_env, lcd, run, settings
 
 from common import *
-
-TRAVIS_BRANCH=os.environ['GITHUB_REF']
-GITHUB_REPO = os.environ['TRAVIS_REPO_SLUG']
-GITHUB_TOKEN = os.environ['GITHUB_TOKEN']
-
-PUSH_URI="https://{}@github.com/{}".format(GITHUB_TOKEN, GITHUB_REPO)
+from env_config import *
 
 def process_test_branch(PUSH_URI, test_branch_name, cwd, no_push_uri = False):
-
   branch_name = get_branch_name(test_branch_name)
   feature_branch_name = 'feature/'+branch_name
 

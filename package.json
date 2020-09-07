@@ -1,0 +1,35 @@
+{
+  "name": "github-playlist",
+  "version": "1.0.0",
+  "description": "### build status - master - develop",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/louiscklaw/github-playlist.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/louiscklaw/github-playlist/issues"
+  },
+  "homepage": "https://github.com/louiscklaw/github-playlist#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-conventional": "^9.1.2",
+    "husky": "^4.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "scripts/pre-commit.sh",
+      "pre-push": "scripts/per-push.sh"
+    }
+  }
+}

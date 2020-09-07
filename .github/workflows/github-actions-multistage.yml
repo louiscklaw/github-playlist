@@ -1,36 +1,44 @@
-name: github-actions-multistage
-# This workflow is triggered on pushes to the repository.
+name: github-master-build-yml
 on: [push]
 
 jobs:
   build:
-    # Job name is Greeting
-    name: Greeting0
-    # This job runs on Linux
-    runs-on: ubuntu-latest
-    steps:
-      # This step uses GitHub's hello-world-javascript-action: https://github.com/actions/hello-world-javascript-action
-      - name: Hello world
-        uses: actions/hello-world-javascript-action@v1
-        with:
-          who-to-greet: 'Mona the Octocat'
-        id: hello
-      # This step prints an output (time) from the previous step's action.
-      - name: Echo the greeting's time
-        run: echo 'The time was ${{ steps.hello.outputs.time }}.'
-
-  build:
-    # Job name is Greeting
+    # 
+    # /home/logic/_workspace/github-playlist/github-actions-multistage-tryout/build.yml
+    # 
     name: Greeting1
-    # This job runs on Linux
     runs-on: ubuntu-latest
     steps:
-      # This step uses GitHub's hello-world-javascript-action: https://github.com/actions/hello-world-javascript-action
       - name: Hello world
         uses: actions/hello-world-javascript-action@v1
         with:
           who-to-greet: 'Mona the Octocat'
         id: hello
-      # This step prints an output (time) from the previous step's action.
-      - name: Echo the greeting's time
+    
+        - name: Echo the greeting's time
         run: echo 'The time was ${{ steps.hello.outputs.time }}.'
+    
+    # 
+    # /home/logic/_workspace/github-playlist/github-actions-helloworld-tryout/build.yml
+    # 
+    # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#on
+    # https://github.com/sdras/awesome-actions
+    
+    name: github-actions-helloworld
+    on: [push, pull_request]
+    
+    jobs:
+      github_actions_helloworld_tryout:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v2
+    
+        - name: github-actions-helloworld-tryout
+          env: # Or as an environment variable
+            SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+          run: |
+            echo 'helloworld'
+    
+    

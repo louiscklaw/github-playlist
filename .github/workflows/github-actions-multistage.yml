@@ -1,4 +1,4 @@
-name: helloworld
+name: github-actions-multistage
 # This workflow is triggered on pushes to the repository.
 on: [push]
 

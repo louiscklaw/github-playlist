@@ -1,0 +1,14 @@
+# https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#on
+# https://github.com/sdras/awesome-actions
+
+name: github-actions-docker-container
+on: [push, pull_request]
+
+jobs:
+  container:
+    runs-on: ubuntu-latest
+    container: node:10.16-jessie
+    steps:
+      - name: Run in container
+      run: |
+        hostname

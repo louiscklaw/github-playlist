@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# https://docs.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables
+
 set -ex
 
 # sudo apt update
@@ -20,7 +22,9 @@ export LANG=C.UTF-8
 
 # pipenv --help
 
-export GITHUB_REF=poc/test-github-actions
+export GITHUB_REF=refs/heads/feature-branch-1
+export GITHUB_REPOSITORY=louiscklaw/github-playlist
+
 echo $GITHUB_TOKEN
 
 cd github-build-merger

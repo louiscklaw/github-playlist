@@ -279,13 +279,13 @@ def helloworld():
 
 def main(PUSH_URI, TEMP_DIR):
   print('starting merger')
-  print(f'current branch {TRAVIS_BRANCH}')
+  print(f'triggering branch {TRIGGERING_BRANCH}')
 
 
-  if categorize_branch(TRAVIS_BRANCH) == CONST_BRANCH_TEST:
+  if categorize_branch(TRIGGERING_BRANCH) == CONST_BRANCH_TEST:
     # test branch will merge to feature branch
     print("this is test branch, will checkout to feature branch")
-    process_test_branch(PUSH_URI, TRAVIS_BRANCH, TEMP_DIR)
+    process_test_branch(PUSH_URI, TRIGGERING_BRANCH, TEMP_DIR)
 
   else:
     print('no merge direction for this branch')

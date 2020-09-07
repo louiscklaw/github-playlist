@@ -14,8 +14,7 @@ MASTER_GITHUB_ACTIONS_TEMPLATE='''name: master_build
 on: [push]
 
 jobs:
-  build:
-    {github_build_jobs}
+  {github_build_jobs}
 '''
 
 def listYmlFiles(path):
@@ -43,7 +42,7 @@ def getYmlFile(filepath):
 
 def formatSubJobYmlFile(contents):
   output = ''
-  output = '\n'.join(map(lambda x: '    '+x, contents.split('\n')))
+  output = '\n'.join(map(lambda x: '  '+x, contents.split('\n')))
 
   # to clear the first 4 spacing
   return output.lstrip()

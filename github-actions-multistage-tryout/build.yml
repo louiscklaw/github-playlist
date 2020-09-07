@@ -1,12 +1,13 @@
-name: Greeting1
-runs-on: ubuntu-latest
-steps:
-  - uses: actions/checkout@v2
+github-actions-multistage-tryout:
+  name: Greeting1
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v2
 
-  - name: github-actions-helloworld-tryout
-    env: # Or as an environment variable
-      SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: github-actions-helloworld-tryout
+      env: # Or as an environment variable
+        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    run: |
-      echo 'helloworld'
+      run: |
+        echo 'helloworld'

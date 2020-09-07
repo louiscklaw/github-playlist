@@ -11,3 +11,4 @@ github_actions_docker_container:
 
     run: |
       echo 'helloworld'
+      hostname

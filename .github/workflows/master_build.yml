@@ -54,6 +54,7 @@ jobs:
   
       run: |
         echo 'helloworld'
+        hostname
   
   # 
   # /home/logic/_workspace/github-playlist/github-environ-tryout/build.yml

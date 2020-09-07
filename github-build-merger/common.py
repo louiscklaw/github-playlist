@@ -19,6 +19,8 @@ def create_temp_dir():
   print(f'create temp directory: {TEMP_DIR}')
   return TEMP_DIR
 
+OS_CWD=os.getcwd()
+
 CONST_BRANCH_UNKNOWN = -1
 CONST_BRANCH_FIX = 0
 CONST_BRANCH_FEATURE = 1
@@ -30,4 +32,17 @@ CONST_BRANCH_DEPENDABOT = 6
 
 DRY_RUN=False
 
-OS_CWD=os.getcwd()
+merge_direction = {
+  '^dependabot/(.+?)$': 'feature',
+  '^test/(.+?)$': 'feature',
+  '^feature/(.+?)$' : 'develop',
+  '^fix/(.+?)$' : 'pre-merge',
+  '^pre-merge/(.+?)$' : 'develop',
+  # 'develop': 'master'
+}
+
+ERR_DRY_RUN_EXPLAIN='DRY RUN ACCEPTED'
+
+GIT_ERR_128_EXPLAIN="error found during creating new branch, check if token is possible to create branch in repo (private repo ?)"
+
+GIT_ERR_CANNOT_CHECKOUT_BRANCH_EXPLAIN="error during checkout branch '{}', is the branch exist ?"

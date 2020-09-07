@@ -1,4 +1,4 @@
-name: poc
+name: merge
 # This workflow is triggered on pushes to the repository.
 on: [push]
 

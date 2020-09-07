@@ -1,11 +1,12 @@
 name: Greeting1
 runs-on: ubuntu-latest
 steps:
-  - name: Hello world
-    uses: actions/hello-world-javascript-action@v1
-    with:
-      who-to-greet: 'Mona the Octocat'
-    id: hello
+  - uses: actions/checkout@v2
 
-    - name: Echo the greeting's time
-    run: echo 'The time was ${{ steps.hello.outputs.time }}.'
+  - name: github-actions-helloworld-tryout
+    env: # Or as an environment variable
+      SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    run: |
+      echo 'helloworld'

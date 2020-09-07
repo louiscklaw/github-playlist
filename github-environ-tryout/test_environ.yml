@@ -1,0 +1,14 @@
+# https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions
+
+name: build matrix
+# This workflow is triggered on pushes to the repository.
+on: [push]
+
+jobs:
+  build:
+    name: Greeting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello world
+        run: |
+          hostname

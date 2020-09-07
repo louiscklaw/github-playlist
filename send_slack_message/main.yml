@@ -1,11 +1,10 @@
-name: slack-notification
+name: send-slack-message
 
-on: [push, pull_request, issues]
+on: [push]
 
 jobs:
-  slack-notifications:
+  build:
     runs-on: ubuntu-latest
-    name: Sends a message to Slack when a push, a pull request or an issue is made
     steps:
       - name: Send message to Slack API
         uses: archive/github-actions-slack@master

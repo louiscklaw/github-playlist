@@ -69,7 +69,7 @@ jobs:
         github-build-merger-tryout/test.sh
   
   merge:
-    needs: [github-actions-multistage-tryout, github_actions_helloworld_tryout]
+    needs: [test_merger, github-actions-multistage-tryout, github_actions_helloworld_tryout]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2

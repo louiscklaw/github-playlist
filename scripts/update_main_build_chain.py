@@ -87,7 +87,7 @@ def main():
     formatted_yml_contents = map(lambda x: formatSubJobYmlFile(x), yml_file_contents)
 
     all_jobs_name = map(lambda x: getNameFromSubJob(x), yml_file_contents)
-    subjob_needs_list = []
+    subjob_needs_list = ['test_merger']
 
     for jobs_names in all_jobs_name:
       for jobs_name in jobs_names:

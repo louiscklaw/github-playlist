@@ -25,6 +25,6 @@ jobs:
 
         pipenv --help
 
-        # cd pipenv_test
-        #   pipenv sync
-        #   pipenv run python3 ./helloworld.py
+        cd github-build-merger
+          pipenv sync
+          pipenv run python3 ./main.py

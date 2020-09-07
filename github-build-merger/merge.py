@@ -10,8 +10,68 @@ import chalk
 
 from fabric.api import local, shell_env, lcd, run, settings
 
+from MyException import *
 from common import *
 from env_config import *
+
+
+def create_new_branch(branch_name, cwd):
+  with( shell_env( GIT_COMMITTER_EMAIL='travis@travis', GIT_COMMITTER_NAME='Travis CI' ) ):
+    print('checkout new branch: {}'.format(branch_name))
+    run_command('git checkout -b {}'.format(branch_name), cwd)
+
+def checkout_branch(branch_name, cwd):
+  with( shell_env( GIT_COMMITTER_EMAIL='travis@travis', GIT_COMMITTER_NAME='Travis CI' ) ):
+    print('checkout branch: {}'.format(branch_name))
+    run_command('git checkout {}'.format(branch_name), cwd)
+
+def create_branch_if_not_exist(branch_name, cwd):
+  'checkout branch if exist, create and checkout if not exist'
+  if check_branch_exist(branch_name, cwd):
+    checkout_branch(branch_name, cwd)
+  else:
+    create_new_branch(branch_name, cwd)
+
+def create_branch_if_not_exist_remote(branch_name, cwd):
+  'checkout branch if exist, create and checkout if not exist'
+  if check_branch_exist(branch_name, cwd) or check_remote_branch_exist(branch_name, cwd):
+    checkout_branch(branch_name, cwd)
+  else:
+    create_new_branch(branch_name, cwd)
+
+def check_branch_exist(branch_name, cwd):
+  print_message('check branch exist, {}'.format(branch_name))
+  with( shell_env( GIT_COMMITTER_EMAIL='travis@travis', GIT_COMMITTER_NAME='Travis CI' ) ):
+    print('check branch exist: {}'.format(branch_name))
+    result = [temp.replace('* ','').strip() for temp in run_command('git branch', cwd).split('\n')]
+    try:
+      from pprint import pprint
+      pprint(result)
+      result.index(branch_name)
+      print('branch found')
+      return True
+    except Exception as e:
+      print('branch not found')
+      print_message(result)
+      return False
+      pass
+
+def check_remote_branch_exist(branch_name, cwd):
+  print_message('check remote branch exist {}'.format(branch_name))
+  with( shell_env( GIT_COMMITTER_EMAIL='travis@travis', GIT_COMMITTER_NAME='Travis CI' ) ):
+    print('check remote branch exist: {}'.format(branch_name))
+    result = [temp.replace('* ','').strip() for temp in run_command('git branch -a', cwd).split('\n')]
+    try:
+      from pprint import pprint
+      pprint(result)
+      result.index('remotes/origin/'+branch_name)
+      print('branch found')
+      return True
+    except Exception as e:
+      print('branch not found')
+      print_message(result)
+      return False
+      pass
 
 def categorize_branch(branch_to_test):
 
@@ -168,6 +228,54 @@ def process_dependabot_PR(PUSH_URI, pr_branch, cwd, no_push_uri = False):
   # run_command('git checkout -b "test/dependabot/npm_and_yarn/bulma-toast-tryout/lodash-4.17.19"', cwd)
   # run_command('git merge --no-ff "dependabot/npm_and_yarn/bulma-toast-tryout/lodash-4.17.19"', cwd)
   # git push origin "master"
+
+def check_branch_exist(branch_name, cwd):
+  print_message('check branch exist, {}'.format(branch_name))
+  with( shell_env( GIT_COMMITTER_EMAIL='travis@travis', GIT_COMMITTER_NAME='Travis CI' ) ):
+    print('check branch exist: {}'.format(branch_name))
+    result = [temp.replace('* ','').strip() for temp in run_command('git branch', cwd).split('\n')]
+    try:
+      from pprint import pprint
+      pprint(result)
+      result.index(branch_name)
+      print('branch found')
+      return True
+    except Exception as e:
+      print('branch not found')
+      print_message(result)
+      return False
+      pass
+
+def print_message(msg_text):
+  print(chalk.blue(msg_text))
+
+def run_command(command_body, cwd=OS_CWD, ignore_error=True, except_in=MyException.command_error):
+  if (DRY_RUN):
+    return dummy_run_result()
+  else:
+    with settings(warn_only=True):
+      command_to_run = 'cd {} && {}'.format(cwd, command_body)
+      command_result = local(command_to_run, capture=True)
+      print(command_result)
+
+      if command_result.failed:
+        if ignore_error:
+          print(chalk.red('command: {}'.format(command_to_run)))
+          print(chalk.red('error found during running command, ignore flag active'))
+          print_message(command_result.stderr)
+        else:
+          print_error('run_command: error during running command "{}"'.format(command_to_run))
+
+          print_error('run_command: error message')
+          print_error(command_result.stderr)
+
+          raise except_in
+
+      return command_result
+
+def helloworld():
+  print('helloworld from merge.py')
+  return 'helloworld test'
 
 def main(PUSH_URI, TEMP_DIR):
   print('starting merger')

@@ -11,6 +11,7 @@ jobs:
     - name: merge branch
       env: # Or as an environment variable
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       run: |
         sudo apt update

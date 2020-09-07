@@ -16,7 +16,7 @@ export LANG=C.UTF-8
 # pipenv --help
 
 export GITHUB_REF=poc/test-github-actions
-echo $TRAVIS_REPO_SLUG
+echo $GITHUB_TOKEN
 
 cd github-build-merger
   pipenv sync

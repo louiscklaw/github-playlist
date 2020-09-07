@@ -5,7 +5,7 @@ name: github-actions-docker-container
 on: [push, pull_request]
 
 jobs:
-  container:
+  github_actions_docker_container:
     runs-on: ubuntu-latest
     container: node:10.16-jessie
     steps:

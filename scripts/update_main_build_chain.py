@@ -65,19 +65,39 @@ def update_merger_needs(content, build_list_to_need):
     ', '.join(build_list_to_need)
   )), content)
 
+def getNameFromSubJob(subjob_contents):
+  output=[]
+
+  for subjob_content in subjob_contents.split('\n'):
+    ms = re.match('([\w|-]*):',subjob_content)
+    if ms:
+      output.append(ms.groups()[0])
+
+  return output
+
 def main():
   yml_files = listYmlFiles('/home/logic/_workspace/github-playlist')
   # playlist_names = map(lambda x: x.split('/')[-1], yml_files)
   # pprint(list(yml_files))
-  yml_file_contents = map(lambda x: getYmlFile(x), yml_files)
+  yml_file_contents = list(map(lambda x: getYmlFile(x), yml_files))
 
-  merger_yml_contents = [getYmlFile(GITHUB_BUILD_MERGER_TRYOUT_FILEPATH)]
-
-  merger_yml_contents1 = update_merger_needs(merger_yml_contents,['test_merger'])
 
   with open(MASTER_GITHUB_ACTIONS_FILEPATH, 'r+') as f_yml_master:
+
     formatted_yml_contents = map(lambda x: formatSubJobYmlFile(x), yml_file_contents)
+
+    all_jobs_name = map(lambda x: getNameFromSubJob(x), yml_file_contents)
+    subjob_needs_list = []
+
+    for jobs_names in all_jobs_name:
+      for jobs_name in jobs_names:
+        subjob_needs_list.append(jobs_name)
+        # pass
+
+    merger_yml_contents = [getYmlFile(GITHUB_BUILD_MERGER_TRYOUT_FILEPATH)]
+    merger_yml_contents1 = update_merger_needs(merger_yml_contents,subjob_needs_list)
     formatted_merger_contents = map(lambda x: formatSubJobYmlFile(x), merger_yml_contents1)
+    # formatted_merger_contents='1123'
 
 
     # merger_yml_content = getMergeYmlFile()

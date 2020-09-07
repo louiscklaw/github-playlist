@@ -39,6 +39,17 @@ jobs:
         echo 'helloworld'
   
   # 
+  # /home/logic/_workspace/github-playlist/github-actions-docker-container-tryout/build.yml
+  # 
+  github_actions_docker_container:
+    runs-on: ubuntu-latest
+    container: node:10.16-jessie
+    steps:
+      - name: Run in container
+      run: |
+        hostname
+  
+  # 
   # /home/logic/_workspace/github-playlist/github-environ-tryout/build.yml
   # 
   github_environ_tryout:
@@ -127,7 +138,7 @@ jobs:
         github-build-merger-tryout/test.sh
   
   merge:
-    needs: [test_merger, github-actions-multistage-tryout, github_actions_helloworld_tryout, github_environ_tryout, python_helloworld_tryout]
+    needs: [test_merger, github-actions-multistage-tryout, github_actions_helloworld_tryout, github_actions_docker_container, github_environ_tryout, python_helloworld_tryout]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2

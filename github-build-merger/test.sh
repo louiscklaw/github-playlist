@@ -13,9 +13,12 @@ export PATH="$PATH:$PYTHON_BIN_PATH"
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
 
-pipenv --help
+# pipenv --help
+
+export GITHUB_REF=poc/test-github-actions
+
 
 cd github-build-merger
   pipenv sync
-  pipenv run python3 ./main.py
+  pipenv run python3 ./main.py -d
 cd ..

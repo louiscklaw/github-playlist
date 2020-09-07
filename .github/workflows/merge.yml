@@ -5,12 +5,12 @@ name: github-merger
 on: [push, pull_request]
 
 jobs:
-  test:
+  test_merger:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
 
-    - name: test
+    - name: test merger
       env: # Or as an environment variable
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -31,7 +31,7 @@ jobs:
         github-build-merger-tryout/test.sh
 
   merge:
-    needs: test
+    needs: test_merger
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2

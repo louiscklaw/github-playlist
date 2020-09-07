@@ -7,6 +7,13 @@ import chalk
 
 from fabric.api import local, shell_env, lcd, run, settings
 
+def get_branch_name(branch_in):
+  temp = branch_in.split('/')
+  if len(temp) > 1:
+    return '/'.join(temp[1:])
+  else:
+    return branch_in
+
 def create_temp_dir():
   TEMP_DIR = local('mktemp -d', capture=True)
   print(f'create temp directory: {TEMP_DIR}')

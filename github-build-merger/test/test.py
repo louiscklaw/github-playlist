@@ -16,6 +16,9 @@ sys.path.append(PWD)
 from merge import *
 
 class TestMerger(unittest.TestCase):
+  def test_get_branch_name(self):
+    self.assertTrue(get_branch_name('1/2/3/4/5')=='2/3/4/5', 'test get branch name')
+
   def test_helloworld(self):
     self.assertTrue(helloworld()=='helloworld test', 'helloworld self test failed')
 

@@ -5,7 +5,7 @@ name: github-merger
 on: [push, pull_request]
 
 jobs:
-  test_python_helloworld:
+  python_helloworld_tryout:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2

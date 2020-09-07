@@ -6,7 +6,6 @@ on: [push]
 
 jobs:
   github_environ_tryout:
-    name: Greeting
     runs-on: ubuntu-latest
     steps:
       - name: Hello world

@@ -1,4 +1,4 @@
-name: github-master-build-yml
+name: master_build
 on: [push]
 
 jobs:

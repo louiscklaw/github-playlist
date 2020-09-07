@@ -9,8 +9,8 @@ import re
 SCRIPT_DIR=os.path.dirname(__file__)
 PROJ_HOME=os.path.abspath(os.path.join(SCRIPT_DIR,'..'))
 
-MASTER_GITHUB_ACTIONS_FILEPATH='/home/logic/_workspace/github-playlist/.github/workflows/github-actions-multistage.yml'
-MASTER_GITHUB_ACTIONS_TEMPLATE='''name: github-master-build-yml
+MASTER_GITHUB_ACTIONS_FILEPATH='/home/logic/_workspace/github-playlist/.github/workflows/master_build.yml'
+MASTER_GITHUB_ACTIONS_TEMPLATE='''name: master_build
 on: [push]
 
 jobs:

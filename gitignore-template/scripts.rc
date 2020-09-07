@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 alias getGitignoreFreecad="cp /home/logic/_workspace/github-playlist/gitignore-template/freecad.gitignore ."
 
 alias getGitignoreKicad="cp /home/logic/_workspace/github-playlist/gitignore-template/kicad.gitignore ."
@@ -11,20 +10,6 @@ alias getGitignorePython="cp /home/logic/_workspace/github-playlist/gitignore-te
 
 alias getGitignoreReact="cp /home/logic/_workspace/github-playlist/gitignore-template/react.gitignore ."
 
-=======
 alias codeGitignoreTemplate="code /home/logic/_workspace/github-playlist/gitignore-template"
 
-alias getGitignoreFreecad="cp /home/logic/_workspace/github-playlist/gitignore-template/freecad.gitignore ."
-
-alias getGitignoreKicad="cp /home/logic/_workspace/github-playlist/gitignore-template/kicad.gitignore ."
-
-alias getGitignoreNext="cp /home/logic/_workspace/github-playlist/gitignore-template/next.gitignore ."
-
-alias getGitignoreNode="cp /home/logic/_workspace/github-playlist/gitignore-template/node.gitignore ."
-
-alias getGitignorePython="cp /home/logic/_workspace/github-playlist/gitignore-template/python.gitignore ."
-
-alias getGitignoreReact="cp /home/logic/_workspace/github-playlist/gitignore-template/react.gitignore ."
-
->>>>>>> origin/develop
 alias updateGitignoreTemplate="cd /home/logic/_workspace/github-playlist/gitignore-template && ./gen.py && source scripts.rc  && cd -"

@@ -1,6 +1,6 @@
 # https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions
 
-name: build matrix
+name: github-actions-environ-tryout
 # This workflow is triggered on pushes to the repository.
 on: [push]
 

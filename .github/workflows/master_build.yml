@@ -80,6 +80,7 @@ jobs:
           github-build-merger-tryout/test.sh
 
   merge:
+    needs: test_merger
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -97,11 +98,8 @@ jobs:
 
           export PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
           export PATH="$PATH:$PYTHON_BIN_PATH"
-
           export LC_ALL=C.UTF-8
           export LANG=C.UTF-8
-
-          pipenv --help
 
           cd github-build-merger-tryout
             pipenv sync

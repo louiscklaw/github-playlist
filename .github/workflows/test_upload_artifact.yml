@@ -5,8 +5,12 @@ jobs:
   action_upload_artifact_tryout:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/upload-artifact@v2
-    - name: action-upload-artifact-tryout
-      with:
-        name: upload-artifact-tryout
-        path: action-upload-artifact-tryout/helloworld
+      - uses: actions/checkout@v1
+      - name: test build
+        run: echo 'helloworld'
+
+      - uses: actions/upload-artifact@v2
+      - name: action-upload-artifact-tryout
+        with:
+          name: upload-artifact-tryout
+          path: action-upload-artifact-tryout/helloworld

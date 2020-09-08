@@ -5,12 +5,12 @@ action_secrets_tryout:
     - uses: actions/checkout@v2
 
     - name: action-secrets-tryout
-      run: ./.github/scripts/decrypt_secret.sh
+      run: ./action-secrets-tryout/decrypt_secret.sh
       env:
         LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
 
     - name: Test printing your secret (Remove this step in production)
       run: |
         cd action-secrets-tryout
-          cat ./secrets/my_secret.json
+          cat $HOME/secrets/my_secret.json
         cd ..

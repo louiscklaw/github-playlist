@@ -46,11 +46,17 @@ jobs:
   action_upload_artifact_tryout:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/upload-artifact@v2
+      - uses: actions/checkout@v2
       - name: action-upload-artifact-tryout
-        with:
-          name: upload-artifact-tryout
-          path: action-upload-artifact-tryout/helloworld
+        env: # Or as an environment variable
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
+        run: |
+          echo 'helloworld'
+          node --version
+          npm -v
+          yarn -v
   
   # 
   # /home/logic/_workspace/github-playlist/github-actions-docker-container-tryout/build.yml

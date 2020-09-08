@@ -11,17 +11,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+  
       - name: action-secrets-tryout
-        env: # Or as an environment variable
-          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./.github/scripts/decrypt_secret.sh
+        env:
+          LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
   
+      - name: Test printing your secret (Remove this step in production)
         run: |
-          echo 'helloworld'
-          node --version
-          npm -v
-          yarn -v
-  
+          cd action-secrets-tryout
+            cat ./secrets/my_secret.json
+          cd ..
   # 
   # /home/logic/_workspace/github-playlist/action-slack-custom-message-tryout/build.yml
   # 

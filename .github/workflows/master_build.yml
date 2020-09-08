@@ -26,7 +26,7 @@ jobs:
           export LC_ALL=C.UTF-8
           export LANG=C.UTF-8
   
-          cd action-pipenv-failed-tryout
+          cd python-helloworld-tryout
             pipenv sync
             pipenv run python3 ./helloworld.py
   

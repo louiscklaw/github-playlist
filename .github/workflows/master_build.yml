@@ -28,7 +28,7 @@ jobs:
   
           cd action-pipenv-failed-tryout
             pipenv sync
-            pipenv run python3 ./helloworld.py
+            pipenv run python3 ./fail.py
   
   # 
   # /home/logic/_workspace/github-playlist/action-secrets-tryout/build.yml

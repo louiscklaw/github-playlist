@@ -9,6 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     container: node:10.16-jessie
     steps:
-      - name: Run in container
+      - name: github_actions_docker_container
       run: |
         hostname

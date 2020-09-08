@@ -1,8 +1,8 @@
 action_upload_artifact_tryout:
   runs-on: ubuntu-latest
   steps:
-    - uses: actions/upload-artifact@v2
     - name: action-upload-artifact-tryout
+      uses: actions/upload-artifact@v2
       with:
         name: upload-artifact-tryout
         path: action-upload-artifact-tryout/helloworld

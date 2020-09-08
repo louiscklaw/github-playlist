@@ -56,25 +56,7 @@ jobs:
           path: action-upload-artifact-tryout/helloworld
   
   # 
-  # /home/logic/_workspace/github-playlist/github-actions-docker-container-tryout/build.yml
-  # 
-  # github_actions_docker_container:
-  #   runs-on: ubuntu-latest
-  #   container: node:10.16-jessie
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: github_actions_docker_container
-  #       env: # Or as an environment variable
-  #         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  
-  #       run: |
-  #         echo 'helloworld'
-  #         hostname
-  #         node -v
-  
-  # 
-  # /home/logic/_workspace/github-playlist/github-actions-helloworld-tryout/build.yml
+  # /home/logic/_workspace/github-playlist/actions-helloworld-tryout/build.yml
   # 
   # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#on
   # https://github.com/sdras/awesome-actions
@@ -94,6 +76,24 @@ jobs:
           node --version
           npm -v
           yarn -v
+  
+  # 
+  # /home/logic/_workspace/github-playlist/github-actions-docker-container-tryout/build.yml
+  # 
+  # github_actions_docker_container:
+  #   runs-on: ubuntu-latest
+  #   container: node:10.16-jessie
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: github_actions_docker_container
+  #       env: # Or as an environment variable
+  #         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
+  #       run: |
+  #         echo 'helloworld'
+  #         hostname
+  #         node -v
   
   # 
   # /home/logic/_workspace/github-playlist/github-actions-multistage-tryout/build.yml
@@ -217,7 +217,7 @@ jobs:
           github-build-merger-tryout/test.sh
   
   merge:
-    needs: [test_merger, github-actions-multistage-tryout, action_slack_custom_message_tryout, puppeteer_helloworld, github_actions_helloworld_tryout, action_secrets_tryout, action_upload_artifact_tryout, github_environ_tryout, python_helloworld_tryout]
+    needs: [test_merger, github-actions-multistage-tryout, action_slack_custom_message_tryout, puppeteer_helloworld, action_secrets_tryout, action_upload_artifact_tryout, github_environ_tryout, python_helloworld_tryout, github_actions_helloworld_tryout]
     runs-on: ubuntu-latest
     steps:
       - name: checkout

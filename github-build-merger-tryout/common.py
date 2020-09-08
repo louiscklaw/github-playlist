@@ -19,51 +19,6 @@ def create_temp_dir():
   print(f'create temp directory: {TEMP_DIR}')
   return TEMP_DIR
 
-
-def merge_to_feature_branch(test_branch_name, feature_branch_name, cwd):
-  create_branch_if_not_exist(feature_branch_name, cwd)
-
-  # TODO:
-  # checkout_branch(feature_branch_name, cwd)
-
-  # currently in feature branch
-  run_command('git merge --ff-only "{}"'.format(test_branch_name), cwd, ignore_error=False)
-
-def merge_to_pre_merge_branch(fix_branch_name, pre_merge_branch_name, cwd):
-  create_branch_if_not_exist(pre_merge_branch_name, cwd)
-  # currently in feature branch
-
-  run_command('git merge --ff-only "{}"'.format(fix_branch_name), cwd)
-
-def merge_to_develop_branch(branch_to_merge, cwd):
-  checkout_branch('develop', cwd)
-  run_command('git merge --ff-only "{}"'.format(branch_to_merge), cwd)
-
-
-def merge_to_pre_merge_master_branch(branch_to_merge, cwd):
-  # create_branch_if_not_exist('pre-merge-master', cwd)
-  # push_commit(PUSH_URI, 'pre-merge-master', cwd)
-
-  # run_command("git push", cwd)
-  # run_command('git merge --ff-only "{}"'.format(branch_to_merge), cwd)
-
-  # working code
-  # run_command("git checkout master", cwd)
-  # run_command('git checkout -b pre-merge-master', cwd)
-  # run_command('git merge -m"pre-merge-master from develop and use theirs for test," origin/develop',cwd)
-  # run_command('git branch', cwd)
-  # run_command('git status',cwd)
-  # run_command('git push -f --set-upstream origin pre-merge-master',cwd)
-
-  print('into merge_to_pre_merge_master_branch')
-  create_branch_if_not_exist('pre-merge-master', cwd)
-  run_command('git merge -m"pre-merge-master from develop and use theirs for test," origin/develop',cwd)
-
-def merge_to_master_branch(branch_to_merge, cwd):
-  checkout_branch('master', cwd)
-  run_command('git merge --ff-only "{}"'.format(branch_to_merge), cwd)
-
-
 OS_CWD=os.getcwd()
 
 CONST_BRANCH_UNKNOWN = -1

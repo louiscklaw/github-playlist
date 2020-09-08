@@ -9,9 +9,9 @@ set -ex
 # python3 -V
 # python3 -m pip install pipenv
 
-sudo apt install -y git
-git config --global user.email "test@example.com"
-git config --global user.name "git test username"
+# sudo apt install -y git
+# git config --global user.email "test@example.com"
+# git config --global user.name "git test username"
 
 
 export PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"

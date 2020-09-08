@@ -21,6 +21,7 @@ class TestFunctionExist(unittest.TestCase):
     import common
     import merge
     test_func_list = [
+      'push_commit',
       'merge_to_develop_branch',
       'merge_to_feature_branch',
       'merge_to_master_branch',

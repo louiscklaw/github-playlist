@@ -14,6 +14,20 @@ from MyException import *
 from common import *
 from env_config import *
 
+def push_commit(uri_to_push, merge_to, cwd, ignore_error=True):
+    print('push_commit')
+
+    command_to_run= "git push {} {}".format(uri_to_push, merge_to)
+
+    try:
+      run_command(command_to_run , cwd, ignore_error)
+
+    except Exception as e:
+      print_error('push_commit: cwd: "{}"'.format(cwd))
+      print_error('push_commit: error during running command "{}"'.format(command_to_run))
+
+      raise e
+
 def merge_to_feature_branch(test_branch_name, feature_branch_name, cwd):
   create_branch_if_not_exist(feature_branch_name, cwd)
 

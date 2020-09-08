@@ -11,5 +11,5 @@ puppeteer_helloworld:
         cd github-actions-puppeteer-tryout
           sudo npm install -g concurrently live-server
           yarn
-          concurrently -s -k "live-server --no-browser ." "node index.js"
+          concurrently -s first -k "live-server --no-browser ." "node index.js"
         cd ..

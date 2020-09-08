@@ -10,9 +10,10 @@ import shutil
 SCRIPT_DIR=os.path.dirname(__file__)
 PROJ_HOME=os.path.abspath(os.path.join(SCRIPT_DIR,'..'))
 
-GITHUB_BUILD_MERGER_TRYOUT_FILEPATH='/home/logic/_workspace/github-playlist/github-build-merger-tryout/subjob.yml'
+GITHUB_BUILD_MERGER_TRYOUT_FILEPATH='{}/github-build-merger-tryout/subjob.yml'.format(PROJ_HOME)
 
-MASTER_GITHUB_ACTIONS_FILEPATH='/home/logic/_workspace/github-playlist/.github/workflows/master_build.yml'
+MASTER_GITHUB_ACTIONS_FILEPATH='{}/.github/workflows/master_build.yml'.format(PROJ_HOME)
+
 MASTER_GITHUB_ACTIONS_TEMPLATE='''name: master_build
 on: [push]
 
@@ -77,7 +78,7 @@ def getNameFromSubJob(subjob_contents):
   return output
 
 def main():
-  yml_files = listYmlFiles('/home/logic/_workspace/github-playlist')
+  yml_files = listYmlFiles(PROJ_HOME)
   # playlist_names = map(lambda x: x.split('/')[-1], yml_files)
   # pprint(list(yml_files))
   yml_file_contents = list(map(lambda x: getYmlFile(x), yml_files))
@@ -121,5 +122,6 @@ if __name__ == '__main__':
   if len(sys.argv) > 1:
     if (sys.argv[1]=='-u'):
       updateMe()
+      sys.exit()
 
   main()

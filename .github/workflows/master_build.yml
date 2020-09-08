@@ -51,7 +51,6 @@ jobs:
 
 
   merge:
-    needs: [test_merger, github_environ_tryout, github_actions_docker_container, puppeteer_helloworld, github-actions-multistage-tryout, github_actions_helloworld_tryout, python_helloworld_tryout]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

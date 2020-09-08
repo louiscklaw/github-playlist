@@ -4,6 +4,34 @@ on: [push]
 jobs:
 
   # 
+  # /home/logic/_workspace/github-playlist/action-pipenv-failed-tryout/build.yml
+  # 
+  action_pipenv_failed_tryout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+  
+      - name: action-pipenv-failed-tryout
+        env: # Or as an environment variable
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
+        run: |
+          sudo apt update
+          sudo apt install -y python3 python3-pip python3-dev python3-wheel python3-setuptools
+          python3 -V
+          python3 -m pip install pipenv
+  
+          export PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
+          export PATH="$PATH:$PYTHON_BIN_PATH"
+          export LC_ALL=C.UTF-8
+          export LANG=C.UTF-8
+  
+          cd action-pipenv-failed-tryout
+            pipenv sync
+            pipenv run python3 ./fail.py
+  
+  # 
   # /home/logic/_workspace/github-playlist/action-secrets-tryout/build.yml
   # 
   # https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets
@@ -187,6 +215,7 @@ jobs:
             pipenv sync
             pipenv run python3 ./helloworld.py
   
+  
 
   # 
   # /home/logic/_workspace/github-playlist/github-build-merger-tryout/subjob.yml
@@ -219,7 +248,7 @@ jobs:
           github-build-merger-tryout/test.sh
   
   merge:
-    needs: [test_merger, github-actions-multistage-tryout, action_slack_custom_message_tryout, puppeteer_helloworld, github_actions_helloworld_tryout, action_secrets_tryout, action_upload_artifact_tryout, github_environ_tryout, python_helloworld_tryout]
+    needs: [test_merger, action_pipenv_failed_tryout, github-actions-multistage-tryout, action_slack_custom_message_tryout, puppeteer_helloworld, github_actions_helloworld_tryout, action_secrets_tryout, action_upload_artifact_tryout, github_environ_tryout, python_helloworld_tryout]
     runs-on: ubuntu-latest
     steps:
       - name: checkout

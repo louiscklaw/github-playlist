@@ -5,6 +5,7 @@ from pprint import pprint
 import shlex
 from subprocess import check_output
 import re
+import shutil
 
 SCRIPT_DIR=os.path.dirname(__file__)
 PROJ_HOME=os.path.abspath(os.path.join(SCRIPT_DIR,'..'))
@@ -112,5 +113,13 @@ def main():
     )
 
 
+def updateMe():
+  shutil.copyfile('/home/logic/_workspace/github-playlist/scripts/update_main_build_chain.py','scripts/update_main_build_chain.py')
+
+
 if __name__ == '__main__':
+  if len(sys.argv) > 1:
+    if (sys.argv[1]=='-u'):
+      updateMe()
+
   main()

@@ -205,11 +205,8 @@ jobs:
   
           export PYTHON_BIN_PATH="$(python3 -m site --user-base)/bin"
           export PATH="$PATH:$PYTHON_BIN_PATH"
-  
           export LC_ALL=C.UTF-8
           export LANG=C.UTF-8
-  
-          pipenv --version
   
           cd python-helloworld-tryout
             pipenv sync

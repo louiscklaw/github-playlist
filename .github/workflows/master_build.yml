@@ -46,14 +46,14 @@ jobs:
   action_upload_artifact_tryout:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+  
       - name: action-upload-artifact-tryout
         uses: actions/upload-artifact@v2
         with:
-          name: upload-artifact-tryout
+          name: 'upload-artifact-tryout'
           path: action-upload-artifact-tryout/helloworld
-        run: |
-          echo $CI
-          echo $HOME
   
   # 
   # /home/logic/_workspace/github-playlist/github-actions-docker-container-tryout/build.yml

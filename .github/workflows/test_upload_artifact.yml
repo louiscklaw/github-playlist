@@ -1,16 +1,15 @@
-name: master_build
+name: test_upload_artifact
 on: [push]
 
 jobs:
   action_upload_artifact_tryout:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: test build
-        run: echo 'helloworld'
+      - name: Checkout
+        uses: actions/checkout@v2
 
-      - uses: actions/upload-artifact@v1
       - name: action-upload-artifact-tryout
+      - uses: actions/upload-artifact@v2
         with:
-          name: upload-artifact-tryout
+          name: 'upload-artifact-tryout'
           path: action-upload-artifact-tryout/helloworld

@@ -52,11 +52,6 @@ jobs:
           name: upload-artifact-tryout
           path: action-upload-artifact-tryout/helloworld
   
-      - uses: actions/upload-artifact@v2
-        if: failure()
-        with:
-          name: upload-artifact-tryout-failed-upload
-          path: action-upload-artifact-tryout/helloworld
   # 
   # /home/logic/_workspace/github-playlist/github-actions-docker-container-tryout/build.yml
   # 

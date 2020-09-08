@@ -18,7 +18,6 @@ jobs:
 
       run: |
         echo 'helloworld'
-
         node --version
         npm -v
         yarn -V

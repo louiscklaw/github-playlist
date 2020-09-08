@@ -18,9 +18,17 @@ from common import *
 
 class TestFunctionExist(unittest.TestCase):
   def test_import(self):
-    pass
-    # import common
-    # self.assertTrue('create_branch_if_not_exist' in dir(common), 'function create_branch_if_not_exist missing')
+    import common
+    import merge
+    test_func_list = [
+      'merge_to_develop_branch',
+      'merge_to_feature_branch',
+      'merge_to_master_branch',
+      'merge_to_pre_merge_branch',
+      'merge_to_pre_merge_master_branch'
+      ]
+    for test_item in test_func_list:
+      self.assertTrue(test_item in dir(merge), 'function {} missing'.format(test_item))
 
 class TestMerger(unittest.TestCase):
   def test_get_branch_name(self):

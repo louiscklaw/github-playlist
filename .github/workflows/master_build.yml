@@ -39,8 +39,6 @@ jobs:
     container: node:10.16-jessie
     steps:
     - uses: actions/checkout@v2
-  
-    - name: github-actions-helloworld-tryout
       env: # Or as an environment variable
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -56,8 +54,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-  
-    - name: github-actions-helloworld-tryout
       env: # Or as an environment variable
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -76,8 +72,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-  
-      - name: github-actions-helloworld-tryout
         env: # Or as an environment variable
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -103,6 +97,9 @@ jobs:
   
       run: |
         echo 'helloworld'
+        node --version
+        npm -v
+        yarn -v
   
   # 
   # /home/logic/_workspace/github-playlist/python-helloworld-tryout/build.yml

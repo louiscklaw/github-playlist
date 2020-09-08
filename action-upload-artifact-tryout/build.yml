@@ -6,3 +6,6 @@ action_upload_artifact_tryout:
       with:
         name: upload-artifact-tryout
         path: action-upload-artifact-tryout/helloworld
+      run: |
+        echo $CI
+        echo $HOME

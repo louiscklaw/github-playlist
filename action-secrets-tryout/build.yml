@@ -5,7 +5,10 @@ action_secrets_tryout:
     - uses: actions/checkout@v2
 
     - name: action-secrets-tryout
-      run: ./action-secrets-tryout/decrypt_secret.sh
+      run: |
+        cd action-secrets-tryout
+          ./decrypt_secret.sh
+        cd ..
       env:
         LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
 

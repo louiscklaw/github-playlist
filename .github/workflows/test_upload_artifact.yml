@@ -9,7 +9,7 @@ jobs:
       - name: test build
         run: echo 'helloworld'
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v1
       - name: action-upload-artifact-tryout
         with:
           name: upload-artifact-tryout

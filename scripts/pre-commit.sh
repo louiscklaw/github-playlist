@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -ex
+set -e
 
 echo 'updating master_build.yml...'
 ./update_main_build_chain.sh

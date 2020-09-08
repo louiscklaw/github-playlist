@@ -30,3 +30,21 @@ jobs:
           echo $GITHUB_SERVER_URL
           echo $GITHUB_API_URL
           echo $GITHUB_GRAPHQL_URL
+
+  #
+  # /home/logic/_workspace/github-playlist/github-actions-docker-container-tryout/build.yml
+  #
+  github_actions_docker_container:
+    runs-on: ubuntu-latest
+    container: node:10.16-jessie
+    steps:
+    - uses: actions/checkout@v2
+    - name: github_actions_docker_container
+      env: # Or as an environment variable
+        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      run: |
+        echo 'helloworld'
+        hostname
+        node -v

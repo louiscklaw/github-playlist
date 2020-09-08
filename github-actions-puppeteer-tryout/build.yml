@@ -9,7 +9,7 @@ puppeteer_helloworld:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     run: |
-      cd helloworld-tryout
+      cd github-actions-puppeteer-tryout
         sudo npm install -g concurrently live-server
         yarn
         concurrently -k "live-server --no-browser ." "node index.js" || true

@@ -21,4 +21,4 @@ action_pipenv_failed_tryout:
 
         cd action-pipenv-failed-tryout
           pipenv sync
-          pipenv run python3 ./fail.py
+          pipenv run python3 ./helloworld.py

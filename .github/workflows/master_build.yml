@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: test python helloworld
+      - name: action-pipenv-failed-tryout
         env: # Or as an environment variable
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -26,7 +26,7 @@ jobs:
           export LC_ALL=C.UTF-8
           export LANG=C.UTF-8
   
-          cd python-helloworld-tryout
+          cd action-pipenv-failed-tryout
             pipenv sync
             pipenv run python3 ./helloworld.py
   

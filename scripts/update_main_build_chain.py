@@ -105,7 +105,7 @@ def main():
     f_yml_master.truncate(0)
     f_yml_master.writelines(
       MASTER_GITHUB_ACTIONS_TEMPLATE.replace(
-        '{github_build_jobs}',''.join(formatted_yml_contents)
+        '{github_build_jobs}',''.join(sorted(formatted_yml_contents))
       ).replace(
         '{merge_job}',''.join(formatted_merger_contents)
       )

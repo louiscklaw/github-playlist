@@ -2,7 +2,6 @@ action_pipenv_failed_tryout:
   runs-on: ubuntu-latest
   steps:
     - uses: actions/checkout@v2
-
     - name: action-pipenv-failed-tryout
       env: # Or as an environment variable
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}

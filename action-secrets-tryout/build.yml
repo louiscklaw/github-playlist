@@ -9,16 +9,17 @@ action_secrets_tryout:
         LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
         INPUT_TEST_JSON: my_secret.json
         OUTPUT_TEST_JSON: $HOME/secrets/my_secret.json
-
       run: |
         cd action-secrets-tryout
           ./decrypt_secret.sh
         cd ..
+
     - name: test-cat
       run: |
         cd action-secrets-tryout
           cat $HOME/secrets/my_secret.json
         cd ..
+
     - name: test-diff
       run: |
         cd action-secrets-tryout

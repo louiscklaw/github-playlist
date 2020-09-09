@@ -13,18 +13,27 @@ jobs:
       - uses: actions/checkout@v2
   
       - name: action-secrets-tryout
+        env:
+          LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
+          INPUT_TEST_JSON: my_secret.json
+          OUTPUT_TEST_JSON: $HOME/secrets/my_secret.json
         run: |
           cd action-secrets-tryout
             ./decrypt_secret.sh
           cd ..
-        env:
-          LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
   
-      - name: Test printing your secret (Remove this step in production)
+      - name: test-cat
         run: |
           cd action-secrets-tryout
             cat $HOME/secrets/my_secret.json
           cd ..
+  
+      - name: test-diff
+        run: |
+          cd action-secrets-tryout
+            diff $INPUT_TEST_JSON $OUTPUT_TEST_JSON
+          cd ..
+  
   # 
   # /home/logic/_workspace/github-playlist/action-slack-custom-message-tryout/build.yml
   # 
@@ -79,6 +88,52 @@ jobs:
           node --version
           npm -v
           yarn -v
+  
+  # 
+  # /home/logic/_workspace/github-playlist/actions-react-tryout/build.yml
+  # 
+  # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#on
+  # https://github.com/sdras/awesome-actions
+  
+  actions_react_tryout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: github-actions-helloworld-tryout
+        uses: actions/checkout@v2
+  
+      - name: actions-react-tryout
+        env: # Or as an environment variable
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd actions-react-tryout
+            yarn
+            yarn test
+            yarn build
+          cd ..
+  
+  # 
+  # /home/logic/_workspace/github-playlist/actions-react-tryout/build.yml
+  # 
+  # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#on
+  # https://github.com/sdras/awesome-actions
+  
+  actions_react_tryout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: github-actions-helloworld-tryout
+        uses: actions/checkout@v2
+  
+      - name: actions-react-tryout
+        env: # Or as an environment variable
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd actions-react-tryout
+            yarn
+            yarn test
+            yarn build
+          cd ..
   
   # 
   # /home/logic/_workspace/github-playlist/actions-react-tryout/build.yml
@@ -243,7 +298,7 @@ jobs:
           github-build-merger-tryout/test.sh
   
   merge:
-    needs: [test_merger, github-actions-multistage-tryout, action_slack_custom_message_tryout, puppeteer_helloworld, action_secrets_tryout, action_upload_artifact_tryout, github_environ_tryout, actions_react_tryout, python_helloworld_tryout, github_actions_helloworld_tryout]
+    needs: [test_merger, action_upload_artifact_tryout, github_environ_tryout, action_slack_custom_message_tryout, action_secrets_tryout, github_actions_helloworld_tryout, actions_react_tryout, puppeteer_helloworld, github-actions-multistage-tryout, python_helloworld_tryout, actions_react_tryout, actions_react_tryout]
     runs-on: ubuntu-latest
     steps:
       - name: checkout

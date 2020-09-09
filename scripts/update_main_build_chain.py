@@ -82,7 +82,8 @@ def getNameFromSubJob(subjob_contents):
   return output
 
 def main():
-  yml_files = listYmlFiles(PROJ_HOME)
+  yml_files = list(set(listYmlFiles(PROJ_HOME)))
+
   # playlist_names = map(lambda x: x.split('/')[-1], yml_files)
   # pprint(list(yml_files))
   yml_file_contents = list(map(lambda x: getYmlFile(x), yml_files))

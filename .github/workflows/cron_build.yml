@@ -7,9 +7,9 @@ on:
     - cron:  '* * * * *'
 
 jobs:
-  build:
+  github_actions_cron_tryout:
     # Job name is Greeting
-    name: Greeting
+    name: github_actions_cron_tryout
     # This job runs on Linux
     runs-on: ubuntu-latest
     steps:

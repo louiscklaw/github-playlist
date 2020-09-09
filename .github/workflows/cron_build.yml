@@ -4,7 +4,7 @@ name: test schedule
 
 on:
   schedule:
-    - cron:  '* * * * *'
+    - cron:  '*/5 * * * *'
 
 jobs:
   github_actions_cron_tryout:

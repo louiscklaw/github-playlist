@@ -109,11 +109,13 @@ jobs:
   
   
   
-  # build-macos:
-  #   runs-on: macos-latest
+  build-macos:
+    runs-on: macos-latest
   
-  #   steps:
-  #   - uses: actions/checkout@v2
+    steps:
+    - uses: actions/checkout@v2
+    - run: sw_vers
+  
   #   - uses: actions/setup-node@v1
   #     with:
   #       node-version: ${{ env.NODE_VERSION }}
@@ -310,7 +312,7 @@ jobs:
           github-build-merger-tryout/test.sh
   
   merge:
-    needs: [test_merger, github-actions-multistage-tryout, build-linux, github_environ_tryout, action_slack_custom_message_tryout, actions_react_tryout, puppeteer_helloworld, python_helloworld_tryout, github_actions_helloworld_tryout, action_upload_artifact_tryout, action_secrets_tryout]
+    needs: [test_merger, build-linux, build-macos, action_upload_artifact_tryout, github-actions-multistage-tryout, python_helloworld_tryout, action_slack_custom_message_tryout, actions_react_tryout, action_secrets_tryout, github_actions_helloworld_tryout, puppeteer_helloworld, github_environ_tryout]
     runs-on: ubuntu-latest
     steps:
       - name: checkout

@@ -22,11 +22,13 @@ jobs:
             ./decrypt_secret.sh
           cd ..
   
+  
       - name: test-cat
         run: |
           cd action-secrets-tryout
             cat $HOME/secrets/my_secret.json
           cd ..
+  
   
       - name: test-diff
         run: |

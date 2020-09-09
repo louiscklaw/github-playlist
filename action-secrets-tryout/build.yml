@@ -7,8 +7,6 @@ action_secrets_tryout:
     - name: action-secrets-tryout
       env:
         LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
-        INPUT_TEST_JSON: my_secret.json
-        OUTPUT_TEST_JSON: $HOME/secrets/my_secret.json
       run: |
         cd action-secrets-tryout
           ./decrypt_secret.sh
@@ -25,5 +23,5 @@ action_secrets_tryout:
     - name: test-diff
       run: |
         cd action-secrets-tryout
-          diff $INPUT_TEST_JSON $OUTPUT_TEST_JSON
+          diff ./my_secret.json $HOME/secrets/my_secret.json
         cd ..

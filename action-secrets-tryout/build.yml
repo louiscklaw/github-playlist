@@ -14,11 +14,13 @@ action_secrets_tryout:
         cd action-secrets-tryout
           ./decrypt_secret.sh
         cd ..
-        # test cat
+    - name: test-cat
+      run: |
         cd action-secrets-tryout
           cat $HOME/secrets/my_secret.json
         cd ..
-        # tes cat
+    - name: test-diff
+      run: |
         cd action-secrets-tryout
           diff $INPUT_TEST_JSON $OUTPUT_TEST_JSON
         cd ..

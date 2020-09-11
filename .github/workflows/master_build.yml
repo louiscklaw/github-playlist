@@ -113,6 +113,27 @@ jobs:
           cd ..
   
   # 
+  # /home/logic/_workspace/github-playlist/actions-send-slack-by-node-tryout/build.yml
+  # 
+  # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#on
+  # https://github.com/sdras/awesome-actions
+  
+  actions-send-slack-by-node-tryout:
+    runs-on: ubuntu-latest
+    steps:
+        uses: actions/checkout@v2
+  
+      - run: |
+          cd actions-send-slack-by-node-tryout
+            yarn
+            yarn test
+            yarn build
+          cd ..
+        env: # Or as an environment variable
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
+  # 
   # /home/logic/_workspace/github-playlist/github-actions-docker-container-tryout/build.yml
   # 
   # github_actions_docker_container:
@@ -252,7 +273,7 @@ jobs:
           github-build-merger-tryout/test.sh
   
   merge:
-    needs: [test_merger, puppeteer_helloworld, action_upload_artifact_tryout, action_slack_custom_message_tryout, action_secrets_tryout, github_environ_tryout, actions_react_tryout, github-actions-multistage-tryout, github_actions_helloworld_tryout, python_helloworld_tryout]
+    needs: [test_merger, action_slack_custom_message_tryout, github-actions-multistage-tryout, actions-send-slack-by-node-tryout, github_actions_helloworld_tryout, action_secrets_tryout, github_environ_tryout, puppeteer_helloworld, python_helloworld_tryout, actions_react_tryout, action_upload_artifact_tryout]
     runs-on: ubuntu-latest
     steps:
       - name: checkout

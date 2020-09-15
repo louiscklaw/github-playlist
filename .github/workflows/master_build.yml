@@ -174,6 +174,22 @@ jobs:
           cd ..
   
   # 
+  # /home/logic/_workspace/github-playlist/build-dashboard-tryout/build.yml
+  # 
+  
+  build-dashboard-tryout:
+    runs-on: ubuntu-latest
+  
+    steps:
+    - uses: actions/checkout@v2
+  
+    - run: |
+        cd build-dashboard-tryout
+          yarn
+          yarn run deploy
+        cd ..
+  
+  # 
   # /home/logic/_workspace/github-playlist/github-actions-docker-container-tryout/build.yml
   # 
   # github_actions_docker_container:
@@ -313,7 +329,7 @@ jobs:
           github-build-merger-tryout/test.sh
   
   merge:
-    needs: [test_merger, puppeteer_helloworld, action_slack_custom_message_tryout, python_helloworld_tryout, github_environ_tryout, action_secrets_tryout, github-actions-multistage-tryout, actions_react_tryout, action_upload_artifact_tryout, build-linux, build-macos, build-windows, github_actions_helloworld_tryout]
+    needs: [action_secrets_tryout, action_slack_custom_message_tryout, action_upload_artifact_tryout, actions_react_tryout, build-dashboard-tryout, build-linux, build-macos, build-windows, github-actions-multistage-tryout, github_actions_helloworld_tryout, github_environ_tryout, puppeteer_helloworld, python_helloworld_tryout, test_merger]
     runs-on: ubuntu-latest
     steps:
       - name: checkout

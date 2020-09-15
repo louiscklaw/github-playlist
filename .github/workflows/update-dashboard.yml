@@ -1,0 +1,26 @@
+name: master_build
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron:  '5 * * * *'
+
+jobs:
+  #
+  # /home/logic/_workspace/github-playlist/action-secrets-tryout/build.yml
+  #
+  # https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets
+
+  build-dashboard-tryout:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - run: |
+        cd build-dashboard-tryout
+          yarn
+          yarn build
+          yarn deploy
+        cd ..

@@ -8,5 +8,7 @@ build-dashboard-tryout:
   - run: |
       cd build-dashboard-tryout
         yarn
-        yarn run deploy
+        yarn build
+        # deploy handled by cron job on update-dashboard.yml
+        # yarn deploy
       cd ..

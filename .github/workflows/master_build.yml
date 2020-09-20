@@ -226,15 +226,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           curl -sL https://firebase.tools > install_firebase.sh
-          chmod +x install_firebase.sh
-          sh ./install_firebase.sh
+          # chmod +x install_firebase.sh
+          # sh ./install_firebase.sh
   
-          cd github-actions-firebase-tryout
-            echo 'helloworld'
-            node --version
-            npm -v
-            yarn -v
-            firebase --help
+          # cd github-actions-firebase-tryout
+          #   echo 'helloworld'
+          #   node --version
+          #   npm -v
+          #   yarn -v
+          #   firebase --help
   
   # 
   # /home/logic/_workspace/github-playlist/github-actions-multistage-tryout/build.yml

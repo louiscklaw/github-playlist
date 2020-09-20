@@ -11,10 +11,9 @@ github-actions-firebase-tryout:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        curl -sL https://firebase.tools > install_firebase.sh
-        chmod +x install_firebase.sh
-        ls -l *.sh
-        # ./install_firebase.sh
+        curl -Lo ./firebase_bin https://firebase.tools/bin/linux/latest
+        chmod +x ./firebase_bin
+        ./firebase_bin --help
 
         # cd github-actions-firebase-tryout
         #   echo 'helloworld'

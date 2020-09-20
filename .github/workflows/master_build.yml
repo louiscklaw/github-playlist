@@ -227,16 +227,16 @@ jobs:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          curl -Lo ./firebase_bin https://firebase.tools/bin/linux/latest
-          chmod +x ./firebase_bin
-          ./firebase_bin --help
+          cd github-actions-firebase-tryout
+            curl -Lo ./firebase_bin https://firebase.tools/bin/linux/latest
+            chmod +x ./firebase_bin
+            ./firebase_bin --help
   
-          # cd github-actions-firebase-tryout
-          #   echo 'helloworld'
-          #   node --version
-          #   npm -v
-          #   yarn -v
-          #   firebase --help
+            echo 'helloworld'
+            node --version
+            npm -v
+            yarn -v
+            ./firebase_bin --help
   
   # 
   # /home/logic/_workspace/github-playlist/github-actions-multistage-tryout/build.yml

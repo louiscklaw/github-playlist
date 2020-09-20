@@ -227,6 +227,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           yarn add global firebase-tools firebase-functions firebase-admin
+          export PATH="$PATH:/usr/local/bin"
+  
           cd github-actions-firebase-tryout
             echo 'helloworld'
             node --version

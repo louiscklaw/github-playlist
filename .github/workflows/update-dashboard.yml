@@ -19,6 +19,8 @@ jobs:
     - uses: actions/checkout@v2
 
     - run: |
+        git config --global user.email "github_actions_deploy@github.com"
+        git config --global user.name "github actions"
         cd build-dashboard-tryout
           yarn
           yarn build

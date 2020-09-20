@@ -12,8 +12,7 @@ github-actions-firebase-tryout:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        yarn add global firebase-tools firebase-functions firebase-admin
-        export PATH="$PATH:/usr/local/bin"
+        curl -sL https://firebase.tools | bash
 
         cd github-actions-firebase-tryout
           echo 'helloworld'

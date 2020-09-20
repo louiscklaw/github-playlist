@@ -222,11 +222,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
   
-      - name: github-actions-firebase-tryout
-        env: # Or as an environment variable
-          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
+      - run: |
           cd github-actions-firebase-tryout
             curl -Lo ./firebase_bin https://firebase.tools/bin/linux/latest
             chmod +x ./firebase_bin
@@ -237,7 +233,9 @@ jobs:
             npm -v
             yarn -v
             ./firebase_bin --help
-  
+        env: # Or as an environment variable
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   # 
   # /home/logic/_workspace/github-playlist/github-actions-multistage-tryout/build.yml
   # 

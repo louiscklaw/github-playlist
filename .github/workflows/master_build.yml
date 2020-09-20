@@ -229,7 +229,8 @@ jobs:
         run: |
           curl -sL https://firebase.tools > install_firebase.sh
           chmod +x install_firebase.sh
-          sh ./install_firebase.sh
+          ls -l *.sh
+          ./install_firebase.sh
   
           # cd github-actions-firebase-tryout
           #   echo 'helloworld'

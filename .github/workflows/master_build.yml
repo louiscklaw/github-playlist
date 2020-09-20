@@ -218,8 +218,7 @@ jobs:
   github-actions-firebase-tryout:
     runs-on: ubuntu-latest
     steps:
-      - name: github-actions-helloworld-tryout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
   
       - name: github-actions-firebase-tryout
         env: # Or as an environment variable
@@ -234,6 +233,7 @@ jobs:
             npm -v
             yarn -v
             firebase --help
+  
   # 
   # /home/logic/_workspace/github-playlist/github-actions-multistage-tryout/build.yml
   # 

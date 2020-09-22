@@ -4,7 +4,7 @@ on:
     branches:
       - master
   schedule:
-    - cron:  '0 1 * * *'
+    - cron:  '* 1 * * *'
 
 jobs:
   #
@@ -24,8 +24,6 @@ jobs:
           cd build-dashboard-tryout
             yarn
             yarn build
-          cd ..
-
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.1

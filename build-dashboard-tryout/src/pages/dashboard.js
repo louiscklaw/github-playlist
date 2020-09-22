@@ -1,13 +1,10 @@
 import React from "react"
+
 import Layout from "../components/layout"
 import Navbar from '../components/nav'
-
 import SEO from "../components/seo"
 
-import ThemeContext from '../contexts/ThemeContext'
-
-
-function IndexPage(){
+function HelloworldPage(){
   return(
     <Layout>
 
@@ -18,5 +15,4 @@ function IndexPage(){
   )
 }
 
-
-export default IndexPage
+export default HelloworldPage

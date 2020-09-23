@@ -193,7 +193,7 @@ jobs:
         run: |
           cd build-dashboard-tryout
             yarn
-            gatsby build --prefix-paths
+            yarn build --prefix-paths
   
   # 
   # /home/logic/_workspace/github-playlist/github-actions-docker-container-tryout/build.yml

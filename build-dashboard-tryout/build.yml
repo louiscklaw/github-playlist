@@ -13,4 +13,4 @@ build-dashboard-tryout:
       run: |
         cd build-dashboard-tryout
           yarn
-          yarn build
+          gatsby build --prefix-paths

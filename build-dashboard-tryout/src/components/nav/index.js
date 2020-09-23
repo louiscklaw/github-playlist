@@ -8,12 +8,14 @@ function Navbar(props){
   const {active_style} = React.useContext(ThemeContext)
 
   const checkActivePage = (page_href) =>{
-    var temp = '.+'+page_href+'$'
-    var re = new RegExp(temp,'g')
-    if (window.location.href.search(re) == 0){
-      return active_style.isActive
-    }else{
-      return ''
+    if (typeof window !== `undefined`){
+      var temp = '.+'+page_href+'$'
+      var re = new RegExp(temp,'g')
+      if (window.location.href.search(re) == 0){
+        return active_style.isActive
+      }else{
+        return ''
+      }
     }
   }
 

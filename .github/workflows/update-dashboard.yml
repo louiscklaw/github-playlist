@@ -23,7 +23,8 @@ jobs:
         run: |
           cd build-dashboard-tryout
             yarn
-            yarn build
+            yarn build --prefix-paths
+
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.1

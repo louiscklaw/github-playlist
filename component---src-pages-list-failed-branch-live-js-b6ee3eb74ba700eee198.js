@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{"XNc+":function(e,n,t){"use strict";t.r(n);var a=t("q1tI"),l=t.n(a),c=t("Bl7J"),r=t("nYfD"),u=t("vrFN");n.default=function(){return l.a.createElement(c.a,null,l.a.createElement(u.a,{title:"Home"}),l.a.createElement(r.a,null))}}}]);
+//# sourceMappingURL=component---src-pages-list-failed-branch-live-js-b6ee3eb74ba700eee198.js.map

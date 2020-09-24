@@ -176,7 +176,7 @@ jobs:
           cd ..
   
   # 
-  # /home/logic/_workspace/github-playlist/build-dashboard-tryout/build.yml
+  # /home/logic/_workspace/github-playlist/build-dashboard-tryout-old/build.yml
   # 
   build-dashboard-tryout:
     runs-on: ubuntu-latest

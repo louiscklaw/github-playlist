@@ -4,6 +4,8 @@ import {Link} from 'gatsby'
 import ThemeContext from '../../contexts/ThemeContext'
 import {combineStyles} from '../../utils/common'
 
+import {entry_href, first_page} from '../../config'
+
 function Navbar(props){
   const {active_style} = React.useContext(ThemeContext)
 
@@ -22,7 +24,7 @@ function Navbar(props){
   return(
     <nav className={active_style.navbar} role="navigation" aria-label="main navigation">
       <div className={active_style.navbarBrand}>
-        <a className={active_style.navbarItem} href="https://louiscklaw.github.io/github-playlist/">
+        <a className={active_style.navbarItem} href={first_page}>
           Github build dashboard
         </a>
 
@@ -33,7 +35,52 @@ function Navbar(props){
         </a>
       </div>
 
+      <div id="navbarBasicExample" className={active_style.navbarMenu}>
+        <div className={active_style.navbarStart}>
 
+          <Link to='/dashboard'
+            className={combineStyles([active_style.navbarItem, checkActivePage('dashboard')])} >
+            Dashboard
+          </Link>
+          <Link to='/list_failed_branches'
+            className={combineStyles([active_style.navbarItem, checkActivePage('list_failed_branches')])} >
+            list failed branches
+          </Link>
+          <Link to='/branch_fail_statistics'
+            className={combineStyles([active_style.navbarItem, checkActivePage('branch_fail_statistics')])} >
+            branch fail statistics
+          </Link>
+          <Link to='/list_failed_branch_live'
+            className={combineStyles([active_style.navbarItem, checkActivePage('list_failed_branch_live')])} >
+            list failed branch (live)
+          </Link>
+          <Link to='/documentation'
+            className={combineStyles([active_style.navbarItem, checkActivePage('documentation')])} >
+            documentation
+          </Link>
+
+        </div>
+
+
+        <div className={active_style.navbarEnd}>
+          <div className={active_style.navbarItem}>
+            <div className={active_style.buttons}>
+              <a className={combineStyles([active_style.button, active_style.isPrimary])}>
+                <i class="fab fa-github-square"></i>
+                <strong>Source</strong>
+              </a>
+
+              <a className={combineStyles([active_style.button, active_style.isPrimary])}>
+                <strong>Sign up</strong>
+              </a>
+              <a className={combineStyles([active_style.button, active_style.isLight])}>
+                Log in
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
 
     </nav>
   )

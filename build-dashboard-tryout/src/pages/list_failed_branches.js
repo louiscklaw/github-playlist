@@ -7,14 +7,13 @@ import SEO from "../components/seo"
 
 import RepoStatusContainer from '../components/RepoStatusContainer'
 
-function Home() {
+function ListFailedBranches() {
   return(
     <Layout>
-      <SEO title="Home" />
-      redirecting to dashboard
-      {typeof window !== `undefined` ? navigate('/dashboard') : null}
+      <SEO title="Dashboard" />
+      <Navbar />
     </Layout>
   )
 }
 
-export default Home
+export default ListFailedBranches

@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{oPZL:function(t,e,n){"use strict";n.r(e);var a=n("q1tI"),r=n.n(a),l=(n("Wbzz"),n("Bl7J")),u=n("nYfD"),c=n("vrFN");n("tU3p");e.default=function(){return r.a.createElement(l.a,null,r.a.createElement(c.a,{title:"Dashboard"}),r.a.createElement(u.a,null))}},tU3p:function(t,e,n){"use strict";var a=n("q1tI"),r=n.n(a);e.a=function(){return r.a.createElement(r.a.Fragment,null)}}}]);
+//# sourceMappingURL=component---src-pages-list-failed-branches-js-e9c537db257dfb60eb41.js.map

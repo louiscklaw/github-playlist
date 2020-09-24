@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{RXBc:function(e,n,t){"use strict";t.r(n);var a=t("q1tI"),r=t.n(a),c=t("Wbzz"),i=t("Bl7J"),o=(t("nYfD"),t("vrFN"));t("tU3p");n.default=function(){return r.a.createElement(i.a,null,r.a.createElement(o.a,{title:"Home"}),"redirecting to dashboard","undefined"!=typeof window?Object(c.navigate)("/dashboard"):null)}},tU3p:function(e,n,t){"use strict";var a=t("q1tI"),r=t.n(a);n.a=function(){return r.a.createElement(r.a.Fragment,null)}}}]);
+//# sourceMappingURL=component---src-pages-index-js-e27f876fafddb7c63a8c.js.map

@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 PROJ_HOME=/home/logic/_workspace/github-playlist/build-dashboard-tryout
-JSON_HOME=$PROJ_HOME/src/json
+STATIC_HOME=$PROJ_HOME/static
 
 set -ex
 
-# node ./getAllRepoOfUser.js
+node ./getAllRepoOfUser.js
 
-mv all_repos.json $JSON_HOME
+mv all_repos.json $STATIC_HOME

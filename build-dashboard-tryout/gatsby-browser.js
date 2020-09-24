@@ -1,8 +1,11 @@
 import React from "react"
+import { ApiContextProvider } from "./src/contexts/ApiContext"
 import { ThemeContextProvider } from "./src/contexts/ThemeContext"
 
 export const wrapRootElement = ({ element }) => (
-  <ThemeContextProvider>
-    {element}
-  </ThemeContextProvider>
+  <ApiContextProvider>
+    <ThemeContextProvider>
+      {element}
+    </ThemeContextProvider>
+  </ApiContextProvider>
 )

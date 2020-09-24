@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{sFYk:function(e,a,n){"use strict";n.r(a);var t=n("q1tI"),l=n.n(t),r=n("Bl7J"),c=n("nYfD"),u=n("vrFN"),o=n("tU3p");a.default=function(){return l.a.createElement(r.a,null,l.a.createElement(u.a,{title:"Dashboard"}),l.a.createElement(c.a,null),l.a.createElement(o.a,null))}}}]);
+//# sourceMappingURL=component---src-pages-dashboard-js-bd425aa45042bc41d99c.js.map

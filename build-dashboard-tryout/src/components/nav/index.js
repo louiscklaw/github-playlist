@@ -21,6 +21,19 @@ function Navbar(props){
 
   return(
     <nav className={active_style.navbar} role="navigation" aria-label="main navigation">
+      <div className={active_style.navbarBrand}>
+        <a className={active_style.navbarItem} href="https://louiscklaw.github.io/github-playlist/">
+          Github build dashboard
+        </a>
+
+        <a role="button" className={[active_style.navbarBurger, active_style.burger]} aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+
 
     </nav>
   )

@@ -187,7 +187,7 @@ jobs:
           cd build-dashboard-tryout
             yarn
             yarn test
-            yarn build
+            yarn build --prefix-paths
   
   # 
   # /home/logic/_workspace/github-playlist/github-actions-docker-container-tryout/build.yml

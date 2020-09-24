@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{FiKt:function(t,e,n){"use strict";n.r(e);var a=n("q1tI"),l=n.n(a),c=n("Bl7J"),i=n("nYfD"),r=n("vrFN");e.default=function(){return l.a.createElement(c.a,null,l.a.createElement(r.a,{title:"BranchFailStatistics"}),l.a.createElement(i.a,null))}}}]);
-//# sourceMappingURL=component---src-pages-branch-fail-statistics-js-1d819807c81c12063c15.js.map

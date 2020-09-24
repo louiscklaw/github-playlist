@@ -10,5 +10,5 @@ cp -r public github-playlist-public-temp
 mv github-playlist-public-temp public/github-playlist
 
 
-cd public/github-playlist
+cd public
   live-server .

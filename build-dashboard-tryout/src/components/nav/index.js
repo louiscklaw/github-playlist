@@ -20,8 +20,9 @@ function Navbar(props){
   }
 
   return(
-    <>
-    </>
+    <nav className={active_style.navbar} role="navigation" aria-label="main navigation">
+
+    </nav>
   )
 }
 

@@ -1,20 +1,18 @@
 import React from "react"
-import { navigate } from "gatsby"
-import Layout from "../components/layout"
-import Navbar from '../components/nav'
+import { Link } from "gatsby"
 
+import Layout from "../components/layout"
+// import Image from "../components/image"
 import SEO from "../components/seo"
 
-import RepoStatusContainer from '../components/RepoStatusContainer'
+// import Container from '../components/container'
+// import Apple from '../components/apple'
 
-function Home() {
-  return(
-    <Layout>
-      <SEO title="Home" />
-      redirecting to dashboard
-      {typeof window !== `undefined` ? navigate('/dashboard') : null}
-    </Layout>
-  )
-}
+const IndexPage = () => (
+  <Layout>
+    <SEO title="Home" />
+    helloworld
+  </Layout>
+)
 
-export default Home
+export default IndexPage

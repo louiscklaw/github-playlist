@@ -1,12 +1,7 @@
-import React from "react"
+/**
+ * Implement Gatsby's Browser APIs in this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/browser-apis/
+ */
 
-import {ApiContextProvider} from './src/contexts/ApiContext'
-import { ThemeContextProvider } from "./src/contexts/ThemeContext"
-
-export const wrapRootElement = ({ element }) => (
-  <ApiContextProvider>
-    <ThemeContextProvider>
-      {element}
-    </ThemeContextProvider>
-  </ApiContextProvider>
-)
+// You can delete this file if you're not using it

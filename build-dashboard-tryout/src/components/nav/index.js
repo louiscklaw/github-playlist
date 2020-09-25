@@ -1,14 +1,13 @@
 import React from 'react'
 import {Link} from 'gatsby'
 
-import ThemeContext from '../../contexts/ThemeContext'
+import active_style from '../../scss/flatly/bulmaswatch.module.scss'
+
 import {combineStyles} from '../../utils/common'
 
 import {entry_href, first_page} from '../../config'
 
 function Navbar(props){
-  const {active_style} = React.useContext(ThemeContext)
-
   const checkActivePage = (page_href) =>{
     if (typeof window !== `undefined`){
       var temp = '.+'+page_href+'$'

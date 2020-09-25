@@ -19,9 +19,7 @@ function AllReposStatus(props){
 
   return(
     <div className="repos-status">
-      {
-        JSON.stringify(all_repo_json)
-      }
+      all repos status
     </div>
   )
 }

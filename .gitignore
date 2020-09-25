@@ -1,5 +1,6 @@
 .env
 .env.docker
+**/public
 
 **/node_modules
 **/build

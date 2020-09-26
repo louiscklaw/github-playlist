@@ -1,6 +1,6 @@
 import React from 'react'
 
-import active_style from '../scss/flatly/bulmaswatch.module.scss'
+import active_style from '../../scss/flatly/bulmaswatch.module.scss'
 
 import AsideContent from './aside-content'
 
@@ -32,7 +32,7 @@ import TabsTest from './tabs-test'
 import TagTest from './tag-test'
 import TypographyTest from './typography-test'
 
-import {combineStyles} from '../utils/common'
+import {combineStyles} from '../../utils/common'
 
 function TestContent(props){
 

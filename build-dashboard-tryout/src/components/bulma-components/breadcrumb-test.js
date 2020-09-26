@@ -1,8 +1,8 @@
 import React from 'react'
-import active_style from '../scss/flatly/bulmaswatch.module.scss'
+import active_style from '../../scss/flatly/bulmaswatch.module.scss'
 
 
-import {combineStyles} from '../utils/common'
+import {combineStyles} from '../../utils/common'
 
 function BreadcrumbTest(props){
   return(

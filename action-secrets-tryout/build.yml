@@ -3,13 +3,25 @@ action_secrets_tryout:
   runs-on: ubuntu-latest
   steps:
     - uses: actions/checkout@v2
-    - name: action-secrets-tryout
-      env: # Or as an environment variable
-        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+    - name: action-secrets-tryout
+      env:
+        LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
       run: |
-        echo 'helloworld'
-        node --version
-        npm -v
-        yarn -v
+        cd action-secrets-tryout
+          ./decrypt_secret.sh
+        cd ..
+
+
+    - name: test-cat
+      run: |
+        cd action-secrets-tryout
+          cat $HOME/secrets/my_secret.json
+        cd ..
+
+
+    - name: test-diff
+      run: |
+        cd action-secrets-tryout
+          diff ./my_secret.json $HOME/secrets/my_secret.json
+        cd ..

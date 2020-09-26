@@ -1,5 +1,7 @@
 name: master_build
-on: [push]
+on:
+  push:
+  pull_request:
 
 jobs:
 
@@ -11,16 +13,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: action-secrets-tryout
-        env: # Or as an environment variable
-          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   
+      - name: action-secrets-tryout
+        env:
+          LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
         run: |
-          echo 'helloworld'
-          node --version
-          npm -v
-          yarn -v
+          cd action-secrets-tryout
+            ./decrypt_secret.sh
+          cd ..
+  
+  
+      - name: test-cat
+        run: |
+          cd action-secrets-tryout
+            cat $HOME/secrets/my_secret.json
+          cd ..
+  
+  
+      - name: test-diff
+        run: |
+          cd action-secrets-tryout
+            diff ./my_secret.json $HOME/secrets/my_secret.json
+          cd ..
   
   # 
   # /home/logic/_workspace/github-playlist/action-slack-custom-message-tryout/build.yml
@@ -78,6 +92,67 @@ jobs:
           yarn -v
   
   # 
+  # /home/logic/_workspace/github-playlist/actions-platform-tryout/build.yml
+  # 
+  
+  build-linux:
+    runs-on: ubuntu-latest
+  
+    steps:
+    - uses: actions/checkout@v2
+  
+    - run: |
+        sudo apt-get install libxml2-utils   \
+                              icnsutils       \
+                              graphicsmagick  \
+                              xz-utils        \
+                              build-essential \
+                              libudev-dev
+  
+  
+  
+  build-macos:
+    runs-on: macos-latest
+  
+    steps:
+    - uses: actions/checkout@v2
+    - run: sw_vers
+  
+  #   - uses: actions/setup-node@v1
+  #     with:
+  #       node-version: ${{ env.NODE_VERSION }}
+  #   - uses: olegtarasov/get-tag@v2
+  #     id: tag_name
+  #   - run: npm install
+  #   - run: npm run test-build
+  #     if: ${{ !steps.tag_name.outputs.tag }}
+  #   - run: npm run release
+  #     if: ${{ steps.tag_name.outputs.tag }}
+  #     env:
+  #       GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+  #       CSC_KEY_PASSWORD: "${{ secrets.CSC_KEY_PASSWORD }}"
+  #       CSC_LINK: "${{ secrets.CSC_LINK }}"
+  
+  build-windows:
+    runs-on: windows-latest
+  
+    steps:
+    - uses: actions/checkout@v2
+    - run: systeminfo
+  #   - uses: actions/setup-node@v1
+  #     with:
+  #       node-version: ${{ env.NODE_VERSION }}
+  #   - uses: olegtarasov/get-tag@v2
+  #     id: tag_name
+  #   - run: npm install
+  #   - run: npm run test-build
+  #     if: ${{ !steps.tag_name.outputs.tag }}
+  #   - run: npm run release
+  #     if: ${{ steps.tag_name.outputs.tag }}
+  #     env:
+  #       GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+  
+  # 
   # /home/logic/_workspace/github-playlist/actions-react-tryout/build.yml
   # 
   # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#on
@@ -101,6 +176,20 @@ jobs:
           cd ..
   
   # 
+  # /home/logic/_workspace/github-playlist/build-dashboard-tryout/build.yml
+  # 
+  build-dashboard-tryout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+  
+      - run: |
+          cd build-dashboard-tryout
+            yarn
+            yarn test
+            yarn build --prefix-paths
+  
+  # 
   # /home/logic/_workspace/github-playlist/github-actions-docker-container-tryout/build.yml
   # 
   # github_actions_docker_container:
@@ -119,6 +208,31 @@ jobs:
   #         node -v
   
   # 
+  # /home/logic/_workspace/github-playlist/github-actions-firebase-tryout/build.yml
+  # 
+  # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#on
+  # https://github.com/sdras/awesome-actions
+  
+  github-actions-firebase-tryout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+  
+      - run: |
+          cd github-actions-firebase-tryout
+            curl -Lo ./firebase_bin https://firebase.tools/bin/linux/latest
+            chmod +x ./firebase_bin
+            ./firebase_bin --help
+  
+            echo 'helloworld'
+            node --version
+            npm -v
+            yarn -v
+            ./firebase_bin --help
+        env: # Or as an environment variable
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  # 
   # /home/logic/_workspace/github-playlist/github-actions-multistage-tryout/build.yml
   # 
   github-actions-multistage-tryout:
@@ -132,6 +246,25 @@ jobs:
   
         run: |
           echo 'helloworld'
+  
+  # 
+  # /home/logic/_workspace/github-playlist/github-actions-orphan-tryout/build.yml
+  # 
+  github-actions-orphan-tryout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+        with:
+          persist-credentials: false
+  
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.6.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: hello-orphans # The branch the action should deploy to.
+          FOLDER: github-actions-orphan-tryout/out # The folder the action should deploy.
+          CLEAN: true # Automatically remove deleted files from the deploy branch
   
   # 
   # /home/logic/_workspace/github-playlist/github-actions-puppeteer-tryout/build.yml
@@ -240,7 +373,7 @@ jobs:
           github-build-merger-tryout/test.sh
   
   merge:
-    needs: [test_merger, github-actions-multistage-tryout, action_slack_custom_message_tryout, puppeteer_helloworld, action_secrets_tryout, action_upload_artifact_tryout, github_environ_tryout, actions_react_tryout, python_helloworld_tryout, github_actions_helloworld_tryout]
+    needs: [action_secrets_tryout, action_slack_custom_message_tryout, action_upload_artifact_tryout, actions_react_tryout, build-dashboard-tryout, build-linux, build-macos, build-windows, github-actions-firebase-tryout, github-actions-multistage-tryout, github-actions-orphan-tryout, github_actions_helloworld_tryout, github_environ_tryout, puppeteer_helloworld, python_helloworld_tryout, test_merger]
     runs-on: ubuntu-latest
     steps:
       - name: checkout

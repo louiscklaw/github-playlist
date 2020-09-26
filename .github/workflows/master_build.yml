@@ -260,7 +260,9 @@ jobs:
           publish_branch: hello-orphan
           publish_dir: github-actions-orphan-tryout/test_dir
           allow_empty_commit: true
-  
+          keep_files: false
+          force_orphan: true
+          exclude_assets: '.github,exclude-file1,exclude-file2'
   # 
   # /home/logic/_workspace/github-playlist/github-actions-puppeteer-tryout/build.yml
   # 

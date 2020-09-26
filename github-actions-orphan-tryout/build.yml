@@ -8,3 +8,6 @@ github-actions-orphan-tryout:
         publish_branch: hello-orphan
         publish_dir: github-actions-orphan-tryout/test_dir
         allow_empty_commit: true
+        keep_files: false
+        force_orphan: true
+        exclude_assets: '.github,exclude-file1,exclude-file2'

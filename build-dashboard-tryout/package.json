@@ -22,18 +22,16 @@
     "gatsby-plugin-sharp": "^2.6.36",
     "gatsby-source-filesystem": "^2.3.30",
     "gatsby-transformer-sharp": "^2.5.15",
+    "htmltidy": "^0.0.6",
+    "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-helmet": "^6.0.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0",
+    "react-select": "^3.1.0"
   },
   "devDependencies": {
-    "babel-jest": "^26.3.0",
-    "babel-preset-gatsby": "^0.5.10",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^26.4.2",
-    "prettier": "2.0.5",
-    "react-test-renderer": "^16.13.1"
+    "prettier": "2.0.5"
   },
   "keywords": [
     "gatsby"
@@ -46,7 +44,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "jest"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
     "type": "git",

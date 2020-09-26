@@ -1,10 +1,9 @@
-gatsby-unittest-tryout:
+build-dashboard-tryout:
   runs-on: ubuntu-latest
   steps:
     - uses: actions/checkout@v2
 
     - run: |
-        cd gatsby-unittest-tryout
+        cd build-dashboard-tryout
           yarn
-          yarn test
           yarn build

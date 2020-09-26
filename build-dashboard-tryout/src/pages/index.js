@@ -2,16 +2,19 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-// import Image from "../components/image"
+import Navbar from '../components/nav'
 import SEO from "../components/seo"
+import TestContent from '../components/test-content'
 
-// import Container from '../components/container'
-// import Apple from '../components/apple'
+import flatly_style from '../scss/flatly/bulmaswatch.module.scss'
 
 const IndexPage = () => (
   <Layout>
+
     <SEO title="Home" />
-    helloworld
+    <Navbar />
+    <TestContent />
+
   </Layout>
 )
 

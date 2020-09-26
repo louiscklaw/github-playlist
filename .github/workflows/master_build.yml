@@ -200,6 +200,7 @@ jobs:
       - run: |
           cd build-dashboard-tryout
             yarn
+            yarn test
             yarn build
   
   # 

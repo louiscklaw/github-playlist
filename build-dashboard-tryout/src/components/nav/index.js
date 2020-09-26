@@ -11,6 +11,8 @@ function Navbar(props){
   let [navbarItembranchFailStatisticsActive, setNavbarItembranchFailStatisticsActive] = React.useState(false)
   let [navbarItemAboutActive, setNavbarItemAboutActive] = React.useState(false)
 
+  let [navbarItemTestActive, setNavbarItemTestActive] = React.useState(false)
+
 
   React.useEffect(()=>{
 
@@ -20,6 +22,8 @@ function Navbar(props){
       setNavbarItemDashboardActive(location_href.search('/dashboard') > 0)
       setNavbarItembranchFailStatisticsActive(location_href.search('/branch_fail_statistics') > 0)
       setNavbarItemAboutActive(location_href.search('/about') > 0)
+
+      setNavbarItemTestActive(location_href.search('/test') > 0)
 
     }
 
@@ -31,7 +35,7 @@ function Navbar(props){
       <div className={active_style.navbarBrand}>
 
         <a className={active_style.navbarItem} href="//louiscklaw.github.io/">
-          <div style={{fontFamily:"Noto Sans TC, sans-serif;font-size:x-large"}}>
+          <div>
             Github Actions dashboard
           </div>
         </a>
@@ -46,19 +50,39 @@ function Navbar(props){
       <div id="navbarBasicExample" className={active_style.navbarMenu}>
         <div className={active_style.navbarStart}>
 
-          <Link to="/dashboard" className={combineStyles([active_style.navbarItem, navbarItemDashboardActive ? active_style.isActive: "" ])}>
+          <Link
+            to="/dashboard"
+            className={combineStyles([
+              active_style.navbarItem,
+              navbarItemDashboardActive ? active_style.isActive: ""
+          ])}>
             Dashboard
           </Link>
 
-          <Link to="/branch_fail_statistics" className={combineStyles([
-            active_style.navbarItem,
-            navbarItembranchFailStatisticsActive ? active_style.isActive: ""
+          <Link
+            to="/branch_fail_statistics"
+            className={combineStyles([
+              active_style.navbarItem,
+              navbarItembranchFailStatisticsActive ? active_style.isActive: ""
           ])}>branch_fail_statistics</Link>
 
-          <Link to="/about" className={combineStyles([
-            active_style.navbarItem,
-            navbarItemAboutActive ? active_style.isActive: ""
-          ])}>about</Link>
+          <Link
+            to="/about"
+            className={combineStyles([
+              active_style.navbarItem,
+              navbarItemAboutActive ? active_style.isActive: ""
+          ])}>
+            about
+          </Link>
+
+          <Link
+            to="/test"
+            className={combineStyles([
+              active_style.navbarItem,
+              navbarItemTestActive ? active_style.isActive: ""
+          ])}>
+            test
+          </Link>
 
           {/*
             <div className={combineStyles([active_style.navbarItem, active_style.hasDropdown, active_style.isHoverable])}>

@@ -7,17 +7,33 @@ import {combineStyles} from '../../utils/common'
 import active_style from '../../scss/flatly/bulmaswatch.module.scss'
 
 function Navbar(props){
-  const location_href = typeof window !== undefined ? window.location.href: ''
+  let [navbarItemDashboardActive, setNavbarItemDashboardActive]=React.useState(false)
+  let [navbarItembranchFailStatisticsActive, setNavbarItembranchFailStatisticsActive] = React.useState(false)
+  let [navbarItemAboutActive, setNavbarItemAboutActive] = React.useState(false)
 
-  const navbarItemDashboardActive=location_href.search('dashboard') > 0
-  const navbarItembranchFailStatisticsActive=location_href.search('branch_fail_statistics') > 0
-  const navbarItemAboutActive=location_href.search('about') > 0
+
+  React.useEffect(()=>{
+
+    if (typeof window !== `undefined`) {
+      let location_href = window.location.href
+
+      setNavbarItemDashboardActive(location_href.search('/dashboard') > 0)
+      setNavbarItembranchFailStatisticsActive(location_href.search('/branch_fail_statistics') > 0)
+      setNavbarItemAboutActive(location_href.search('/about') > 0)
+
+    }
+
+  },[])
+
 
   return(
     <nav className={active_style.navbar} role="navigation" aria-label="main navigation">
       <div className={active_style.navbarBrand}>
-        <a className={active_style.navbarItem} href="https://bulma.io">
-          <img src="//bulma.io/images/bulma-logo.png" width="112" height="28" />
+
+        <a className={active_style.navbarItem} href="//louiscklaw.github.io/">
+          <div style={{fontFamily:"Noto Sans TC, sans-serif;font-size:x-large"}}>
+            Github Actions dashboard
+          </div>
         </a>
 
         <a role="button" className={[active_style.navbarBurger, active_style.burger]} aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -33,6 +49,7 @@ function Navbar(props){
           <Link to="/dashboard" className={combineStyles([active_style.navbarItem, navbarItemDashboardActive ? active_style.isActive: "" ])}>
             Dashboard
           </Link>
+
           <Link to="/branch_fail_statistics" className={combineStyles([
             active_style.navbarItem,
             navbarItembranchFailStatisticsActive ? active_style.isActive: ""

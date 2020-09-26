@@ -1,0 +1,17 @@
+github-actions-multistage-tryout:
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v2
+    - name: github-actions-multistage-tryout
+      env: # Or as an environment variable
+        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      run: |
+        echo 'helloworld'
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: github-actions-orphan-tryout/test_dir

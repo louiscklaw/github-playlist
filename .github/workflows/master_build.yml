@@ -259,6 +259,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: hello-orphan
           publish_dir: github-actions-orphan-tryout/test_dir
+          allow_empty_commit: true
   
   # 
   # /home/logic/_workspace/github-playlist/github-actions-puppeteer-tryout/build.yml

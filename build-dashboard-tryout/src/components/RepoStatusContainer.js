@@ -1,7 +1,7 @@
 import React from 'react'
 // import BuildStatusCell from './BuildStatusCell'
 
-import RepoStatus from './repo-status'
+import RepoStatus from './RepoStatus'
 // import {getAllRepoNames} from '../utils/getAllRepoNames'
 
 import './repo-status-container.css'
@@ -15,11 +15,15 @@ import {getAllRepoNames} from '../utils/getAllRepoNames'
 function AllReposStatus(props){
   let {all_repo_json} = React.useContext(ApiContext)
 
-
-
   return(
     <div className="repos-status">
-      all repos status
+      {
+        getAllRepoNames(all_repo_json).map( x => {
+          return(
+            <RepoStatus repo_name={x} />
+          )
+        })
+      }
     </div>
   )
 }

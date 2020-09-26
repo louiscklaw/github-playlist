@@ -6,7 +6,7 @@ github-actions-orphan-tryout:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_branch: hello-orphan
-        publish_dir: github-actions-orphan-tryout/test_dir
+        publish_dir: github-actions-orphan-tryout/test_dir/test_orphan_file.txt
         allow_empty_commit: true
         keep_files: false
         force_orphan: true

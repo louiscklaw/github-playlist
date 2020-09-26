@@ -19,7 +19,9 @@ else:
 MASTER_GITHUB_ACTIONS_FILEPATH='{}/.github/workflows/master_build.yml'.format(PROJ_HOME)
 
 MASTER_GITHUB_ACTIONS_TEMPLATE='''name: master_build
-on: [push]
+on:
+  push:
+  pull_request:
 
 jobs:
 
@@ -82,7 +84,8 @@ def getNameFromSubJob(subjob_contents):
   return output
 
 def main():
-  yml_files = listYmlFiles(PROJ_HOME)
+  yml_files = list(set(listYmlFiles(PROJ_HOME)))
+
   # playlist_names = map(lambda x: x.split('/')[-1], yml_files)
   # pprint(list(yml_files))
   yml_file_contents = list(map(lambda x: getYmlFile(x), yml_files))
@@ -101,7 +104,7 @@ def main():
         # pass
 
     merger_yml_contents = [getYmlFile(GITHUB_BUILD_MERGER_TRYOUT_FILEPATH)]
-    merger_yml_contents1 = update_merger_needs(merger_yml_contents,subjob_needs_list)
+    merger_yml_contents1 = update_merger_needs(merger_yml_contents,sorted(subjob_needs_list))
     formatted_merger_contents = map(lambda x: formatSubJobYmlFile(x), merger_yml_contents1)
     # formatted_merger_contents='1123'
 

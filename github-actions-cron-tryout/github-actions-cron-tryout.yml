@@ -1,4 +1,5 @@
 # https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions
+# https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#onschedule
 
 name: test schedule
 

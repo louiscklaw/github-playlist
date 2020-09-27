@@ -37,23 +37,23 @@ function Navbar(props){
       <div id="navbarBasicExample" className={active_style.navbarMenu}>
         <div className={active_style.navbarStart}>
 
-          <Link to='/dashboard'
+          <Link to='dashboard'
             className={combineStyles([active_style.navbarItem, checkActivePage('dashboard')])} >
             Dashboard
           </Link>
-          <Link to='/list_failed_branches'
+          <Link to='list_failed_branches'
             className={combineStyles([active_style.navbarItem, checkActivePage('list_failed_branches')])} >
             list failed branches
           </Link>
-          <Link to='/branch_fail_statistics'
+          <Link to='branch_fail_statistics'
             className={combineStyles([active_style.navbarItem, checkActivePage('branch_fail_statistics')])} >
             branch fail statistics
           </Link>
-          <Link to='/list_failed_branch_live'
+          <Link to='list_failed_branch_live'
             className={combineStyles([active_style.navbarItem, checkActivePage('list_failed_branch_live')])} >
             list failed branch (live)
           </Link>
-          <Link to='/documentation'
+          <Link to='documentation'
             className={combineStyles([active_style.navbarItem, checkActivePage('documentation')])} >
             documentation
           </Link>

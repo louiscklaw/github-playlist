@@ -3,7 +3,11 @@ function helloworld(){
 }
 
 function getAllRepoNames(all_repo_json){
-  return all_repo_json.map(x => x.full_name)
+  if (typeof all_repo_json !== 'undefined'){
+    return all_repo_json.map(x => x.full_name)
+  }else{
+    return ['louiscklaw/github-playlist']
+  }
 }
 
 export {

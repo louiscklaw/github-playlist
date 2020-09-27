@@ -10,7 +10,7 @@ const ApiContext = React.createContext(default_value)
 
 function ApiContextProvider(props){
   const [hello, setHello] = React.useState(null)
-  const [all_repo_json, setAllRepoJson] = React.useState(null)
+  const [all_repo_json, setAllRepoJson] = React.useState([])
   const [all_repo_names, setAllRepoNames] = React.useState(null)
 
   React.useState(()=>{
@@ -19,8 +19,6 @@ function ApiContextProvider(props){
         setAllRepoJson(r_json)
       })
   },[])
-
-
 
   return(
     <ApiContext.Provider value={{

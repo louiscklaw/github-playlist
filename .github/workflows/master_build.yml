@@ -205,7 +205,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo 'helloworld'
-          ls -l /test_orphan_branch
+          ls -l ../test_orphan_branch
+          cd ..
+          cd test_orphan_branch
+            touch hello_orphan_branch
+            git add hello_orphan_branch
+            git commit -m"test commit using command line,"
+          cd ..
   
   # 
   # /home/logic/_workspace/github-playlist/github-actions-docker-container-tryout/build.yml

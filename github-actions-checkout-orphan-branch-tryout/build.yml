@@ -4,7 +4,7 @@ github-actions-checkout-orphan-branch-tryout:
     - uses: actions/checkout@v2
       with:
         ref: test_orphan_branch
-        path: '/tmp'
+        path: '/test_orphan_branch'
 
     - name: github-actions-checkout-orphan-branch-tryou
       env: # Or as an environment variable
@@ -12,4 +12,4 @@ github-actions-checkout-orphan-branch-tryout:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         echo 'helloworld'
-        ls -l /tmp
+        ls -l /test_orphan_branch

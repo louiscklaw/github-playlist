@@ -218,6 +218,9 @@ jobs:
   
           cd test_orphan_branch
             touch hello_orphan_branch
+            git config --global user.email "louiscklaw@github.com"
+            git config --global user.name "louiscklaw"
+  
             git add hello_orphan_branch
             git commit -m"test commit using command line,"
           cd ..

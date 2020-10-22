@@ -215,7 +215,7 @@ jobs:
           ls -l .
           ls -l ..
           ls -l test_orphan_branch
-          cd ..
+  
           cd test_orphan_branch
             touch hello_orphan_branch
             git add hello_orphan_branch

@@ -6,6 +6,8 @@ github-actions-checkout-orphan-branch-tryout:
         ref: test_orphan_branch
         path: 'test_orphan_branch'
 
+    - uses: actions/checkout@v2
+
     - name: github-actions-checkout-orphan-branch-tryou
       env: # Or as an environment variable
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}

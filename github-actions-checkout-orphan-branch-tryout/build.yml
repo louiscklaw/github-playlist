@@ -4,7 +4,7 @@ github-actions-checkout-orphan-branch-tryout:
     - uses: actions/checkout@v2
       with:
         ref: test_orphan_branch
-        path: '../test_orphan_branch'
+        path: 'test_orphan_branch'
 
     - uses: actions/checkout@v2
 
@@ -16,7 +16,7 @@ github-actions-checkout-orphan-branch-tryout:
         echo 'helloworld'
         ls -l .
         ls -l ..
-        ls -l ../test_orphan_branch
+        ls -l test_orphan_branch
         cd ..
         cd test_orphan_branch
           touch hello_orphan_branch

@@ -12,6 +12,7 @@ github-actions-checkout-orphan-branch-tryout:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         echo 'helloworld'
+        ls -l ..
         ls -l ../test_orphan_branch
         cd ..
         cd test_orphan_branch

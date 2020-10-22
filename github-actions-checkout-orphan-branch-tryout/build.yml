@@ -4,6 +4,7 @@ github-actions-checkout-orphan-branch-tryout:
     - uses: actions/checkout@v2
       with:
         ref: test_orphan_branch
+        path: '/tmp'
 
     - name: github-actions-checkout-orphan-branch-tryou
       env: # Or as an environment variable

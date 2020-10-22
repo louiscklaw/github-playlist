@@ -196,14 +196,15 @@ jobs:
     steps:
   
       # NOTES: actions/checkout will clear every and then checkout, so must define path for each branch
-      - uses: actions/checkout@v2
-        with:
-          ref: test_orphan_branch
-          path: 'master/test_orphan_branch'
+  
       - uses: actions/checkout@v2
         with:
           ref: master
           path: 'master'
+      - uses: actions/checkout@v2
+        with:
+          ref: test_orphan_branch
+          path: 'master/test_orphan_branch'
   
       - name: github-actions-checkout-orphan-branch-tryou
         env: # Or as an environment variable

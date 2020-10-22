@@ -194,8 +194,9 @@ jobs:
   github-actions-checkout-orphan-branch-tryout:
     runs-on: ubuntu-latest
     steps:
-      - name: github-actions-helloworld-tryout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+        with:
+          ref: test_orphan_branch
   
       - name: github-actions-checkout-orphan-branch-tryou
         env: # Or as an environment variable
@@ -203,10 +204,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo 'helloworld'
-          node --version
-          npm -v
-          yarn -v
-  
   # 
   # /home/logic/_workspace/github-playlist/github-actions-docker-container-tryout/build.yml
   # 

@@ -1,5 +1,6 @@
 # https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions
 # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#onschedule
+# https://jasonet.co/posts/scheduled-actions/#:~:text=The%20schedule%20event%20lets%20you,From%20the%20GitHub%20Actions%20changelog.
 
 name: test schedule
 

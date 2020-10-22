@@ -2,12 +2,11 @@ github-actions-checkout-orphan-branch-tryout:
   runs-on: ubuntu-latest
   steps:
 
-
+    # NOTES: actions/checkout will clear every and then checkout, so must define path for each branch
     - uses: actions/checkout@v2
       with:
         ref: test_orphan_branch
         path: 'test_orphan_branch'
-
     - uses: actions/checkout@v2
       with:
         ref: master

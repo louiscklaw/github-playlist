@@ -30,4 +30,5 @@ github-actions-checkout-orphan-branch-tryout:
 
           git add hello_orphan_branch
           git commit -m"test commit using command line,"
+          git push
         cd ..

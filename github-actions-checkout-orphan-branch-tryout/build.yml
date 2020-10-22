@@ -1,12 +1,14 @@
 github-actions-checkout-orphan-branch-tryout:
   runs-on: ubuntu-latest
   steps:
+
+
     - uses: actions/checkout@v2
       with:
         ref: test_orphan_branch
         path: 'test_orphan_branch'
 
-    - uses: actions/checkout@v2
+    # - uses: actions/checkout@v2
 
     - name: github-actions-checkout-orphan-branch-tryou
       env: # Or as an environment variable

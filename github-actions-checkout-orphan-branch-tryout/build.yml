@@ -6,7 +6,7 @@ github-actions-checkout-orphan-branch-tryout:
     - uses: actions/checkout@v2
       with:
         ref: test_orphan_branch
-        path: 'test_orphan_branch'
+        path: 'master/test_orphan_branch'
     - uses: actions/checkout@v2
       with:
         ref: master
@@ -20,9 +20,9 @@ github-actions-checkout-orphan-branch-tryout:
         echo 'helloworld'
         ls -l .
         ls -l ..
-        ls -l test_orphan_branch
+        ls -l master/test_orphan_branch
 
-        cd test_orphan_branch
+        cd master/test_orphan_branch
           touch hello_orphan_branch
           git config --global user.email "louiscklaw@github.com"
           git config --global user.name "louiscklaw"

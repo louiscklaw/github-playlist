@@ -195,7 +195,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
   
-      # NOTES: actions/checkout will clear every and then checkout, so must define path for each branch
+      # NOTES: actions/checkout will clear every and then checkout, so must define path for each branch, sequences are matters
   
       - uses: actions/checkout@v2
         with:

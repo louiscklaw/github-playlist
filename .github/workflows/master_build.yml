@@ -277,7 +277,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run a one-line script
-        run: sleep
+        run: sleep 1800
   
   # 
   # /home/logic/_workspace/github-playlist/github-actions-multistage-tryout/build.yml

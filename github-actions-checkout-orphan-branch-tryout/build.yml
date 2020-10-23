@@ -29,6 +29,6 @@ github-actions-checkout-orphan-branch-tryout:
           git config --global user.name "louiscklaw"
 
           git add hello_orphan_branch
-          git commit -m"test commit using command line,"
-          git push
+          git commit -m"test commit using command line," | true
+          git push | true
         cd ..

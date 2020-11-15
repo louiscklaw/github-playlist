@@ -19,7 +19,6 @@ update_tryout_shortcut(){
 }
 
 update_scripts(){
-  set -x
   SCRIPT_FILE=$(realpath $0)
   PROJ_HOME=$(dirname $SCRIPT_FILE)
   MASTER_GITHUB_PROJ_HOME='/home/logic/_workspace/github-playlist'
@@ -31,6 +30,8 @@ update_scripts(){
   rsync -avzh $PROJ_HOME/scripts/update_shortcut.py $MASTER_GITHUB_PROJ_HOME/scripts
 
   rsync -avzh $PROJ_HOME/scripts/update_shortcut.py $MASTER_GITHUB_PROJ_HOME/scripts
+
+  cd && cd -
 
 }
 

@@ -1,0 +1,7 @@
+{
+  "title":"title",
+  "owner":"louiscklaw",
+  "body":"hello world body",
+  "assignee": "louiscklaw",
+  "labels": ["Bugs","new labels OK ?"]
+}

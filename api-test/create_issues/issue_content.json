@@ -1,7 +1,1 @@
-{
-  "title":"title",
-  "owner":"louiscklaw",
-  "body":"hello world body",
-  "assignee": "louiscklaw",
-  "labels": ["Bugs","new labels OK ?"]
-}
+{"title":"[Bug #19] When user update line up info, Admin user line up info does not get updated unless refresh page","owner":"From Trello (lynked-insight)","body":"### From Trello (lynked-insight)\n\n  Steps:\nUser A performed line up.\nAdmin check user A line up info\nUser A updated the line up info\nAdmin check user A line up info without refresh page\nObserve\n\nExpected result:\nIt should auto update user A line up info without refreshing page\n\nActual result:\nIt still display old line up info for user A\n\n\n  ","assignee":"louiscklaw","labels":["Auto Refresh","Bug","new labels OK ?"]}

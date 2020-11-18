@@ -1,0 +1,52 @@
+{
+  "content": {
+    "name": "new_file4.png",
+    "path": "hello/new_file4.png",
+    "sha": "546ec0cecd50d739959d0c4b9974f4c254debcfc",
+    "size": 22020,
+    "url": "https://api.github.com/repos/louiscklaw/trello-playlist/contents/hello/new_file4.png?ref=test-upload",
+    "html_url": "https://github.com/louiscklaw/trello-playlist/blob/test-upload/hello/new_file4.png",
+    "git_url": "https://api.github.com/repos/louiscklaw/trello-playlist/git/blobs/546ec0cecd50d739959d0c4b9974f4c254debcfc",
+    "download_url": "https://raw.githubusercontent.com/louiscklaw/trello-playlist/test-upload/hello/new_file4.png",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/louiscklaw/trello-playlist/contents/hello/new_file4.png?ref=test-upload",
+      "git": "https://api.github.com/repos/louiscklaw/trello-playlist/git/blobs/546ec0cecd50d739959d0c4b9974f4c254debcfc",
+      "html": "https://github.com/louiscklaw/trello-playlist/blob/test-upload/hello/new_file4.png"
+    }
+  },
+  "commit": {
+    "sha": "6a98cff18724bf852260a7e0bc281e4d50f9e2e6",
+    "node_id": "MDY6Q29tbWl0MzEzNTEzNzcwOjZhOThjZmYxODcyNGJmODUyMjYwYTdlMGJjMjgxZTRkNTBmOWUyZTY=",
+    "url": "https://api.github.com/repos/louiscklaw/trello-playlist/git/commits/6a98cff18724bf852260a7e0bc281e4d50f9e2e6",
+    "html_url": "https://github.com/louiscklaw/trello-playlist/commit/6a98cff18724bf852260a7e0bc281e4d50f9e2e6",
+    "author": {
+      "name": "trello_import_js",
+      "email": "trello_import_js@github.com",
+      "date": "2020-11-17T07:10:25Z"
+    },
+    "committer": {
+      "name": "trello_import_js",
+      "email": "trello_import_js@github.com",
+      "date": "2020-11-17T07:10:25Z"
+    },
+    "tree": {
+      "sha": "33d65390e227e06d1734b1b326a915018b405807",
+      "url": "https://api.github.com/repos/louiscklaw/trello-playlist/git/trees/33d65390e227e06d1734b1b326a915018b405807"
+    },
+    "message": "my commit message",
+    "parents": [
+      {
+        "sha": "4ca5ea849b3fb0f59e2bb509c5dfcaccf32f0871",
+        "url": "https://api.github.com/repos/louiscklaw/trello-playlist/git/commits/4ca5ea849b3fb0f59e2bb509c5dfcaccf32f0871",
+        "html_url": "https://github.com/louiscklaw/trello-playlist/commit/4ca5ea849b3fb0f59e2bb509c5dfcaccf32f0871"
+      }
+    ],
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null
+    }
+  }
+}

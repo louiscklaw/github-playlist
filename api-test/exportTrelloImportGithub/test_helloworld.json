@@ -1,0 +1,230 @@
+{
+
+  "cards": [ {
+    "id": "5fb224b002c4141efa57b7b1",
+    "address": null,
+    "checkItemStates": null,
+    "closed": false,
+    "coordinates": null,
+    "creationMethod": null,
+    "dateLastActivity": "2020-11-16T07:05:20.550Z",
+    "desc": "Steps to reproduce:\ni. User view menu, http://food.lynked.co.jp/food/%E6%A8%A9%E4%B9%9D/\nii. User add food into cart\niii. User try to place order\niv. User will be prompt to do lineup\nv. User direct press take a number without filling anything.\nvi. User try to place order again.\nvii. Observe\n\nExpected result:\nUser should not allowed to send order successfully\n\nActual result:\nUser is able to send order successfully without lineup",
+    "descData": null,
+    "dueReminder": null,
+    "idBoard": "5fb2247b8577f0090b8a8bdf",
+    "idLabels": [ "5fb224b002c4141efa57b7c9" ],
+    "idList": "5fb2247b8577f0090b8a8be0",
+    "idMembersVoted": [],
+    "idShort": 1,
+    "idAttachmentCover": "5fb224b002c4141efa57b7b9",
+    "locationName": null,
+    "manualCoverAttachment": false,
+    "name": "[Bug] When user send order without lineup, just click take a number, back to send order successfully",
+    "pos": 16384,
+    "shortLink": "ElBOFgL6",
+    "isTemplate": false,
+    "cardRole": null,
+    "badges": {
+      "attachmentsByType": {
+        "trello": {
+          "board": 0,
+          "card": 0
+        }
+      },
+      "location": false,
+      "votes": 0,
+      "viewingMemberVoted": false,
+      "subscribed": false,
+      "fogbugz": "",
+      "checkItems": 0,
+      "checkItemsChecked": 0,
+      "checkItemsEarliestDue": null,
+      "comments": 2,
+      "attachments": 1,
+      "description": true,
+      "due": null,
+      "dueComplete": false,
+      "start": null
+    },
+    "dueComplete": false,
+    "due": null,
+    "email": "louis27642632+2vda3x4z8c7nsp31xqg+2vda80q6swtt34xxnsh+04vsl55cha@boards.trello.com",
+    "idChecklists": [],
+    "idMembers": [],
+    "labels": [ {
+      "id": "5fb224b002c4141efa57b7c9",
+      "idBoard": "5fb2247b8577f0090b8a8bdf",
+      "name": "Bug",
+      "color": "red"
+    },{
+      "id": "5fb224b002c4141efa57b7c9",
+      "idBoard": "5fb2247b8577f0090b8a8bdf",
+      "name": "Bug1",
+      "color": "red"
+    } ],
+    "limits": {
+      "attachments": {
+        "perCard": {
+          "status": "ok",
+          "disableAt": 1000,
+          "warnAt": 900
+        }
+      },
+      "checklists": {
+        "perCard": {
+          "status": "ok",
+          "disableAt": 500,
+          "warnAt": 450
+        }
+      },
+      "stickers": {
+        "perCard": {
+          "status": "ok",
+          "disableAt": 70,
+          "warnAt": 63
+        }
+      }
+    },
+    "shortUrl": "https://trello.com/c/ElBOFgL6",
+    "start": null,
+    "subscribed": false,
+    "url": "https://trello.com/c/ElBOFgL6/1-bug-when-user-send-order-without-lineup-just-click-take-a-number-back-to-send-order-successfully",
+    "cover": {
+      "idAttachment": "5fb224b002c4141efa57b7b9",
+      "color": null,
+      "idUploadedBackground": null,
+      "size": "normal",
+      "brightness": "light",
+      "scaled": [ {
+        "_id": "5fb224b002c4141efa57b7b2",
+        "id": "5fb224b002c4141efa57b7b2",
+        "scaled": false,
+        "url": "https://trello-attachments.s3.amazonaws.com/5fb2247b8577f0090b8a8bdf/5fb224b002c4141efa57b7b1/70x50/0d736988a09b69fe282bb6dd2c8481a2/image.png",
+        "bytes": 862,
+        "height": 50,
+        "width": 70
+      }, {
+        "_id": "5fb224b002c4141efa57b7b3",
+        "id": "5fb224b002c4141efa57b7b3",
+        "scaled": false,
+        "url": "https://trello-attachments.s3.amazonaws.com/5fb2247b8577f0090b8a8bdf/5fb224b002c4141efa57b7b1/250x150/c478a8d489da98b6d9be9fb8ea3c185d/image.png",
+        "bytes": 3858,
+        "height": 150,
+        "width": 250
+      }, {
+        "_id": "5fb224b002c4141efa57b7b4",
+        "id": "5fb224b002c4141efa57b7b4",
+        "scaled": true,
+        "url": "https://trello-attachments.s3.amazonaws.com/5fb2247b8577f0090b8a8bdf/5fb224b002c4141efa57b7b1/149x64/0de37dd491ef80a615d593db5f962f1d/image.png",
+        "bytes": 2207,
+        "height": 64,
+        "width": 149
+      }, {
+        "_id": "5fb224b002c4141efa57b7b5",
+        "id": "5fb224b002c4141efa57b7b5",
+        "scaled": true,
+        "url": "https://trello-attachments.s3.amazonaws.com/5fb2247b8577f0090b8a8bdf/5fb224b002c4141efa57b7b1/300x129/606740febee2220f9541caa706674631/image.png",
+        "bytes": 5229,
+        "height": 129,
+        "width": 300
+      }, {
+        "_id": "5fb224b002c4141efa57b7b6",
+        "id": "5fb224b002c4141efa57b7b6",
+        "scaled": true,
+        "url": "https://trello-attachments.s3.amazonaws.com/5fb2247b8577f0090b8a8bdf/5fb224b002c4141efa57b7b1/600x258/452e73d944ce0ddba060a95a0c0f4ae4/image.png",
+        "bytes": 13558,
+        "height": 258,
+        "width": 600
+      }, {
+        "_id": "5fb224b002c4141efa57b7b7",
+        "id": "5fb224b002c4141efa57b7b7",
+        "scaled": true,
+        "url": "https://trello-attachments.s3.amazonaws.com/5fb2247b8577f0090b8a8bdf/5fb224b002c4141efa57b7b1/1200x516/b5587a296ad1d3613002916b111de639/image.png",
+        "bytes": 34469,
+        "height": 516,
+        "width": 1200
+      }, {
+        "_id": "5fb224b002c4141efa57b7b8",
+        "id": "5fb224b002c4141efa57b7b8",
+        "scaled": true,
+        "url": "https://trello-attachments.s3.amazonaws.com/5fb2247b8577f0090b8a8bdf/5fb224b002c4141efa57b7b1/1882x809/c0328c7fd3465d54af03f5ec1e5658aa/image.png",
+        "bytes": 45917,
+        "height": 809,
+        "width": 1882
+      } ],
+      "edgeColor": "#e3e3eb"
+    },
+    "attachments": [ {
+      "bytes": 45917,
+      "date": "2020-09-16T01:04:36.447Z",
+      "edgeColor": "#e3e3eb",
+      "idMember": "5fb224b002c4141efa57b7ba",
+      "isUpload": true,
+      "mimeType": "image/png",
+      "name": "image.png",
+      "previews": [ {
+        "_id": "5fb224b002c4141efa57b7b2",
+        "id": "5fb224b002c4141efa57b7b2",
+        "scaled": false,
+        "url": "https://trello-attachments.s3.amazonaws.com/5fb2247b8577f0090b8a8bdf/5fb224b002c4141efa57b7b1/70x50/0d736988a09b69fe282bb6dd2c8481a2/image.png",
+        "bytes": 862,
+        "height": 50,
+        "width": 70
+      }, {
+        "_id": "5fb224b002c4141efa57b7b3",
+        "id": "5fb224b002c4141efa57b7b3",
+        "scaled": false,
+        "url": "https://trello-attachments.s3.amazonaws.com/5fb2247b8577f0090b8a8bdf/5fb224b002c4141efa57b7b1/250x150/c478a8d489da98b6d9be9fb8ea3c185d/image.png",
+        "bytes": 3858,
+        "height": 150,
+        "width": 250
+      }, {
+        "_id": "5fb224b002c4141efa57b7b4",
+        "id": "5fb224b002c4141efa57b7b4",
+        "scaled": true,
+        "url": "https://trello-attachments.s3.amazonaws.com/5fb2247b8577f0090b8a8bdf/5fb224b002c4141efa57b7b1/149x64/0de37dd491ef80a615d593db5f962f1d/image.png",
+        "bytes": 2207,
+        "height": 64,
+        "width": 149
+      }, {
+        "_id": "5fb224b002c4141efa57b7b5",
+        "id": "5fb224b002c4141efa57b7b5",
+        "scaled": true,
+        "url": "https://trello-attachments.s3.amazonaws.com/5fb2247b8577f0090b8a8bdf/5fb224b002c4141efa57b7b1/300x129/606740febee2220f9541caa706674631/image.png",
+        "bytes": 5229,
+        "height": 129,
+        "width": 300
+      }, {
+        "_id": "5fb224b002c4141efa57b7b6",
+        "id": "5fb224b002c4141efa57b7b6",
+        "scaled": true,
+        "url": "https://trello-attachments.s3.amazonaws.com/5fb2247b8577f0090b8a8bdf/5fb224b002c4141efa57b7b1/600x258/452e73d944ce0ddba060a95a0c0f4ae4/image.png",
+        "bytes": 13558,
+        "height": 258,
+        "width": 600
+      }, {
+        "_id": "5fb224b002c4141efa57b7b7",
+        "id": "5fb224b002c4141efa57b7b7",
+        "scaled": true,
+        "url": "https://trello-attachments.s3.amazonaws.com/5fb2247b8577f0090b8a8bdf/5fb224b002c4141efa57b7b1/1200x516/b5587a296ad1d3613002916b111de639/image.png",
+        "bytes": 34469,
+        "height": 516,
+        "width": 1200
+      }, {
+        "_id": "5fb224b002c4141efa57b7b8",
+        "id": "5fb224b002c4141efa57b7b8",
+        "scaled": true,
+        "url": "https://trello-attachments.s3.amazonaws.com/5fb2247b8577f0090b8a8bdf/5fb224b002c4141efa57b7b1/1882x809/c0328c7fd3465d54af03f5ec1e5658aa/image.png",
+        "bytes": 45917,
+        "height": 809,
+        "width": 1882
+      } ],
+      "url": "https://trello-attachments.s3.amazonaws.com/5fb2247b8577f0090b8a8bdf/5fb224b002c4141efa57b7b1/x/fd0c9bc88afd7beee500d26f37a2ceaf/image.png",
+      "pos": 16384,
+      "fileName": "image.png",
+      "id": "5fb224b002c4141efa57b7b9"
+    } ],
+    "pluginData": [],
+    "customFieldItems": []
+  }]
+}

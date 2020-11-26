@@ -1,3 +1,4 @@
+# /home/logic/_workspace/github-playlist/scripts/update_shortcut.py
 import os,sys
 import subprocess
 import shlex
@@ -9,6 +10,7 @@ ENV_FILE_TO_UPDATE=sys.argv[1]
 new_command_template='''
 new_from_##PROJ_NAME##(){
   new_from ##PROJ_DIR_NAME##
+  ./init.sh
   ./run.sh
 }
 '''

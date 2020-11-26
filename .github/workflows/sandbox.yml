@@ -30,6 +30,10 @@ jobs:
       - name: Build with Gradle
         run: gradle cleanTest test --tests "com.example.chrome.MobileChromeTest"
         continue-on-error: true
+
+      - name: check python version
+        run: python3 -V
+
       - name: Upload logs
         uses: actions/upload-artifact@v1
         with:

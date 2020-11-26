@@ -14,7 +14,9 @@ echo '3'
 brew install node
 
 echo '4'
+npm i -g npm@latest
 npm install -g appium
+npm install -g appium-doctor
 
 echo '5'
 npm install wd

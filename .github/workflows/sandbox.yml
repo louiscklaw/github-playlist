@@ -13,4 +13,4 @@ jobs:
       uses: reactivecircus/android-emulator-runner@v2.2.0
       with:
         api-level: 29
-        script: adb devices -l
+        script: sh ./github-android-emulator-tryout/scripts.sh

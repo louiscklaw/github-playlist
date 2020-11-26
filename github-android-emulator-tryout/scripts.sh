@@ -17,3 +17,6 @@ npm install -g appium
 
 echo '5'
 npm install wd
+
+echo '6'
+appium --port 4724 --address 10.10.1.40

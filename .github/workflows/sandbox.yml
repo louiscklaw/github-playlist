@@ -37,17 +37,14 @@ jobs:
           python3 -m pip install pip --upgrade
           python3 -m pip install pipenv
           pipenv --version
+
+      - name: python appium test
+        run: |
+          echo 'start python appium test'
           pushd github-android-emulator-tryout
             pipenv sync
-          popd
-
-
-      - name: check python version
-        run: |
-          pushd github-android-emulator-tryout
             pipenv run python3 appium-helloworld.py
           popd
-
 
       - name: Upload logs
         uses: actions/upload-artifact@v1

@@ -13,7 +13,8 @@ desired_caps = {
   "appActivity": "com.google.android.apps.chrome.Main",
   "automationName": "UiAutomator2",
   "app":'{}/apk_pool/ApiDemos-debug.apk'.format(CURR_DIR),
-  "deviceName":"emulator-5554"
+  "deviceName":"emulator-5554",
+  "uiautomator2ServerInstallTimeout": 2*60*1000
 }
 
 def getScreenShot(driver, sc_filename):

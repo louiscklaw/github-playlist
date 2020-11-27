@@ -12,7 +12,8 @@ desired_caps = {
   "appPackage": "com.android.chrome",
   "appActivity": "com.google.android.apps.chrome.Main",
   "automationName": "UiAutomator2",
-  "app":'{}/apk_pool/ApiDemos-debug.apk'.format(CURR_DIR)
+  "app":'{}/apk_pool/ApiDemos-debug.apk'.format(CURR_DIR),
+  "deviceName":"emulator-5554"
 }
 
 def getScreenShot(driver, sc_filename):

@@ -5,7 +5,7 @@ on: [push, pull_request]
 jobs:
   build:
     name: Mobile Chrome Test
-    runs-on: macOS-10.14
+    runs-on: macOS-latest
     steps:
       - name: Checkout source code
         uses: actions/checkout@v1

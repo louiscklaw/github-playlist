@@ -3,6 +3,7 @@ github_actions_add_and_commit_tryout:
   steps:
     - uses: actions/checkout@v2
       with:
+        ref: 'master'
         repository: 'LynkedKK/QA_test_result'
         path: "result_placeholder"
 

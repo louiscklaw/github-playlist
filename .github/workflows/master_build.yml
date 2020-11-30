@@ -201,7 +201,7 @@ jobs:
         run: |
           git config --global user.email "louiscklaw@gmail.com"
           git config --global user.name "louiscklaw"
-          git clone https://louiscklaw:$LOUISCKLAW_GITHUB_TOKEN@github.com/louiscklaw/github-playlist.git --branch=master QA_test_result
+          git clone https://louiscklaw:$LOUISCKLAW_GITHUB_TOKEN@github.com/louiscklaw/hello-result.git --branch=master QA_test_result
           echo 2 > QA_test_result/helloworld.txt
           ls -l QA_test_result
           cd QA_test_result

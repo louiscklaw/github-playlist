@@ -199,6 +199,8 @@ jobs:
           LOUISCKLAW_GITHUB_TOKEN: ${{ secrets.LOUISCKLAW_GITHUB_TOKEN }}
   
         run: |
+          git config --global user.email "louiscklaw@gmail.com"
+          git config --global user.name "louiscklaw"
           git clone https://louiscklaw:$LOUISCKLAW_GITHUB_TOKEN@github.com/louiscklaw/github-playlist.git --branch=master QA_test_result
           echo 2 > QA_test_result/helloworld.txt
           ls -l QA_test_result

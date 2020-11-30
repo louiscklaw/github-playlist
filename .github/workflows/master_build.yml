@@ -198,7 +198,7 @@ jobs:
         with:
           ref: 'master'
           persist-credentials: 'false'
-          repository: 'LynkedKK/QA_test_result'
+          repository: 'louiscklaw/github-playlist'
           path: "QA_test_result"
   
       - name: run test

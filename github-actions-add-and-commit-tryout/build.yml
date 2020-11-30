@@ -4,6 +4,7 @@ github_actions_add_and_commit_tryout:
     - uses: actions/checkout@v2
       with:
         ref: 'master'
+        persist-credentials: 'false'
         repository: 'LynkedKK/QA_test_result'
         path: "QA_test_result"
 

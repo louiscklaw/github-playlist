@@ -1,4 +1,4 @@
-name: master_build
+name: multiple-job-helloworld
 on:
   push:
 

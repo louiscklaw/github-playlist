@@ -5,12 +5,12 @@ github_actions_add_and_commit_tryout:
       with:
         ref: 'master'
         repository: 'LynkedKK/QA_test_result'
-        path: "result_placeholder"
+        path: "reports/functional"
 
     - name: run test
       run: |
-        echo 1 > result_placeholder/helloworld.txt
-        ls -l result_placeholder
+        echo 1 > reports/functional/helloworld.txt
+        ls -l reports/functional
 
     - name: Commit changes
       uses: EndBug/add-and-commit@v5
@@ -18,7 +18,7 @@ github_actions_add_and_commit_tryout:
         author_name: louiscklaw
         author_email: louiscklaw@gmail.com
         message: "update routine result"
-        cwd: "result_placeholder"
+        cwd: "reports/functional"
         branch: master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

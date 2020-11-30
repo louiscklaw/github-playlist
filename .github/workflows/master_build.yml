@@ -197,7 +197,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: 'master'
-          persist-credentials: 'false'
           repository: 'louiscklaw/github-playlist'
           path: "QA_test_result"
   

@@ -9,7 +9,8 @@ github_actions_add_and_commit_tryout:
 
     - name: run test
       run: |
-        touch result_placeholder/helloworld.txt
+        echo 1 > result_placeholder/helloworld.txt
+        ls -l result_placeholder
 
     - name: Commit changes
       uses: EndBug/add-and-commit@v5
@@ -18,5 +19,6 @@ github_actions_add_and_commit_tryout:
         author_email: louiscklaw@gmail.com
         message: "update routine result"
         cwd: "result_placeholder"
+        branch: master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

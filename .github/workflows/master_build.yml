@@ -189,6 +189,29 @@ jobs:
             yarn build --prefix-paths --verbose
   
   # 
+  # /home/logic/_workspace/github-playlist/github-actions-add-and-commit-tryout/build.yml
+  # 
+  github_actions_add_and_commit_tryout:
+    - uses: actions/checkout@v2
+      with:
+        repository: 'https://github.com/LynkedKK/QA_test_result'
+        path: "result_placeholder"
+  
+    - name: run test
+      run: |
+        touch result_placeholder/helloworld.txt
+  
+    - name: Commit changes
+      uses: EndBug/add-and-commit@v5
+      with:
+        author_name: louiscklaw
+        author_email: louiscklaw@gmail.com
+        message: "update routine result"
+        cwd: "result_placeholder"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
+  # 
   # /home/logic/_workspace/github-playlist/github-actions-checkout-orphan-branch-tryout/build.yml
   # 
   github-actions-checkout-orphan-branch-tryout:
@@ -439,7 +462,7 @@ jobs:
           github-build-merger-tryout/test.sh
   
   merge:
-    needs: [action_secrets_tryout, action_slack_custom_message_tryout, action_upload_artifact_tryout, actions_react_tryout, build-dashboard-tryout, build-linux, build-macos, build-windows, github-actions-checkout-orphan-branch-tryout, github-actions-firebase-tryout, github-actions-long-duration-tryout, github-actions-multistage-tryout, github-actions-orphan-tryout, github-lighthouse-tryout, github_actions_helloworld_tryout, github_environ_tryout, puppeteer_helloworld, python_helloworld_tryout, test_merger]
+    needs: [action_secrets_tryout, action_slack_custom_message_tryout, action_upload_artifact_tryout, actions_react_tryout, build-dashboard-tryout, build-linux, build-macos, build-windows, github-actions-checkout-orphan-branch-tryout, github-actions-firebase-tryout, github-actions-long-duration-tryout, github-actions-multistage-tryout, github-actions-orphan-tryout, github-lighthouse-tryout, github_actions_add_and_commit_tryout, github_actions_helloworld_tryout, github_environ_tryout, puppeteer_helloworld, python_helloworld_tryout, test_merger]
     runs-on: ubuntu-latest
     steps:
       - name: checkout

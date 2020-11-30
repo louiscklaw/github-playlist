@@ -197,7 +197,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: 'master'
-          repository: 'louiscklaw/github-playlist'
+          repository: 'LynkedKK/QA_test_result'
           path: "QA_test_result"
   
       - name: run test

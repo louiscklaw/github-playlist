@@ -192,24 +192,26 @@ jobs:
   # /home/logic/_workspace/github-playlist/github-actions-add-and-commit-tryout/build.yml
   # 
   github_actions_add_and_commit_tryout:
-    - uses: actions/checkout@v2
-      with:
-        repository: 'https://github.com/LynkedKK/QA_test_result'
-        path: "result_placeholder"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: 'https://github.com/LynkedKK/QA_test_result'
+          path: "result_placeholder"
   
-    - name: run test
-      run: |
-        touch result_placeholder/helloworld.txt
+      - name: run test
+        run: |
+          touch result_placeholder/helloworld.txt
   
-    - name: Commit changes
-      uses: EndBug/add-and-commit@v5
-      with:
-        author_name: louiscklaw
-        author_email: louiscklaw@gmail.com
-        message: "update routine result"
-        cwd: "result_placeholder"
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v5
+        with:
+          author_name: louiscklaw
+          author_email: louiscklaw@gmail.com
+          message: "update routine result"
+          cwd: "result_placeholder"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   
   # 
   # /home/logic/_workspace/github-playlist/github-actions-checkout-orphan-branch-tryout/build.yml

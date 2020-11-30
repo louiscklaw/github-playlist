@@ -196,7 +196,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          repository: 'https://github.com/LynkedKK/QA_test_result'
+          repository: 'LynkedKK/QA_test_result'
           path: "result_placeholder"
   
       - name: run test

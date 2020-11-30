@@ -198,12 +198,12 @@ jobs:
         with:
           ref: 'master'
           repository: 'LynkedKK/QA_test_result'
-          path: "reports/functional"
+          path: "QA_test_result"
   
       - name: run test
         run: |
-          echo 1 > reports/functional/helloworld.txt
-          ls -l reports/functional
+          echo 1 > QA_test_result/helloworld.txt
+          ls -l QA_test_result
   
       - name: Commit changes
         uses: EndBug/add-and-commit@v5
@@ -211,7 +211,7 @@ jobs:
           author_name: louiscklaw
           author_email: louiscklaw@gmail.com
           message: "update routine result"
-          cwd: "reports/functional"
+          cwd: "QA_test_result"
           branch: master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

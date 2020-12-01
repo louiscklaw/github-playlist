@@ -16,6 +16,9 @@ jobs:
 
 
       - name: turn on android emulators
+        env:
+          ADB_ANDROID_A: adb -s emulator-5554
+          ADB_ANDROID_B: adb -s emulator-5556
         run: |
           echo "y" | $ANDROID_HOME/tools/bin/sdkmanager --install 'system-images;android-27;google_apis;x86'
 

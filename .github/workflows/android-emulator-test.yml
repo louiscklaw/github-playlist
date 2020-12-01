@@ -9,17 +9,22 @@ jobs:
     steps:
       - name: Checkout source code
         uses: actions/checkout@v1
+
       - name: Set up Node.js
         uses: actions/setup-node@v1
         with:
           node-version: '10.16.3'
 
-
       - name: turn on android emulators
         env:
-          ADB_ANDROID_A: adb -s emulator-5554
-          ADB_ANDROID_B: adb -s emulator-5556
+          ANDROID_NAMES: (xamarin_android_emulator_a xamarin_android_emulator_b)
+          ADB_ANDROIDS: ('adb -s emulator-5554' 'adb -s emulator-5556')
         run: |
+          for i in ${ANDROID_NAMES[@]}
+          do
+            echo $i
+          done
+
           echo "y" | $ANDROID_HOME/tools/bin/sdkmanager --install 'system-images;android-27;google_apis;x86'
 
           echo "no" | $ANDROID_HOME/tools/bin/avdmanager create avd -n xamarin_android_emulator_a -k 'system-images;android-27;google_apis;x86' --force

@@ -16,11 +16,10 @@ jobs:
       #     node-version: '10.16.3'
 
       - name: turn on android emulators
-        env:
-          ANDROID_NAMES: ['xamarin_android_emulator_a', 'xamarin_android_emulator_b']
-          ADB_ANDROIDS: ['adb -s emulator-5554', 'adb -s emulator-5556']
-
         run: |
+          ANDROID_NAMES=(xamarin_android_emulator_a xamarin_android_emulator_b)
+          ADB_ANDROIDS=('adb -s emulator-5554' 'adb -s emulator-5556')
+
           for i in {0..1}
           do
             echo ${ADB_ANDROIDS[$i]}

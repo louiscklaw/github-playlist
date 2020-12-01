@@ -36,6 +36,18 @@ jobs:
           $ANDROID_HOME/platform-tools/adb devices
           echo "Emulator started"
 
+          while [ "$(adb -s emulator-5554 shell getprop sys.boot_completed | tr -d '\r')" != "1" ]; do
+            echo "Still waiting for boot.."
+            sleep 1
+          done
+
+          while [ "$(adb -s emulator-5556 shell getprop sys.boot_completed | tr -d '\r')" != "1" ]; do
+            echo "Still waiting for boot.."
+            sleep 1
+          done
+
+          echo 'emulator boot complete'
+
           adb devices -l
 
       - name: Set up Appium

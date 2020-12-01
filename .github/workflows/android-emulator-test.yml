@@ -20,10 +20,17 @@ jobs:
           ANDROID_NAMES=(xamarin_android_emulator_a xamarin_android_emulator_b)
           ADB_ANDROIDS=('adb -s emulator-5554' 'adb -s emulator-5556')
 
+          echo "y" | $ANDROID_HOME/tools/bin/sdkmanager --install 'system-images;android-27;google_apis;x86'
+
           for i in {0..1}
           do
             echo ${ADB_ANDROIDS[$i]}
             echo ${ANDROID_NAMES[$i]}
+
+            ACTIVE_ANDROID_NAME=${ANDROID_NAMES[$i]}
+            ACTIVE_ADB_ANDROID=${ADB_ANDROIDS[$i]}
+
+            echo "no" | $ANDROID_HOME/tools/bin/avdmanager create avd -n $ACTIVE_ANDROID_NAME -k 'system-images;android-27;google_apis;x86' --force
 
           done
 

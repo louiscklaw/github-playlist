@@ -24,6 +24,8 @@ jobs:
           do
             echo ${ADB_ANDROIDS[$i]}
             echo ${ANDROID_NAMES[$i]}
+
+            echo "y" | $ANDROID_HOME/tools/bin/sdkmanager --install 'system-images;android-27;google_apis;x86'
           done
 
       # - name: turn on android emulators

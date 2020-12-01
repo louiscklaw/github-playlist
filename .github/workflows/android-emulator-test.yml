@@ -15,7 +15,7 @@ jobs:
           node-version: '10.16.3'
 
 
-      - name: Run Android Emulator A
+      - name: turn on android emulators
         run: |
           echo "y" | $ANDROID_HOME/tools/bin/sdkmanager --install 'system-images;android-27;google_apis;x86'
 

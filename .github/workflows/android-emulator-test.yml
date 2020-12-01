@@ -19,10 +19,9 @@ jobs:
         env:
           ANDROID_NAMES: (xamarin_android_emulator_a xamarin_android_emulator_b)
           ADB_ANDROIDS: ('adb -s emulator-5554' 'adb -s emulator-5556')
-          ADB_IDX: $(seq 0 1)
 
         run: |
-          for i in $ADB_IDX
+          for i in {0..1}
           do
             echo ${ADB_ANDROIDS[$i]}
             echo ${ANDROID_NAMES[$i]}

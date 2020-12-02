@@ -4,7 +4,7 @@ name: Pre-Commit E2E Tests in iOS
 on:
   push:
     branches:
-      - [test/ios-emulator-tryout, testbranch]
+      - testbranch
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

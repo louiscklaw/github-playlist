@@ -32,6 +32,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: logs
-          path: github-actions-ios-emulator-tryout/**/*.log
-          path: github-actions-ios-emulator-tryout/**/*.png
-          path: github-actions-ios-emulator-tryout/**/*.mp4
+          path: |
+            github-actions-ios-emulator-tryout/**/*.log
+            github-actions-ios-emulator-tryout/**/*.png
+            github-actions-ios-emulator-tryout/**/*.mp4

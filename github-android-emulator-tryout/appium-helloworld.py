@@ -14,27 +14,9 @@ desired_caps_A = {
   "automationName": "UiAutomator2",
   "app":'{}/apk_pool/ApiDemos-debug.apk'.format(CURR_DIR),
   "deviceName":"emulator-5554",
-  "uiautomator2ServerInstallTimeout": 2*60*1000
-}
-
-desired_caps_B = {
-  "platformName": "Android",
-  "appPackage": "com.android.chrome",
-  "appActivity": "com.google.android.apps.chrome.Main",
-  "automationName": "UiAutomator2",
-  "app":'{}/apk_pool/ApiDemos-debug.apk'.format(CURR_DIR),
-  "deviceName":"emulator-5556",
-  "uiautomator2ServerInstallTimeout": 2*60*1000
-}
-
-desired_caps_C = {
-  "platformName": "Android",
-  "appPackage": "com.android.chrome",
-  "appActivity": "com.google.android.apps.chrome.Main",
-  "automationName": "UiAutomator2",
-  "app":'{}/apk_pool/ApiDemos-debug.apk'.format(CURR_DIR),
-  "deviceName":"emulator-5558",
-  "uiautomator2ServerInstallTimeout": 2*60*1000
+  "uiautomator2ServerInstallTimeout": 2*60*1000,
+  "loggingPrefs": {"browser":"ALL"},
+  # "goog:loggingPrefs": {"browser":"ALL"}
 }
 
 def getScreenShot(driver, sc_filename):
@@ -43,12 +25,45 @@ def getScreenShot(driver, sc_filename):
     fh.write(base64.urlsafe_b64decode(img_data))
 
 # This will launch your Android application.
-driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
+driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps_A)
 driver.implicitly_wait(30)
 
 sleep(3)
 
-getScreenShot(driver, '{}/hello_chrome.png'.format(SCREEN_CAPTURE_DIR))
+# driver.get('http://menymeny.com/manage/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/')
+driver.get('http://127.0.0.1:37103/github-android-emulator-tryout/helloworld.html')
+# sleep(5)
+# getScreenShot(driver, '{}/menymeny_manage_screenshot.png'.format(SCREEN_CAPTURE_DIR))
+
+from pprint import pprint
+import json
+pprint(dir(driver))
+
+
+context = driver.current_context
+driver.switch_to.context("NATIVE_APP")
+sleep(1)
+driver.find_element_by_id("com.android.chrome:id/terms_accept").click()
+sleep(1)
+
+driver.find_element_by_id("com.android.chrome:id/negative_button").click()
+sleep(1)
+
+
+driver.get("https://aboutme.louislabs.com/")
+sleep(15)
+
+driver.switch_to.context("WEBVIEW_chrome")
+
+fo=open('./browser.log','w')
+fo.writelines(json.dumps(driver.get_log('browser')))
+
+# android
+# fo=open('./logcat.log','w')
+# fo.writelines(json.dumps(driver.get_log('logcat')))
+
+# fo=open('./bugreport.log','w')
+# fo.writelines(json.dumps(driver.get_log('bugreport')))
 
 driver.quit()
 

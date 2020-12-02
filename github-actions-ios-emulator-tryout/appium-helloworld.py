@@ -36,27 +36,29 @@ driver.implicitly_wait(30)
 # sleep(30)
 # getScreenShot(driver, '{}/menymeny_manage_screenshot.png'.format(SCREEN_CAPTURE_DIR))
 
-# driver.get('http://menymeny.com/food/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/')
-# sleep(30)
-# getScreenShot(driver, '{}/menymeny_food_screenshot.png'.format(SCREEN_CAPTURE_DIR))
-
 # driver.get('http://menymeny.com/admin/')
 # sleep(30)
 # getScreenShot(driver, '{}/menymeny_admin_screenshot.png'.format(SCREEN_CAPTURE_DIR))
 
 
+# driver.get('http://menymeny.com/food/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/')
+# sleep(30)
+# getScreenShot(driver, '{}/menymeny_food_screenshot.png'.format(SCREEN_CAPTURE_DIR))
 
+try:
+  print('driver.contexts')
+  print(json.dumps(driver.contexts))
+  # driver.switch_to.context("WEBVIEW_chrome")
 
-driver.get("https://aboutme.louislabs.com/")
-sleep(15)
+  driver.get("https://aboutme.louislabs.com/")
+  sleep(15)
 
-driver.switch_to.context("WEBVIEW_chrome")
+  fo=open('./browser_food.log','w')
+  fo.writelines(json.dumps(driver.get_log('browser')))
 
-# fo=open('./logcat.log','w')
-# fo.writelines(json.dumps(driver.get_log('logcat')))
-
-fo=open('./browser.log','w')
-fo.writelines(json.dumps(driver.get_log('browser')))
+  pass
+finally:
+  pass
 
 
 # el = driver.find_element_by_accessibility_id('item')

@@ -33,6 +33,6 @@ jobs:
         with:
           name: logs
           path: |
-            github-actions-ios-emulator-tryout/**/*.log
-            github-actions-ios-emulator-tryout/**/*.png
-            github-actions-ios-emulator-tryout/**/*.mp4
+            github-actions-ios-emulator-tryout/*.log
+            github-actions-ios-emulator-tryout/*.png
+            github-actions-ios-emulator-tryout/*.mp4

@@ -49,10 +49,19 @@ def writeLog(filename, content):
   fo=open(filename,'w')
   fo.writelines(content)
 
+def saveRecordingScreen(driver, video_name):
+  video_rawdata = driver.stop_recording_screen()
+
+  filepath = os.path.join("{}/{}".format(VIDEO_PATH, video_name))
+  with open(filepath, "wb") as vd:
+      vd.write(base64.b64decode(video_rawdata))
+
 try:
   print('driver.contexts')
   print(json.dumps(driver.contexts))
   # driver.switch_to.context("WEBVIEW_chrome")
+
+  driver.start_recording_screen()
 
   driver.get("https://aboutme.louislabs.com/")
   sleep(15)
@@ -88,5 +97,7 @@ except Exception as e:
   raise e
 
 finally:
+  saveRecordingScreen(driver, './test.mp4')
+
   driver.quit()
   print('done')

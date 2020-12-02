@@ -4,7 +4,7 @@ from appium import webdriver
 
 desired_caps = dict(
     platformName='iOS',
-    platformVersion='13.4',
+    platformVersion='11.4',
     automationName='xcuitest',
     deviceName='iPhone Simulator',
     # app=PATH('../../apps/UICatalog.app.zip')

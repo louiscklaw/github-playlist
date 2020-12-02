@@ -1,6 +1,8 @@
 name: multiple-job-helloworld
 on:
   push:
+    branches:
+      - test/multiple-job-helloworld
 
 jobs:
   #

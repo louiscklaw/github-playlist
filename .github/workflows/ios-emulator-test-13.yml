@@ -57,9 +57,14 @@ jobs:
       # Install Repo and Dependencies
       - name: Install Repo and Dependencies
         run: |
+          brew install ffmpeg
+
           cd github-actions-ios-emulator-tryout
             npm install --save-dev
+            npm install appium-doctor
+            ./node_modules/.bin/appium-doctor
           cd -
+
       # Start the Appium Server
       - name: Start the Appium Server
         run: |

@@ -19,31 +19,30 @@ desired_caps = dict(
     browserName='safari',
     loggingPrefs={"browser":"ALL"}
 )
+desired_caps["goog:loggingPrefs"]={"browser":"ALL"}
 
 def getScreenShot(driver, sc_filename):
   img_data = driver.get_screenshot_as_base64()
   with open(sc_filename, "wb") as fh:
     fh.write(base64.urlsafe_b64decode(img_data))
 
-driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
-driver.implicitly_wait(30)
+# driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+# driver.implicitly_wait(30)
 
-# https://www.whatismybrowser.com/detect/what-http-headers-is-my-browser-sending
-# driver.get('https://www.whatismybrowser.com/detect/what-http-headers-is-my-browser-sending');
-# getScreenShot(driver, '{}/check_browser.png'.format(SCREEN_CAPTURE_DIR))
+class driver:
+  contexts='hello contexts'
+  def get_log(text):
+    return text
 
-# driver.get('http://menymeny.com/manage/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/')
-# sleep(30)
-# getScreenShot(driver, '{}/menymeny_manage_screenshot.png'.format(SCREEN_CAPTURE_DIR))
+  def get(text):
+    return ''
 
-# driver.get('http://menymeny.com/admin/')
-# sleep(30)
-# getScreenShot(driver, '{}/menymeny_admin_screenshot.png'.format(SCREEN_CAPTURE_DIR))
+  def quit():
+    return ''
 
-
-# driver.get('http://menymeny.com/food/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/')
-# sleep(30)
-# getScreenShot(driver, '{}/menymeny_food_screenshot.png'.format(SCREEN_CAPTURE_DIR))
+  class switch_to:
+    def context(text):
+      return text
 
 try:
   print('driver.contexts')
@@ -51,7 +50,8 @@ try:
   # driver.switch_to.context("WEBVIEW_chrome")
 
   driver.get("https://aboutme.louislabs.com/")
-  sleep(15)
+  sleep(1)
+  driver.switch_to.context("WEBVIEW_4083.1")
 
   fo=open('./logs/browser_food.log','w')
   fo.writelines(json.dumps(driver.get_log('browser')))

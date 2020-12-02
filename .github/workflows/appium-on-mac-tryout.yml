@@ -1,6 +1,6 @@
 # https://medium.com/@sandeepqaops/setting-up-github-actions-for-react-native-mobile-app-for-ios-simulator-with-appium-96890c7bb303
 # Pre-Commit E2E Tests in iOS
-name: ios-emulator-test-14
+name: appium-on-mac-tryout
 # Controls when the action will run.
 on:
   push:

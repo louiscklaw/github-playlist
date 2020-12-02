@@ -32,7 +32,10 @@ driver.get('https://www.whatismybrowser.com/detect/what-http-headers-is-my-brows
 getScreenShot(driver, '{}/check_browser.png'.format(SCREEN_CAPTURE_DIR))
 
 driver.get('http://menymeny.com/food/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/')
-getScreenShot(driver, '{}/menymeny_screenshot.png'.format(SCREEN_CAPTURE_DIR))
+getScreenShot(driver, '{}/menymeny_food_screenshot.png'.format(SCREEN_CAPTURE_DIR))
+
+driver.get('http://menymeny.com/admin/')
+getScreenShot(driver, '{}/menymeny_admin_screenshot.png'.format(SCREEN_CAPTURE_DIR))
 
 # el = driver.find_element_by_accessibility_id('item')
 # el.click()

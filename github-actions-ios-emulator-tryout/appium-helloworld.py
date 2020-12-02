@@ -3,7 +3,7 @@ import os,sys
 from appium import webdriver
 import base64
 from time import sleep
-
+import json
 import unittest
 from appium import webdriver
 
@@ -16,7 +16,8 @@ desired_caps = dict(
     automationName='xcuitest',
     deviceName='iPhone Simulator',
     # app=PATH('../../apps/UICatalog.app.zip')
-    browserName='safari'
+    browserName='safari',
+    loggingPrefs={"browser":"ALL"}
 )
 
 def getScreenShot(driver, sc_filename):
@@ -42,6 +43,21 @@ getScreenShot(driver, '{}/menymeny_food_screenshot.png'.format(SCREEN_CAPTURE_DI
 driver.get('http://menymeny.com/admin/')
 sleep(30)
 getScreenShot(driver, '{}/menymeny_admin_screenshot.png'.format(SCREEN_CAPTURE_DIR))
+
+
+
+
+driver.get("https://aboutme.louislabs.com/")
+sleep(15)
+
+driver.switch_to.context("WEBVIEW_chrome")
+
+# fo=open('./logcat.log','w')
+# fo.writelines(json.dumps(driver.get_log('logcat')))
+
+fo=open('./browser.log','w')
+fo.writelines(json.dumps(driver.get_log('browser')))
+
 
 # el = driver.find_element_by_accessibility_id('item')
 # el.click()

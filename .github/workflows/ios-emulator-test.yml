@@ -92,6 +92,12 @@ jobs:
           name: screenshot
           path: github-actions-ios-emulator-tryout/screens
 
+      - name: Upload logs
+        uses: actions/upload-artifact@v1
+        with:
+          name: logs
+          path: github-actions-ios-emulator-tryout/logs
+
       # # Open Metro Bundler in Background
       # - name: Open Metro Bundler in Background
       #   run: |

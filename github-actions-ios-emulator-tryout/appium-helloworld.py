@@ -3,7 +3,7 @@ import os,sys
 from appium import webdriver
 import base64
 from time import sleep
-
+import json
 import unittest
 from appium import webdriver
 
@@ -16,7 +16,8 @@ desired_caps = dict(
     automationName='xcuitest',
     deviceName='iPhone Simulator',
     # app=PATH('../../apps/UICatalog.app.zip')
-    browserName='safari'
+    browserName='safari',
+    loggingPrefs={"browser":"ALL"}
 )
 
 def getScreenShot(driver, sc_filename):
@@ -28,20 +29,35 @@ driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 driver.implicitly_wait(30)
 
 # https://www.whatismybrowser.com/detect/what-http-headers-is-my-browser-sending
-driver.get('https://www.whatismybrowser.com/detect/what-http-headers-is-my-browser-sending');
-getScreenShot(driver, '{}/check_browser.png'.format(SCREEN_CAPTURE_DIR))
+# driver.get('https://www.whatismybrowser.com/detect/what-http-headers-is-my-browser-sending');
+# getScreenShot(driver, '{}/check_browser.png'.format(SCREEN_CAPTURE_DIR))
 
-driver.get('http://menymeny.com/manage/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/')
-sleep(30)
-getScreenShot(driver, '{}/menymeny_manage_screenshot.png'.format(SCREEN_CAPTURE_DIR))
+# driver.get('http://menymeny.com/manage/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/')
+# sleep(30)
+# getScreenShot(driver, '{}/menymeny_manage_screenshot.png'.format(SCREEN_CAPTURE_DIR))
 
-driver.get('http://menymeny.com/food/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/')
-sleep(30)
-getScreenShot(driver, '{}/menymeny_food_screenshot.png'.format(SCREEN_CAPTURE_DIR))
+# driver.get('http://menymeny.com/food/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/')
+# sleep(30)
+# getScreenShot(driver, '{}/menymeny_food_screenshot.png'.format(SCREEN_CAPTURE_DIR))
 
-driver.get('http://menymeny.com/admin/')
-sleep(30)
-getScreenShot(driver, '{}/menymeny_admin_screenshot.png'.format(SCREEN_CAPTURE_DIR))
+# driver.get('http://menymeny.com/admin/')
+# sleep(30)
+# getScreenShot(driver, '{}/menymeny_admin_screenshot.png'.format(SCREEN_CAPTURE_DIR))
+
+
+
+
+driver.get("https://aboutme.louislabs.com/")
+sleep(15)
+
+driver.switch_to.context("WEBVIEW_chrome")
+
+# fo=open('./logcat.log','w')
+# fo.writelines(json.dumps(driver.get_log('logcat')))
+
+fo=open('./browser.log','w')
+fo.writelines(json.dumps(driver.get_log('browser')))
+
 
 # el = driver.find_element_by_accessibility_id('item')
 # el.click()

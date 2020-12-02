@@ -21,9 +21,9 @@ jobs:
         run: |
 
           cd github-actions-ios-emulator-tryout
-            touch helloworld.log
-            touch helloworld.png
-            touch helloworld.mp4
+            echo 1 > helloworld.log
+            echo 1 > helloworld.png
+            echo 1 > helloworld.mp4
 
           cd -
 

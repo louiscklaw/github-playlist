@@ -1,6 +1,9 @@
 name: Android Emulator Test
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - test/android-emulator-tryout
 
 jobs:
   build:

@@ -1,5 +1,8 @@
 name: master_build
 on:
+  push:
+    branches:
+      - test/on-request
   repository_dispatch:
     types: do-something
 

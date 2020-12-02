@@ -1,6 +1,6 @@
 # https://medium.com/@sandeepqaops/setting-up-github-actions-for-react-native-mobile-app-for-ios-simulator-with-appium-96890c7bb303
 # Pre-Commit E2E Tests in iOS
-name: ios-emulator-test
+name: ios-emulator-test-13
 # Controls when the action will run.
 on:
   push:
@@ -84,6 +84,9 @@ jobs:
             echo 'start python appium test'
             pipenv sync
             pipenv run python3 appium-helloworld.py
+
+            ls -la
+
           cd -
 
       - name: Upload Test Results
@@ -91,6 +94,12 @@ jobs:
         with:
           name: screenshot
           path: github-actions-ios-emulator-tryout/screens
+
+      - name: Upload logs
+        uses: actions/upload-artifact@v1
+        with:
+          name: logs
+          path: github-actions-ios-emulator-tryout
 
       # # Open Metro Bundler in Background
       # - name: Open Metro Bundler in Background

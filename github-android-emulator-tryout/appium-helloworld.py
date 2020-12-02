@@ -7,13 +7,33 @@ from time import sleep
 CURR_DIR=os.path.abspath(os.path.dirname(__file__))
 SCREEN_CAPTURE_DIR='{}/screens'.format(CURR_DIR)
 
-desired_caps = {
+desired_caps_A = {
   "platformName": "Android",
   "appPackage": "com.android.chrome",
   "appActivity": "com.google.android.apps.chrome.Main",
   "automationName": "UiAutomator2",
   "app":'{}/apk_pool/ApiDemos-debug.apk'.format(CURR_DIR),
   "deviceName":"emulator-5554",
+  "uiautomator2ServerInstallTimeout": 2*60*1000
+}
+
+desired_caps_B = {
+  "platformName": "Android",
+  "appPackage": "com.android.chrome",
+  "appActivity": "com.google.android.apps.chrome.Main",
+  "automationName": "UiAutomator2",
+  "app":'{}/apk_pool/ApiDemos-debug.apk'.format(CURR_DIR),
+  "deviceName":"emulator-5556",
+  "uiautomator2ServerInstallTimeout": 2*60*1000
+}
+
+desired_caps_C = {
+  "platformName": "Android",
+  "appPackage": "com.android.chrome",
+  "appActivity": "com.google.android.apps.chrome.Main",
+  "automationName": "UiAutomator2",
+  "app":'{}/apk_pool/ApiDemos-debug.apk'.format(CURR_DIR),
+  "deviceName":"emulator-5558",
   "uiautomator2ServerInstallTimeout": 2*60*1000
 }
 

@@ -1,0 +1,21 @@
+platform: 'iOS',
+  desiredCapabilities: {
+    deviceName: 'TestiPhoneX',
+    platformVersion: '11.4',
+    app: path.join(
+      __dirname,
+      '..',
+      '..',
+      'ios',
+      'build',
+      '<PRODUCT>',
+      'Build',
+      'Products',
+      'Debug-iphonesimulator',
+      '<APP>.app',
+    ),
+    udid: '{IPHONE_UUID}',
+    xcodeOrgId: '<APPLE DEVELOPER CERT ORG>',
+    xcodeSigningId: 'iPhone Developer',
+    automationName: 'XCUITest',
+  }

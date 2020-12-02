@@ -1,4 +1,9 @@
 # iOS environment
+import os,sys
+from appium import webdriver
+import base64
+from time import sleep
+
 import unittest
 from appium import webdriver
 

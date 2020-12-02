@@ -58,10 +58,15 @@ jobs:
       # Install Repo and Dependencies
       - name: Install Repo and Dependencies
         run: |
-          npm install --save-dev
+          cd github-actions-ios-emulator-tryout
+            npm install --save-dev
+          cd -
       # Start the Appium Server
       - name: Start the Appium Server
-        run: ./node_modules/.bin/appium --log-timestamp --log-no-colors --allow-insecure chromedriver_autodownload > appium.log &
+        run: |
+          cd github-actions-ios-emulator-tryout
+            ./node_modules/.bin/appium --log-timestamp --log-no-colors --allow-insecure chromedriver_autodownload > appium.log &
+          cd -
       # Poll for Appium Server to Start
       - name: Poll for Appium Server to Start
         run: |
@@ -76,8 +81,8 @@ jobs:
 
       - name: python appium test
         run: |
-          echo 'start python appium test'
           cd github-actions-ios-emulator-tryout
+            echo 'start python appium test'
             pipenv sync
             pipenv run python3 appium-helloworld.py
           cd -

@@ -26,23 +26,23 @@ def getScreenShot(driver, sc_filename):
   with open(sc_filename, "wb") as fh:
     fh.write(base64.urlsafe_b64decode(img_data))
 
-# driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
-# driver.implicitly_wait(30)
+driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+driver.implicitly_wait(30)
 
-class driver:
-  contexts='hello contexts'
-  def get_log(text):
-    return text
+# class driver:
+#   contexts='hello contexts'
+#   def get_log(text):
+#     return text
 
-  def get(text):
-    return ''
+#   def get(text):
+#     return ''
 
-  def quit():
-    return ''
+#   def quit():
+#     return ''
 
-  class switch_to:
-    def context(text):
-      return text
+#   class switch_to:
+#     def context(text):
+#       return text
 
 try:
   print('driver.contexts')
@@ -56,14 +56,13 @@ try:
   fo=open('./logs/browser_food.log','w')
   fo.writelines(json.dumps(driver.get_log('browser')))
 
-  pass
+  # el = driver.find_element_by_accessibility_id('item')
+  # el.click()
+
+
+except Exception as e:
+  raise e
+
 finally:
-  pass
-
-
-# el = driver.find_element_by_accessibility_id('item')
-# el.click()
-
-driver.quit()
-
-print('done')
+  driver.quit()
+  print('done')

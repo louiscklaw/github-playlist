@@ -5,7 +5,7 @@ name: ios-emulator-test
 on:
   push:
     branches:
-      - test/ios-emulator-test
+      - test/ios-version-test-*
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

@@ -53,7 +53,7 @@ try:
 
   driver.get("https://aboutme.louislabs.com/")
   sleep(15)
-  driver.switch_to.context("WEBVIEW_4216.1")
+  driver.switch_to.context(driver.contexts[1])
 
   fo=open('./logs/browser_food.log','w')
   fo.writelines(json.dumps(driver.get_log('browser')))

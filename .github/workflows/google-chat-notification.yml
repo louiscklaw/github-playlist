@@ -1,6 +1,8 @@
 name: google-chat-notification
 on:
   push:
+    branches:
+      - test/google-chat-notification
 
 jobs:
 

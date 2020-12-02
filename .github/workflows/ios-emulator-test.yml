@@ -61,16 +61,16 @@ jobs:
       # Start the Appium Server
       - name: Start the Appium Server
         run: ./node_modules/.bin/appium --log-timestamp --log-no-colors --allow-insecure chromedriver_autodownload > appium.log &
-      # # Poll for Appium Server to Start
-      # - name: Poll for Appium Server to Start
-      #   run: |
-      #     until $(curl --output /dev/null --silent --head --fail http://127.0.0.1:4723/wd/hub/sessions); do
-      #       sleep 5
-      #     done
-      # # Open Metro Bundler in Background
-      # - name: Open Metro Bundler in Background
-      #   run: |
-      #     node_modules/react-native/scripts/launchPackager.command &
+      # Poll for Appium Server to Start
+      - name: Poll for Appium Server to Start
+        run: |
+          until $(curl --output /dev/null --silent --head --fail http://127.0.0.1:4723/wd/hub/sessions); do
+            sleep 5
+          done
+      # Open Metro Bundler in Background
+      - name: Open Metro Bundler in Background
+        run: |
+          node_modules/react-native/scripts/launchPackager.command &
       # # Build iOS App and Run Tests
       # - name: Build iOS App and Run Tests
       #   env:

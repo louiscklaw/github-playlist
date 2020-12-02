@@ -12,7 +12,7 @@ SCREEN_CAPTURE_DIR='{}/screens'.format(CURR_DIR)
 
 desired_caps = dict(
     platformName='iOS',
-    platformVersion='11.4',
+    platformVersion='13.4',
     automationName='xcuitest',
     deviceName='iPhone Simulator',
     # app=PATH('../../apps/UICatalog.app.zip')

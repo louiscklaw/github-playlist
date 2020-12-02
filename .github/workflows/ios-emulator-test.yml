@@ -111,6 +111,11 @@ jobs:
         with:
           name: appium.log
           path: appium.log
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v1
+        with:
+          name: screenshot
+          path: github-actions-ios-emulator-tryout/screens
       # Upload Test Results
       - name: Upload Test Results
         uses: actions/upload-artifact@v1

@@ -41,14 +41,17 @@ driver.implicitly_wait(30)
 # getScreenShot(driver, '{}/menymeny_admin_screenshot.png'.format(SCREEN_CAPTURE_DIR))
 
 
-driver.get('http://menymeny.com/food/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/')
-sleep(30)
-getScreenShot(driver, '{}/menymeny_food_screenshot.png'.format(SCREEN_CAPTURE_DIR))
+# driver.get('http://menymeny.com/food/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/')
+# sleep(30)
+# getScreenShot(driver, '{}/menymeny_food_screenshot.png'.format(SCREEN_CAPTURE_DIR))
 
 try:
   print('driver.contexts')
   print(json.dumps(driver.contexts))
   # driver.switch_to.context("WEBVIEW_chrome")
+
+  driver.get("https://aboutme.louislabs.com/")
+  sleep(15)
 
   fo=open('./browser_food.log','w')
   fo.writelines(json.dumps(driver.get_log('browser')))

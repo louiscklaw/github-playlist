@@ -27,6 +27,7 @@ jobs:
 
           cd -
 
+          ls -l /Users/runner/work/github-playlist/github-playlist/github-actions-ios-emulator-tryout/
 
       - name: Upload logs
         uses: actions/upload-artifact@v1

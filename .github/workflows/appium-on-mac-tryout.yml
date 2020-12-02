@@ -34,5 +34,5 @@ jobs:
         with:
           name: logs
           path: |
-            github-actions-ios-emulator-tryout/
+            github-actions-ios-emulator-tryout
             !node_modules

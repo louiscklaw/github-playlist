@@ -55,7 +55,7 @@ try:
   # driver.switch_to.context("WEBVIEW_chrome")
 
   driver.get("https://aboutme.louislabs.com/")
-  sleep(1)
+  sleep(15)
   driver.switch_to.context(driver.contexts[1])
   writeLog('safariConsole_food.log', json.dumps(driver.get_log('safariConsole')))
 

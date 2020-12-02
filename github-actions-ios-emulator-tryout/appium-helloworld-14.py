@@ -66,7 +66,7 @@ try:
   driver.get("https://aboutme.louislabs.com/")
   sleep(15)
   driver.switch_to.context(driver.contexts[1])
-  writeLog('safariConsole_food.log', json.dumps(driver.get_log('safariConsole')))
+  writeLog('safariConsole_louislabs.log', json.dumps(driver.get_log('safariConsole')))
 
   # https://www.whatismybrowser.com/detect/what-http-headers-is-my-browser-sending
   driver.get('https://www.whatismybrowser.com/detect/what-http-headers-is-my-browser-sending');

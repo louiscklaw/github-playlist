@@ -37,13 +37,13 @@ jobs:
       - name: List iOS Devices & Platforms
         run: |
           xcrun simctl list
-      # Install iOS 11.4 Runtime
-      - name: Install iOS 11.4 Runtime
+      # Install iOS 12.4 Runtime
+      - name: Install iOS 12.4 Runtime
         run: |
           gem install xcode-install
           xcversion simulators --install='iOS 12.4'
-      # Create and Boot iOS Emulator - iPhoneX on iOS 11.4, Update default appium config for iOS
-      - name: Create and Run iOS Emulator - iPhoneX on iOS 11.4, Update default appium config for iOS
+      # Create and Boot iOS Emulator - iPhoneX on iOS 12.4, Update default appium config for iOS
+      - name: Create and Run iOS Emulator - iPhoneX on iOS 12.4, Update default appium config for iOS
         run: |
           xcrun simctl create TestiPhoneX com.apple.CoreSimulator.SimDeviceType.iPhone-X com.apple.CoreSimulator.SimRuntime.iOS-12-4 > deviceid.txt
           DEVICEUUID=`cat deviceid.txt`

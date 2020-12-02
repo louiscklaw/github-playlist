@@ -68,10 +68,26 @@ jobs:
           until $(curl --output /dev/null --silent --head --fail http://127.0.0.1:4723/wd/hub/sessions); do
             sleep 5
           done
-      # Open Metro Bundler in Background
-      - name: Open Metro Bundler in Background
+
+      - name: check python version
         run: |
-          node_modules/react-native/scripts/launchPackager.command &
+          python3 -V
+          python3 -m pip install pip --upgrade
+          python3 -m pip install pipenv
+          pipenv --version
+
+      - name: python appium test
+        run: |
+          echo 'start python appium test'
+          cd github-actions-ios-emulator-tryout
+            pipenv sync
+            pipenv run python3 appium-helloworld.py
+          cd -
+
+      # # Open Metro Bundler in Background
+      # - name: Open Metro Bundler in Background
+      #   run: |
+      #     node_modules/react-native/scripts/launchPackager.command &
       # # Build iOS App and Run Tests
       # - name: Build iOS App and Run Tests
       #   env:

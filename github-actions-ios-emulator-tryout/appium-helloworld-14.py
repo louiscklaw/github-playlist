@@ -52,7 +52,7 @@ def writeLog(filename, content):
 def saveRecordingScreen(driver, video_name):
   video_rawdata = driver.stop_recording_screen()
 
-  filepath = os.path.join("{}/{}".format(VIDEO_PATH, video_name))
+  filepath = os.path.join(video_name)
   with open(filepath, "wb") as vd:
       vd.write(base64.b64decode(video_rawdata))
 

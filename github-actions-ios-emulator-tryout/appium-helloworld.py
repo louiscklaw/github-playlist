@@ -29,20 +29,20 @@ driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 driver.implicitly_wait(30)
 
 # https://www.whatismybrowser.com/detect/what-http-headers-is-my-browser-sending
-driver.get('https://www.whatismybrowser.com/detect/what-http-headers-is-my-browser-sending');
-getScreenShot(driver, '{}/check_browser.png'.format(SCREEN_CAPTURE_DIR))
+# driver.get('https://www.whatismybrowser.com/detect/what-http-headers-is-my-browser-sending');
+# getScreenShot(driver, '{}/check_browser.png'.format(SCREEN_CAPTURE_DIR))
 
-driver.get('http://menymeny.com/manage/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/')
-sleep(30)
-getScreenShot(driver, '{}/menymeny_manage_screenshot.png'.format(SCREEN_CAPTURE_DIR))
+# driver.get('http://menymeny.com/manage/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/')
+# sleep(30)
+# getScreenShot(driver, '{}/menymeny_manage_screenshot.png'.format(SCREEN_CAPTURE_DIR))
 
-driver.get('http://menymeny.com/food/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/')
-sleep(30)
-getScreenShot(driver, '{}/menymeny_food_screenshot.png'.format(SCREEN_CAPTURE_DIR))
+# driver.get('http://menymeny.com/food/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/')
+# sleep(30)
+# getScreenShot(driver, '{}/menymeny_food_screenshot.png'.format(SCREEN_CAPTURE_DIR))
 
-driver.get('http://menymeny.com/admin/')
-sleep(30)
-getScreenShot(driver, '{}/menymeny_admin_screenshot.png'.format(SCREEN_CAPTURE_DIR))
+# driver.get('http://menymeny.com/admin/')
+# sleep(30)
+# getScreenShot(driver, '{}/menymeny_admin_screenshot.png'.format(SCREEN_CAPTURE_DIR))
 
 
 

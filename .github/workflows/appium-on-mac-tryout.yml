@@ -17,12 +17,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Install Repo and Dependencies
+      - name: install appium and appium doctor on mac
         run: |
+          brew install ffmpeg
+
           cd github-actions-ios-emulator-tryout
             npm install --save-dev
             npm install appium-doctor
             ./node_modules/.bin/appium-doctor
           cd -
-
-          brew install ffmpeg

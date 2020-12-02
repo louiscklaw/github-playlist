@@ -21,6 +21,8 @@ jobs:
         run: |
           cd github-actions-ios-emulator-tryout
             npm install --save-dev
+            npm install appium-doctor
+            ./node_modules/.bin/appium-doctor
           cd -
 
           brew install ffmpeg

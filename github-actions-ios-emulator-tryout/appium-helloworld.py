@@ -27,8 +27,9 @@ def getScreenShot(driver, sc_filename):
 driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 driver.implicitly_wait(30)
 
-
-getScreenShot(driver, '{}/hello_chrome.png'.format(SCREEN_CAPTURE_DIR))
+# https://www.whatismybrowser.com/detect/what-http-headers-is-my-browser-sending
+driver.get('https://www.whatismybrowser.com/detect/what-http-headers-is-my-browser-sending');
+getScreenShot(driver, '{}/check_browser.png'.format(SCREEN_CAPTURE_DIR))
 
 # el = driver.find_element_by_accessibility_id('item')
 # el.click()

@@ -86,6 +86,9 @@ jobs:
             echo 'start python appium test'
             pipenv sync
             pipenv run python3 appium-helloworld.py
+
+            ls -la
+
           cd -
 
       - name: Upload Test Results
@@ -98,7 +101,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: logs
-          path: github-actions-ios-emulator-tryout/logs
+          path: github-actions-ios-emulator-tryout
 
       # # Open Metro Bundler in Background
       # - name: Open Metro Bundler in Background

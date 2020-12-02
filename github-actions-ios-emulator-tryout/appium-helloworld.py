@@ -7,6 +7,7 @@ import json
 import unittest
 from appium import webdriver
 
+
 CURR_DIR=os.path.abspath(os.path.dirname(__file__))
 SCREEN_CAPTURE_DIR='{}/screens'.format(CURR_DIR)
 
@@ -53,7 +54,7 @@ try:
   sleep(1)
   driver.switch_to.context(driver.contexts[1])
 
-  fo=open('./logs/browser_food.log','w')
+  fo=open('browser_food.log','w')
   fo.writelines(json.dumps(driver.get_log('browser')))
 
   # el = driver.find_element_by_accessibility_id('item')

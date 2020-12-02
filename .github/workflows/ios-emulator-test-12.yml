@@ -84,6 +84,9 @@ jobs:
             echo 'start python appium test'
             pipenv sync
             pipenv run python3 appium-helloworld.py
+
+            ls -la
+
           cd -
 
       - name: Upload Test Results

@@ -65,9 +65,7 @@ jobs:
       # Poll for Appium Server to Start
       - name: Poll for Appium Server to Start
         run: |
-          until $(curl --output /dev/null --silent --head --fail http://127.0.0.1:4723/wd/hub/sessions); do
-            sleep 5
-          done
+          sleep 60
 
       - name: check python version
         run: |

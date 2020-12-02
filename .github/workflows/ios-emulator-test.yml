@@ -18,30 +18,30 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: testbranch
-      # # Setup Node JS - 10.17.0
-      # - name: Set up Node JS 10.17.0
-      #   uses: actions/setup-node@v1
-      #   with:
-      #     node-version: '10.17.0'
-      # # Clean Packages & Install Dependencies
-      # - name: Clean Packages
-      #   run: |
-      #     rm -rf node_modules
-      #     npm cache clean --force
-      #     rm -rf package-lock.json
-      # # Install React Native CLI
-      # - name: Install React Native CLI
-      #   run: |
-      #     npm install react-native-cli
-      # # List iOS Devices & Platforms
-      # - name: List iOS Devices & Platforms
-      #   run: |
-      #     xcrun simctl list
-      # # Install iOS 11.4 Runtime
-      # - name: Install iOS 11.4 Runtime
-      #   run: |
-      #     gem install xcode-install
-      #     xcversion simulators --install='iOS 11.4'
+      # Setup Node JS - 10.17.0
+      - name: Set up Node JS 10.17.0
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.17.0'
+      # Clean Packages & Install Dependencies
+      - name: Clean Packages
+        run: |
+          rm -rf node_modules
+          npm cache clean --force
+          rm -rf package-lock.json
+      # Install React Native CLI
+      - name: Install React Native CLI
+        run: |
+          npm install react-native-cli
+      # List iOS Devices & Platforms
+      - name: List iOS Devices & Platforms
+        run: |
+          xcrun simctl list
+      # Install iOS 11.4 Runtime
+      - name: Install iOS 11.4 Runtime
+        run: |
+          gem install xcode-install
+          xcversion simulators --install='iOS 11.4'
       # # Create and Boot iOS Emulator - iPhoneX on iOS 11.4, Update default appium config for iOS
       # - name: Create and Run iOS Emulator - iPhoneX on iOS 11.4, Update default appium config for iOS
       #   run: |

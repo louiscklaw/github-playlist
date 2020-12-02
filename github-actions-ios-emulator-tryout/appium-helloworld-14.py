@@ -45,6 +45,10 @@ driver.implicitly_wait(30)
 #     def context(text):
 #       return text
 
+def writeLog(filename, content):
+  fo=open(filename,'w')
+  fo.writelines(content)
+
 try:
   print('driver.contexts')
   print(json.dumps(driver.contexts))
@@ -53,9 +57,28 @@ try:
   driver.get("https://aboutme.louislabs.com/")
   sleep(1)
   driver.switch_to.context(driver.contexts[1])
+  writeLog('safariConsole_food.log', json.dumps(driver.get_log('safariConsole')))
 
-  fo=open('safariConsole_food.log','w')
-  fo.writelines(json.dumps(driver.get_log('safariConsole')))
+  # https://www.whatismybrowser.com/detect/what-http-headers-is-my-browser-sending
+  driver.get('https://www.whatismybrowser.com/detect/what-http-headers-is-my-browser-sending');
+  getScreenShot(driver, '{}/check_browser.png'.format(SCREEN_CAPTURE_DIR))
+
+
+
+  driver.get('http://menymeny.com/manage/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/')
+  sleep(30)
+  getScreenShot(driver, '{}/menymeny_manage_screenshot.png'.format(SCREEN_CAPTURE_DIR))
+  writeLog('safariConsole_manage.log', json.dumps(driver.get_log('safariConsole')))
+
+  driver.get('http://menymeny.com/admin/')
+  sleep(30)
+  getScreenShot(driver, '{}/menymeny_admin_screenshot.png'.format(SCREEN_CAPTURE_DIR))
+  writeLog('safariConsole_admin.log', json.dumps(driver.get_log('safariConsole')))
+
+  driver.get('http://menymeny.com/food/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/')
+  sleep(30)
+  getScreenShot(driver, '{}/menymeny_food_screenshot.png'.format(SCREEN_CAPTURE_DIR))
+  writeLog('safariConsole_food.log', json.dumps(driver.get_log('safariConsole')))
 
   # el = driver.find_element_by_accessibility_id('item')
   # el.click()

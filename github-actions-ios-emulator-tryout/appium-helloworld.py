@@ -54,8 +54,8 @@ try:
   sleep(1)
   driver.switch_to.context(driver.contexts[1])
 
-  fo=open('browser_food.log','w')
-  fo.writelines(json.dumps(driver.get_log('browser')))
+  fo=open('safariConsole_food.log','w')
+  fo.writelines(json.dumps(driver.get_log('safariConsole')))
 
   # el = driver.find_element_by_accessibility_id('item')
   # el.click()

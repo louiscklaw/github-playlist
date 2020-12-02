@@ -19,6 +19,7 @@ desired_caps = dict(
     browserName='safari',
     loggingPrefs={"browser":"ALL"}
 )
+desired_caps["goog:loggingPrefs"]={"browser":"ALL"}
 
 def getScreenShot(driver, sc_filename):
   img_data = driver.get_screenshot_as_base64()
@@ -52,18 +53,18 @@ try:
 
   driver.get("https://aboutme.louislabs.com/")
   sleep(15)
+  driver.switch_to.context(driver.contexts[1])
 
-  fo=open('./logs/browser_food.log','w')
-  fo.writelines(json.dumps(driver.get_log('browser')))
+  fo=open('safariConsole_food.log','w')
+  fo.writelines(json.dumps(driver.get_log('safariConsole')))
 
-  pass
+  # el = driver.find_element_by_accessibility_id('item')
+  # el.click()
+
+
+except Exception as e:
+  raise e
+
 finally:
-  pass
-
-
-# el = driver.find_element_by_accessibility_id('item')
-# el.click()
-
-driver.quit()
-
-print('done')
+  driver.quit()
+  print('done')

@@ -87,6 +87,12 @@ jobs:
             pipenv run python3 appium-helloworld.py
           cd -
 
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v1
+        with:
+          name: screenshot
+          path: github-actions-ios-emulator-tryout/screens
+
       # # Open Metro Bundler in Background
       # - name: Open Metro Bundler in Background
       #   run: |
@@ -106,16 +112,12 @@ jobs:
       #     npm run e2e-test
 
       # Upload Appium Logs
-      - name: Upload Appium logs
-        uses: actions/upload-artifact@v1
-        with:
-          name: appium.log
-          path: appium.log
-      - name: Upload Test Results
-        uses: actions/upload-artifact@v1
-        with:
-          name: screenshot
-          path: github-actions-ios-emulator-tryout/screens
+      # - name: Upload Appium logs
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: appium.log
+      #     path: appium.log
+
       # Upload Test Results
       - name: Upload Test Results
         uses: actions/upload-artifact@v1

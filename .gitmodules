@@ -1,0 +1,3 @@
+[submodule "actions/fastmac-tryout"]
+	path = actions/fastmac-tryout
+	url = git@github.com:louiscklaw/fastmac-tryout.git

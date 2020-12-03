@@ -12,13 +12,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Install iOS 12.4 Runtime
-        run: |
-          gem install xcode-install
-          xcversion simulators --install='iOS 12.4'
-      - uses: louiscklaw/hello-world-composite-run-steps-action@v4
+      - uses: louiscklaw/ios12-runtime-install-action-tryout@v1
         id: foo
         with:
           who-to-greet: 'Mona the Octocat'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
+      - name: Install iOS 12.4 Runtime
+        run: |
+          gem install xcode-install
+          xcversion simulators --install='iOS 12.4'

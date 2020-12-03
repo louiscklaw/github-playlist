@@ -1,3 +1,9 @@
 [submodule "actions/hello-world-composite-run-steps-action"]
 	path = actions/hello-world-composite-run-steps-action
 	url = git@github.com:louiscklaw/hello-world-composite-run-steps-action.git
+[submodule "actions/ios12-runtime-install-action"]
+	path = actions/ios12-runtime-install-action
+	url = git@github.com:louiscklaw/ios12-runtime-install-action.git
+[submodule "actions/ios12-runtime-install-action-tryout"]
+	path = actions/ios12-runtime-install-action-tryout
+	url = git@github.com:louiscklaw/ios12-runtime-install-action-tryout.git

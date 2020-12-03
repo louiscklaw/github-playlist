@@ -12,7 +12,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: louiscklaw/ios12-runtime-install-action-tryout@v1
+      - uses: louiscklaw/ios12-runtime-install-action-tryout@v1.1
         id: foo
         with:
           who-to-greet: 'Mona the Octocat'

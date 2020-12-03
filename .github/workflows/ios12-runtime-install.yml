@@ -22,7 +22,7 @@ jobs:
         run: |
           gem install xcode-install
           xcversion simulators --install='iOS 12.4'
-      - name: size of directory
+      # - name: size of directory
       #   run: |
       #     du -sh /Users/runner/Library/Caches/XcodeInstall/com.apple.pkg.iPhoneSimulatorSDK12_4
       # - name: size of directory

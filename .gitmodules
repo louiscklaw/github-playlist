@@ -1,3 +1,9 @@
 [submodule "actions/fastmac-tryout"]
 	path = actions/fastmac-tryout
 	url = git@github.com:louiscklaw/fastmac-tryout.git
+[submodule "actions/mac-github-actions-init-tryout"]
+	path = actions/mac-github-actions-init-tryout
+	url = git@github.com:louiscklaw/mac-github-actions-init-tryout.git
+[submodule "actions/dummy_repo"]
+	path = actions/dummy_repo
+	url = git@github.com:louiscklaw/dummy_repo.git

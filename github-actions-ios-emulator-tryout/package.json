@@ -11,5 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "appium": "^1.19.1"
+  },
+  "dependencies": {
+    "appium-doctor": "^1.15.4"
   }
 }
